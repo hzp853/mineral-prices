@@ -54,16 +54,24 @@ $MAP = @(
 )
 
 function Get-WebText($url) {
-  $tmp = [System.IO.Path]::GetTempFileName()
+  # 跨平台：Windows/PS5.1 与 GitHub Actions 的 Linux/PS7 都要能跑（Linux 上没有 curl.exe）
+  $headers = @{
+    'User-Agent' = $ua
+    'Referer'    = 'https://finance.sina.com.cn/'
+  }
   try {
-    $args = @('-s', '--compressed', '-A', $ua, '-e', 'https://finance.sina.com.cn/', '--max-time', '20', '-o', $tmp, $url)
-    & curl.exe @args 2>$null | Out-Null
-    if (-not (Test-Path $tmp)) { return $null }
-    $bytes = [System.IO.File]::ReadAllBytes($tmp)
-    if ($bytes.Length -lt 32) { return $null }
-    return [System.Text.Encoding]::UTF8.GetString($bytes)
-  } finally {
-    if (Test-Path $tmp) { Remove-Item $tmp -Force -ErrorAction SilentlyContinue }
+    $resp = Invoke-WebRequest -Uri $url -Headers $headers -UseBasicParsing -TimeoutSec 25
+    $content = $resp.Content
+    if ($null -eq $content) { return $null }
+    if ($content -is [byte[]]) {
+      if ($content.Length -lt 32) { return $null }
+      return [System.Text.Encoding]::UTF8.GetString($content)
+    }
+    $s = [string]$content
+    if ($s.Length -lt 32) { return $null }
+    return $s
+  } catch {
+    return $null
   }
 }
 
