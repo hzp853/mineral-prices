@@ -11,7 +11,8 @@
 param(
   [switch]$DryRun,
   [switch]$Quiet,
-  [int]$HistoryDays = 380
+  [int]$HistoryDays = 380,
+  [int]$KekuangIssues = 60
 )
 
 # 在 Linux / .NET Core 上启用 GBK 等代码页（GitHub Actions 的 ubuntu 环境需要）
@@ -126,9 +127,9 @@ $Varieties = @(
   @{ id='apt';            name='仲钨酸铵'; cat='rare';      unit='元/吨'; mode='kekuang'; match='仲钨酸铵'; desc='仲钨酸铵 APT 报价。' }
   @{ id='moly-conc';      name='钼精矿';   cat='rare';      unit='元/吨度'; mode='kekuang'; match='钼精矿'; desc='钼精矿报价，元/吨度。' }
   # 非金属矿
-  @{ id='fluorite';       name='萤石';     cat='nonmetal'; unit='元/吨'; mode='ppi'; grade='CaF₂ 97% 湿粉'; region='全国'; desc='萤石 97% 湿粉，生意社基准价（全国主流，出厂参考）。生意社公开数据列表缺 2026 年 6–7 月，该段不补点、图上断开。' }
-  @{ id='phosphate-rock'; name='磷矿石';   cat='nonmetal'; unit='元/吨'; mode='kekuang'; match='磷矿石'; grade='30% 品位'; region='湖北'; desc='磷矿石 30% 品位船板价。' }
-  @{ id='graphite';       name='石墨';     cat='nonmetal'; unit='元/吨'; mode='kekuang'; match='鳞片石墨'; grade='-195 目'; region='全国'; desc='鳞片石墨 -195 目报价。' }
+  @{ id='fluorite';       name='萤石';     cat='nonmetal'; unit='元/吨'; mode='ppi'; ppiId=318; match='萤石'; freq='weekly'; grade='CaF₂ 97% 湿粉'; region='全国'; desc='萤石 97% 湿粉，生意社基准价（全国主流，出厂参考）。生意社公开数据列表缺 2026 年 6–7 月，该段不补点、图上断开。' }
+  @{ id='phosphate-rock'; name='磷矿石';   cat='nonmetal'; unit='元/吨'; mode='ppi'; ppiId=925; match='磷矿石'; freq='daily'; grade='综合基准价（品位未细分）'; region='全国'; desc='磷矿石，生意社基准价（全国主流，出厂参考），日频。' }
+  @{ id='graphite';       name='石墨';     cat='nonmetal'; unit='元/吨'; mode='kekuang'; match='鳞片石墨'; grade='鳞片石墨 -194 目（山东）'; region='全国'; desc='鳞片石墨 -194 目报价（科矿网每期报价，2026-10 后已停更，仅历史快照）。' }
   @{ id='sulfur';         name='硫磺';     cat='nonmetal'; unit='元/吨'; mode='kekuang'; match='硫磺'; grade='进口颗粒'; region='全国'; desc='硫磺进口颗粒成交价。' }
 )
 
@@ -214,17 +215,18 @@ function Get-PpiHtml($url) {
   return $body
 }
 
-function Get-PpiFluorite() {
-  # 生意社「萤石」数据列表：dlist-14--318-N.html，每页约 21 条，标题形如「11月13日萤石3693.75元/吨」
+function Get-PpiList($id, $name) {
+  # 生意社数据列表：dlist-14--<id>-N.html，标题形如「11月13日萤石3693.75元/吨」「10月25日磷矿石643.33元/吨」
   # 标题不含年份，按“不晚于今天”推断：月日 > 今天的月日 → 上一年
   $today = Get-Date
   $pts = @{}
-  $newest = $null
+  $seen = 0
   foreach ($p in 1..8) {
-    $url = "https://www.100ppi.com/data/dlist-14--318-$p.html"
-    try { $html = Get-PpiHtml $url } catch { Log ("  [100ppi] page $p 失败 :: " + $_.Exception.Message); break }
-    $rows = [regex]::Matches($html, '(\d{1,2})月(\d{1,2})日萤石([\d\.]+)元/吨')
+    $url = "https://www.100ppi.com/data/dlist-14--$id-$p.html"
+    try { $html = Get-PpiHtml $url } catch { Log ("  [100ppi] $name page $p 失败 :: " + $_.Exception.Message); break }
+    $rows = [regex]::Matches($html, '(\d{1,2})月(\d{1,2})日' + [regex]::Escape($name) + '([\d\.]+)元/吨')
     if ($rows.Count -eq 0) { break }
+    $seen += $rows.Count
     foreach ($x in $rows) {
       $mo = [int]$x.Groups[1].Value; $dy = [int]$x.Groups[2].Value; $val = [double]$x.Groups[3].Value
       $yr = $today.Year
@@ -234,11 +236,11 @@ function Get-PpiFluorite() {
     }
     Start-Sleep -Milliseconds 250
   }
-  if ($pts.Count -eq 0) { throw '生意社：未解析到萤石基准价' }
+  if ($pts.Count -eq 0) { throw "生意社：未解析到$name基准价" }
   $pl = @()
   foreach ($k in ($pts.Keys | Sort-Object)) { $pl += , @($k, [double]$pts[$k]) }
   $newest = $pl[$pl.Count - 1][0]
-  return @{ points = $pl; latest = $newest; url = 'https://www.100ppi.com/data/dlist-14--318-1.html' }
+  return @{ points = $pl; latest = $newest; raw = $seen; url = "https://www.100ppi.com/data/dlist-14--$id-1.html" }
 }
 
 function Get-CnmnSpot() {  # 返回 hashtable: 名称 -> @{value=中间值; low; high; date; raw}
@@ -284,7 +286,7 @@ function Get-KekuangIssues($maxIssues = 24) {
   $cats = @(4025, 4066, 4022, 4023, 4065)
   $ids = @{}
   foreach ($c in $cats) {
-    foreach ($p in 1, 2, 3) {
+    foreach ($p in 1, 2, 3, 4, 5, 6, 7, 8) {
       try {
         $html = Get-WebText "http://www.kekuang.cn/mobile/quote/list.php?catid=$c&page=$p" 'UTF8'
         foreach ($x in [regex]::Matches($html, 'itemid=(\d+)')) { $ids[[int]$x.Groups[1].Value] = $true }
@@ -306,16 +308,28 @@ function Parse-KekuangArticle($itemid) {
   $plain = Get-PlainText $html
   $dm = [regex]::Match($plain, '(20\d{2})[-年/](\d{1,2})[-月/](\d{1,2})')
   $date = if ($dm.Success) { '{0:d4}-{1:d2}-{2:d2}' -f [int]$dm.Groups[1].Value, [int]$dm.Groups[2].Value, [int]$dm.Groups[3].Value } else { (Get-Date).ToString('yyyy-MM-dd') }
-  $rows = [regex]::Matches($html, '(?is)<tr[^>]*>(.*?)</tr>')
-  $out = @()
-  foreach ($row in $rows) {
-    $cells = @([regex]::Matches($row.Groups[1].Value, '(?is)<t[dh][^>]*>(.*?)</t[dh]') | ForEach-Object {
-      $c = Get-PlainText $_.Groups[1].Value
-      return ($c -replace '^.*?box-sizing:\s*border-box !important;">', '').Trim()
-    })
-    if ($cells.Count -lt 4) { continue }
-    $out += , $cells
+  $rows = @()
+  # 科矿的表格 HTML 被站点的行内样式破坏（<td style="…!i> mportant;"> 之类），<tr>/<td> 结构不可靠。
+  # 改为「文本令牌流 + 以单位结尾切行」：遇到 元/xxx 就收一行，行首是品名，倒数第二个是报价，中间是规格。
+  $flat = ($html -replace '(?is)<script.*?</script>', ' ' -replace '(?is)<style.*?</style>', ' ' `
+                 -replace '<[^>]+>', '|' -replace '&nbsp;', ' ' -replace '\s+', ' ')
+  $flat = $flat -replace 'mportant;[^|]*', '' -replace '\|+', '|'
+  $toks = @($flat.Split('|') | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne '' })
+  $buf = @()
+  foreach ($tk in $toks) {
+    if ($tk -match '^[（(]?元/') {
+      if ($buf.Count -ge 2) {
+        $pn = $buf[$buf.Count - 1]
+        if ($pn -match '^[\d\.,]+\s*[-–~]?\s*[\d\.,]*\s*万?$') {
+          $nm = $buf[0]
+          $specTxt = if ($buf.Count -gt 2) { (($buf[1..($buf.Count - 2)]) -join ' ') } else { '' }
+          $rows += , @($nm, $specTxt, $pn, $tk)
+        }
+      }
+      $buf = @()
+    } else { $buf += $tk }
   }
+  $out = $rows
   return @{ date = $date; rows = $out; url = $url; title = $title; plain = $plain }
 }
 
@@ -460,7 +474,7 @@ if ($cnmn) {
 # 4) 科矿网
 $kk = $null
 try {
-  $issues = Get-KekuangIssues 60
+  $issues = Get-KekuangIssues $KekuangIssues
   Log ("  [kekuang] 候选期次 " + $issues.Count)
   $allRows = @()
   foreach ($it in $issues) {
@@ -488,6 +502,8 @@ if ($kk) {
       if ($cells.Count -ge 3) {
         $name = $cells[0]
         if ($name -notmatch $v.match) { $name = $null }
+        # 同名但不同规格（如鳞片石墨 -190/-194/-195）时，用 spec 进一步筛
+        if ($name -and $v.spec -and ($cells.Count -ge 2) -and ($cells[1] -notmatch $v.spec)) { $name = $null }
       }
       if ($name) {
         $priceCells = @()
@@ -543,23 +559,23 @@ if ($kk) {
   }
 }
 
-# 5) 生意社（100ppi）萤石基准价
-try {
-  $ppi = Get-PpiFluorite
-  $pl = @($ppi.points)
-  foreach ($v in $Varieties) {
-    if ($v.mode -ne 'ppi') { continue }
+# 5) 生意社（100ppi）基准价：萤石 dlist-14--318、磷矿石 dlist-14--925
+foreach ($v in $Varieties) {
+  if ($v.mode -ne 'ppi') { continue }
+  try {
+    $ppi = Get-PpiList $v.ppiId $v.match
+    $pl = @($ppi.points)
     $sid = $v.id + '-100ppi'
     $seriesNew += @{
       id = $sid; varietyId = $v.id; sourceId = '100ppi'; label = ($v.name + ' 生意社基准价')
       spec = @{ grade = $v.grade; tax = '含税'; region = $v.region; delivery = '出厂'; currency = 'CNY' }
-      unit = $v.unit; freq = 'weekly'; updatedAt = $pl[$pl.Count - 1][0]
+      unit = $v.unit; freq = $v.freq; updatedAt = $pl[$pl.Count - 1][0]
       historyStart = $pl[0][0]; points = $pl
     }
     $varietyOut += @{ id = $v.id; name = $v.name; category = $v.cat; unit = $v.unit; hasFutures = $false; defaultSeriesId = $sid; description = $v.desc; aliases = @() }
     Log ("  [100ppi] " + $v.name + " " + $pl.Count + " 点 " + $pl[0][0] + " ~ " + $pl[$pl.Count - 1][0])
-  }
-} catch { Log ("  [100ppi] 失败 :: " + $_.Exception.Message); $missing += @{ variety = '萤石'; reason = '生意社抓取失败：' + $_.Exception.Message } }
+  } catch { Log ("  [100ppi] " + $v.name + " 失败 :: " + $_.Exception.Message); $missing += @{ variety = $v.name; reason = '生意社抓取失败：' + $_.Exception.Message } }
+}
 
 # 6) 手工补数：tools\manual_quotes.csv（seriesId,date,value），用于数据源更新滞后时补当日价
 $ManualP = Join-Path $PSScriptRoot 'manual_quotes.csv'
