@@ -1,0 +1,8 @@
+# 上期所每日文件的本地缓存，不入库
+tools/.cache/
+
+# 系统与编辑器杂项
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp

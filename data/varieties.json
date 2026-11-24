@@ -1,0 +1,292 @@
+[
+    {
+        "id":  "iron-ore",
+        "name":  "铁矿石",
+        "aliases":  [
+                        "铁矿",
+                        "铁精粉",
+                        "Iron Ore",
+                        "Fe"
+                    ],
+        "category":  "ferrous",
+        "hasFutures":  true,
+        "unit":  "元/吨",
+        "defaultSeriesId":  "iron-ore-dce",
+        "description":  "62% 品位粉矿，干基，港口自提。"
+    },
+    {
+        "id":  "manganese-ore",
+        "name":  "锰矿",
+        "aliases":  [
+                        "锰矿石",
+                        "Manganese Ore",
+                        "Mn"
+                    ],
+        "category":  "ferrous",
+        "hasFutures":  false,
+        "unit":  "元/吨度",
+        "defaultSeriesId":  "mn-baiinfo",
+        "description":  "44% 澳矿，吨度计价。"
+    },
+    {
+        "id":  "chrome-ore",
+        "name":  "铬矿",
+        "aliases":  [
+                        "铬矿石",
+                        "Chrome Ore",
+                        "Cr"
+                    ],
+        "category":  "ferrous",
+        "hasFutures":  false,
+        "unit":  "美元/吨",
+        "defaultSeriesId":  "cr-smm",
+        "description":  "40% 南非粉矿，CIF 中国主港。"
+    },
+    {
+        "id":  "cu",
+        "name":  "铜",
+        "aliases":  [
+                        "电解铜",
+                        "阴极铜",
+                        "Copper",
+                        "Cu"
+                    ],
+        "category":  "nonferrous",
+        "hasFutures":  true,
+        "unit":  "元/吨",
+        "defaultSeriesId":  "cu-shfe-cathode",
+        "description":  "1# 阴极铜，含税，上海仓库自提。"
+    },
+    {
+        "id":  "al",
+        "name":  "铝",
+        "aliases":  [
+                        "电解铝",
+                        "铝锭",
+                        "Aluminum",
+                        "Al"
+                    ],
+        "category":  "nonferrous",
+        "hasFutures":  true,
+        "unit":  "元/吨",
+        "defaultSeriesId":  "al-shfe-a00",
+        "description":  "A00 铝锭，含税。"
+    },
+    {
+        "id":  "pb",
+        "name":  "铅",
+        "aliases":  [
+                        "电解铅",
+                        "铅锭",
+                        "Lead",
+                        "Pb"
+                    ],
+        "category":  "nonferrous",
+        "hasFutures":  true,
+        "unit":  "元/吨",
+        "defaultSeriesId":  "pb-shfe-1",
+        "description":  "1# 铅锭，含税。"
+    },
+    {
+        "id":  "zn",
+        "name":  "锌",
+        "aliases":  [
+                        "电解锌",
+                        "锌锭",
+                        "Zinc",
+                        "Zn"
+                    ],
+        "category":  "nonferrous",
+        "hasFutures":  true,
+        "unit":  "元/吨",
+        "defaultSeriesId":  "zn-shfe-0",
+        "description":  "0# 锌锭，含税。"
+    },
+    {
+        "id":  "ni",
+        "name":  "镍",
+        "aliases":  [
+                        "电解镍",
+                        "镍板",
+                        "Nickel",
+                        "Ni"
+                    ],
+        "category":  "nonferrous",
+        "hasFutures":  true,
+        "unit":  "元/吨",
+        "defaultSeriesId":  "ni-shfe-1",
+        "description":  "1# 电解镍，含税。"
+    },
+    {
+        "id":  "sn",
+        "name":  "锡",
+        "aliases":  [
+                        "电解锡",
+                        "锡锭",
+                        "Tin",
+                        "Sn"
+                    ],
+        "category":  "nonferrous",
+        "hasFutures":  true,
+        "unit":  "元/吨",
+        "defaultSeriesId":  "sn-shfe-1",
+        "description":  "1# 锡锭，含税。"
+    },
+    {
+        "id":  "sb",
+        "name":  "锑",
+        "aliases":  [
+                        "锑锭",
+                        "Antimony",
+                        "Sb"
+                    ],
+        "category":  "nonferrous",
+        "hasFutures":  false,
+        "unit":  "元/吨",
+        "defaultSeriesId":  "sb-smm-1",
+        "description":  "1# 锑锭，含税，湖南主产区。"
+    },
+    {
+        "id":  "mg",
+        "name":  "镁",
+        "aliases":  [
+                        "镁锭",
+                        "Magnesium",
+                        "Mg"
+                    ],
+        "category":  "nonferrous",
+        "hasFutures":  false,
+        "unit":  "元/吨",
+        "defaultSeriesId":  "mg-smm-999",
+        "description":  "99.9% 镁锭，含税，府谷出厂。"
+    },
+    {
+        "id":  "au",
+        "name":  "黄金",
+        "aliases":  [
+                        "金",
+                        "Gold",
+                        "Au",
+                        "Au99.99"
+                    ],
+        "category":  "precious",
+        "hasFutures":  true,
+        "unit":  "元/克",
+        "defaultSeriesId":  "au-sge-9999",
+        "description":  "Au99.99 现货，上海黄金交易所。"
+    },
+    {
+        "id":  "ag",
+        "name":  "白银",
+        "aliases":  [
+                        "银",
+                        "Silver",
+                        "Ag",
+                        "Ag(T+D)"
+                    ],
+        "category":  "precious",
+        "hasFutures":  true,
+        "unit":  "元/千克",
+        "defaultSeriesId":  "ag-sge-td",
+        "description":  "Ag(T+D) 递延合约。"
+    },
+    {
+        "id":  "lithium-carbonate",
+        "name":  "碳酸锂",
+        "aliases":  [
+                        "锂盐",
+                        "Li2CO3",
+                        "Lithium Carbonate"
+                    ],
+        "category":  "rare",
+        "hasFutures":  true,
+        "unit":  "元/吨",
+        "defaultSeriesId":  "lc-gfex-2407",
+        "description":  "电池级碳酸锂，主力合约与现货并存。"
+    },
+    {
+        "id":  "co",
+        "name":  "钴",
+        "aliases":  [
+                        "电解钴",
+                        "Cobalt",
+                        "Co"
+                    ],
+        "category":  "rare",
+        "hasFutures":  false,
+        "unit":  "元/吨",
+        "defaultSeriesId":  "co-smm-998",
+        "description":  "电解钴 ≥99.8%，含税。"
+    },
+    {
+        "id":  "prnd-oxide",
+        "name":  "氧化镨钕",
+        "aliases":  [
+                        "镨钕氧化物",
+                        "PrNd Oxide",
+                        "NdPr"
+                    ],
+        "category":  "rare",
+        "hasFutures":  false,
+        "unit":  "元/吨",
+        "defaultSeriesId":  "prnd-smm-99",
+        "description":  "≥99% 氧化镨钕，含税。"
+    },
+    {
+        "id":  "tungsten-concentrate",
+        "name":  "钨精矿",
+        "aliases":  [
+                        "黑钨精矿",
+                        "Tungsten",
+                        "W"
+                    ],
+        "category":  "rare",
+        "hasFutures":  false,
+        "unit":  "元/吨",
+        "defaultSeriesId":  "w-smm-65",
+        "description":  "65% 黑钨精矿，含税。"
+    },
+    {
+        "id":  "fluorite",
+        "name":  "萤石",
+        "aliases":  [
+                        "氟石",
+                        "CaF2",
+                        "Fluorite",
+                        "氟化钙"
+                    ],
+        "category":  "nonmetal",
+        "hasFutures":  false,
+        "unit":  "元/吨",
+        "defaultSeriesId":  "fluorite-kq81-97",
+        "description":  "CaF₂ 97% 湿粉，不含税，出厂价。"
+    },
+    {
+        "id":  "phosphate-rock",
+        "name":  "磷矿石",
+        "aliases":  [
+                        "磷矿",
+                        "Phosphate Rock",
+                        "P2O5"
+                    ],
+        "category":  "nonmetal",
+        "hasFutures":  false,
+        "unit":  "元/吨",
+        "defaultSeriesId":  "p-rock-kq81-30",
+        "description":  "30% 品位，坑口价。"
+    },
+    {
+        "id":  "graphite",
+        "name":  "石墨",
+        "aliases":  [
+                        "鳞片石墨",
+                        "Graphite",
+                        "C"
+                    ],
+        "category":  "nonmetal",
+        "hasFutures":  false,
+        "unit":  "元/吨",
+        "defaultSeriesId":  "graphite-kq81-195",
+        "description":  "鳞片石墨 -195 目，含税。"
+    }
+]

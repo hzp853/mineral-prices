@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>矿产品价格中枢</title>
+<meta name="description" content="金属与非金属矿产品现货价格走势看板：分类浏览、品种详情、多品种对比、自选与涨跌榜。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563EB'/%3E%3Cpath d='M8 23l6-9 4 5.5L21 16l3 7z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="app-header">
+  <div class="header-inner">
+    <a class="brand" href="#/"><span class="brand-mark">矿</span><span>矿产品价格中枢</span></a>
+
+    <nav class="nav" id="nav">
+      <a href="#/" data-route="home">首页</a>
+      <a href="#/ranking" data-route="ranking">涨跌榜</a>
+      <a href="#/compare" data-route="compare">对比</a>
+      <a href="#/watchlist" data-route="watchlist">自选</a>
+      <a href="#/specs" data-route="specs">口径字典</a>
+      <a href="#/about" data-route="about">关于</a>
+    </nav>
+
+    <div class="header-right">
+      <div class="search" id="search">
+        <input id="q" type="search" placeholder="搜索品种 / 别名" autocomplete="off" aria-label="搜索品种">
+        <div class="search-results" id="qres" hidden></div>
+      </div>
+      <span class="demo-flag" id="demoFlag" hidden>示例数据</span>
+      <span class="datestamp" id="datestamp">截至 <b>—</b></span>
+      <button class="icon-btn" id="themeBtn" title="切换深色 / 浅色" aria-label="切换主题">◐</button>
+      <button class="icon-btn menu-btn" id="menuBtn" title="菜单" aria-label="菜单">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container" id="view"></div>
+</main>
+
+<footer class="app-footer">
+  <div class="footer-inner">
+    <span>矿产品价格中枢 · v<span id="ver">1.2.0</span></span>
+    <span class="gap-note">价格口径以来源为准，本站不构成任何交易或投资建议。</span>
+    <span class="spacer"></span>
+    <a href="#/specs">口径字典</a>
+    <a href="#/about">数据说明</a>
+  </div>
+</footer>
+
+<script src="assets/chart.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

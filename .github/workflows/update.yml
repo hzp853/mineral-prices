@@ -1,0 +1,64 @@
+name: 更新行情并发布
+
+# 定时抓取交易所公开行情 → 提交到仓库 → 发布到 GitHub Pages
+# 时间用 UTC：10:10 UTC = 北京时间 18:10（周一至周五）
+# 上期所/上金所日行情一般 16:00-17:00 之间出全，18:10 取数比较稳。
+
+on:
+  schedule:
+    - cron: '10 10 * * 1-5'
+  workflow_dispatch:        # 也可以在 Actions 页面手动点一下立即跑
+
+permissions:
+  contents: write           # 提交 data/ 变更
+  pages: write              # 发布 Pages
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 抓取行情（上期所 6 个品种 + 上金所 2 个品种）
+        shell: pwsh
+        run: ./tools/update_data.ps1 -Days 3
+
+      - name: 提交数据变更
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "今天没有新数据（休市或接口无更新）"
+          else
+            git commit -m "chore(data): 行情更新 $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: 组装发布目录
+        run: |
+          mkdir -p _site
+          cp -r index.html assets data _site/
+          # tools/ 和 .github/ 不需要发布到公网
+
+      - name: 上传 Pages 产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: update
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 发布到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

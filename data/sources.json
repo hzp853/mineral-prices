@@ -1,0 +1,74 @@
+[
+    {
+        "id":  "shfe",
+        "name":  "上海期货交易所",
+        "type":  "exchange",
+        "trust":  "A",
+        "freq":  "daily",
+        "url":  "https://www.shfe.com.cn",
+        "note":  "官方结算行情"
+    },
+    {
+        "id":  "dce",
+        "name":  "大连商品交易所",
+        "type":  "exchange",
+        "trust":  "A",
+        "freq":  "daily",
+        "url":  "http://www.dce.com.cn",
+        "note":  "官方结算行情"
+    },
+    {
+        "id":  "gfex",
+        "name":  "广州期货交易所",
+        "type":  "exchange",
+        "trust":  "A",
+        "freq":  "daily",
+        "url":  "http://www.gfex.com.cn",
+        "note":  "官方结算行情"
+    },
+    {
+        "id":  "sge",
+        "name":  "上海黄金交易所",
+        "type":  "exchange",
+        "trust":  "A",
+        "freq":  "daily",
+        "url":  "https://www.sge.com.cn",
+        "note":  "官方行情"
+    },
+    {
+        "id":  "smm",
+        "name":  "上海有色网",
+        "type":  "agency",
+        "trust":  "B",
+        "freq":  "weekly",
+        "url":  "https://www.smm.cn",
+        "note":  "商业机构现货报价"
+    },
+    {
+        "id":  "baiinfo",
+        "name":  "百川盈孚",
+        "type":  "agency",
+        "trust":  "B",
+        "freq":  "weekly",
+        "url":  "https://www.baiinfo.com",
+        "note":  "商业机构现货报价"
+    },
+    {
+        "id":  "kq81",
+        "name":  "矿权资源网",
+        "type":  "media",
+        "trust":  "C",
+        "freq":  "weekly",
+        "url":  "http://www.kq81.com",
+        "note":  "行业媒体公开报价"
+    },
+    {
+        "id":  "manual",
+        "name":  "内部录入",
+        "type":  "manual",
+        "trust":  "D",
+        "freq":  "manual",
+        "url":  null,
+        "note":  "人工询价，仅供参考"
+    }
+]
