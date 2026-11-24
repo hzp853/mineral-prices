@@ -126,7 +126,7 @@ $Varieties = @(
   @{ id='apt';            name='仲钨酸铵'; cat='rare';      unit='元/吨'; mode='kekuang'; match='仲钨酸铵'; desc='仲钨酸铵 APT 报价。' }
   @{ id='moly-conc';      name='钼精矿';   cat='rare';      unit='元/吨度'; mode='kekuang'; match='钼精矿'; desc='钼精矿报价，元/吨度。' }
   # 非金属矿
-  @{ id='fluorite';       name='萤石';     cat='nonmetal'; unit='元/吨'; mode='kekuang'; match='萤石'; grade='CaF₂ 97% 湿粉'; region='全国'; desc='萤石 97% 湿粉，不含税出厂价。' }
+  @{ id='fluorite';       name='萤石';     cat='nonmetal'; unit='元/吨'; mode='ppi'; grade='CaF₂ 97% 湿粉'; region='全国'; desc='萤石 97% 湿粉，生意社基准价（全国主流，出厂参考）。生意社公开数据列表缺 2026 年 6–7 月，该段不补点、图上断开。' }
   @{ id='phosphate-rock'; name='磷矿石';   cat='nonmetal'; unit='元/吨'; mode='kekuang'; match='磷矿石'; grade='30% 品位'; region='湖北'; desc='磷矿石 30% 品位船板价。' }
   @{ id='graphite';       name='石墨';     cat='nonmetal'; unit='元/吨'; mode='kekuang'; match='鳞片石墨'; grade='-195 目'; region='全国'; desc='鳞片石墨 -195 目报价。' }
   @{ id='sulfur';         name='硫磺';     cat='nonmetal'; unit='元/吨'; mode='kekuang'; match='硫磺'; grade='进口颗粒'; region='全国'; desc='硫磺进口颗粒成交价。' }
@@ -137,6 +137,7 @@ $Categories = @(
   @{ id='nonferrous'; name='有色金属'; order=2; icon='■'; desc='铜、铝、铅、锌、镍、锡、氧化铝、钴、锑、镁、铋、铟、镓、镉、碲、海绵钛、电解锰、金属硅、LME 六种基本金属' }
   @{ id='precious';   name='贵金属';   order=3; icon='◆'; desc='黄金、白银' }
   @{ id='rare';       name='稀有与新能源'; order=4; icon='●'; desc='碳酸锂、氢氧化锂、工业硅、多晶硅、钨精矿、仲钨酸铵、钼精矿' }
+  @{ id='nonmetal';   name='非金属矿'; order=5; icon='○'; desc='萤石（磷矿石、石墨数据源待接入）' }
 )
 
 $Sources = @(
@@ -146,6 +147,7 @@ $Sources = @(
   @{ id='cnmn';   name='中国有色网';     type='media';    trust='B'; freq='daily'; url='https://www.cnmn.com.cn/'; note='上海金属现货报价（小金属），每日 10:00/11:30 更新，取区间中间值。' }
   @{ id='kekuang';name='科矿网';         type='media';    trust='B'; freq='irregular'; url='http://www.kekuang.cn/'; note='稀土与非金属矿报价，不定期更新（偏周更）。' }
   @{ id='westmetall'; name='Westmetall（LME 镜像）'; type='media'; trust='B'; freq='daily'; url='https://www.westmetall.com/en/markdaten.php'; note='LME 官方现货结算价与库存的免费镜像，美元/吨，含约一年历史。' }
+  @{ id='100ppi'; name='生意社（100ppi）'; type='media'; trust='B'; freq='daily'; url='https://www.100ppi.com/'; note='生意社基准价：基于撮合报价与价格模型生成的交易指导价，非交易所结算价，历史约半年。' }
 )
 
 # ---------------- 适配器 ----------------
@@ -189,6 +191,54 @@ function Get-Westmetall($field) {
   }
   $pts = @($pts | Sort-Object { $_[0] })
   return $pts
+}
+
+function Get-PpiHtml($url) {
+  # 生意社(100ppi)有 JS cookie 挑战：首次返回带 HW_CHECK 的壳页，取出 token 带 cookie 重试。
+  $cache = Join-Path $PSScriptRoot '.cache\ppi_token.txt'
+  $tok = ''
+  if (Test-Path $cache) { $tok = (Get-Content $cache -Raw).Trim() }
+  $headers = @{ 'User-Agent' = $UA; 'Referer' = 'https://www.100ppi.com/' }
+  if ($tok) { $headers['Cookie'] = 'HW_CHECK=' + $tok }
+  $r = Invoke-WebRequest -Uri $url -Headers $headers -UseBasicParsing -TimeoutSec 45
+  $body = [System.Text.Encoding]::UTF8.GetString($r.RawContentStream.ToArray())
+  $m = [regex]::Match($body, '_0x2\s*=\s*"([0-9a-f]+)"')
+  if ($m.Success) {
+    $tok = $m.Groups[1].Value
+    New-Item -ItemType Directory -Force -Path (Split-Path -Parent $cache) | Out-Null
+    if (-not $DryRun) { [System.IO.File]::WriteAllText($cache, $tok, (New-Object System.Text.UTF8Encoding($false))) }
+    $headers['Cookie'] = 'HW_CHECK=' + $tok
+    $r = Invoke-WebRequest -Uri $url -Headers $headers -UseBasicParsing -TimeoutSec 45
+    $body = [System.Text.Encoding]::UTF8.GetString($r.RawContentStream.ToArray())
+  }
+  return $body
+}
+
+function Get-PpiFluorite() {
+  # 生意社「萤石」数据列表：dlist-14--318-N.html，每页约 21 条，标题形如「11月13日萤石3693.75元/吨」
+  # 标题不含年份，按“不晚于今天”推断：月日 > 今天的月日 → 上一年
+  $today = Get-Date
+  $pts = @{}
+  $newest = $null
+  foreach ($p in 1..8) {
+    $url = "https://www.100ppi.com/data/dlist-14--318-$p.html"
+    try { $html = Get-PpiHtml $url } catch { Log ("  [100ppi] page $p 失败 :: " + $_.Exception.Message); break }
+    $rows = [regex]::Matches($html, '(\d{1,2})月(\d{1,2})日萤石([\d\.]+)元/吨')
+    if ($rows.Count -eq 0) { break }
+    foreach ($x in $rows) {
+      $mo = [int]$x.Groups[1].Value; $dy = [int]$x.Groups[2].Value; $val = [double]$x.Groups[3].Value
+      $yr = $today.Year
+      if ($mo -gt $today.Month -or ($mo -eq $today.Month -and $dy -gt $today.Day)) { $yr = $yr - 1 }
+      $d = ('{0:d4}-{1:d2}-{2:d2}' -f $yr, $mo, $dy)
+      if (-not $pts.ContainsKey($d)) { $pts[$d] = $val }
+    }
+    Start-Sleep -Milliseconds 250
+  }
+  if ($pts.Count -eq 0) { throw '生意社：未解析到萤石基准价' }
+  $pl = @()
+  foreach ($k in ($pts.Keys | Sort-Object)) { $pl += , @($k, [double]$pts[$k]) }
+  $newest = $pl[$pl.Count - 1][0]
+  return @{ points = $pl; latest = $newest; url = 'https://www.100ppi.com/data/dlist-14--318-1.html' }
 }
 
 function Get-CnmnSpot() {  # 返回 hashtable: 名称 -> @{value=中间值; low; high; date; raw}
@@ -490,6 +540,52 @@ if ($kk) {
     }
     $varietyOut += @{ id = $v.id; name = $v.name; category = $v.cat; unit = $v.unit; hasFutures = $false; defaultSeriesId = $sid; description = $v.desc; aliases = @() }
     Log ("  [kekuang] " + $v.name + " " + $pl.Count + " 点 " + $pl[0][0] + " ~ " + $pl[$pl.Count - 1][0])
+  }
+}
+
+# 5) 生意社（100ppi）萤石基准价
+try {
+  $ppi = Get-PpiFluorite
+  $pl = @($ppi.points)
+  foreach ($v in $Varieties) {
+    if ($v.mode -ne 'ppi') { continue }
+    $sid = $v.id + '-100ppi'
+    $seriesNew += @{
+      id = $sid; varietyId = $v.id; sourceId = '100ppi'; label = ($v.name + ' 生意社基准价')
+      spec = @{ grade = $v.grade; tax = '含税'; region = $v.region; delivery = '出厂'; currency = 'CNY' }
+      unit = $v.unit; freq = 'weekly'; updatedAt = $pl[$pl.Count - 1][0]
+      historyStart = $pl[0][0]; points = $pl
+    }
+    $varietyOut += @{ id = $v.id; name = $v.name; category = $v.cat; unit = $v.unit; hasFutures = $false; defaultSeriesId = $sid; description = $v.desc; aliases = @() }
+    Log ("  [100ppi] " + $v.name + " " + $pl.Count + " 点 " + $pl[0][0] + " ~ " + $pl[$pl.Count - 1][0])
+  }
+} catch { Log ("  [100ppi] 失败 :: " + $_.Exception.Message); $missing += @{ variety = '萤石'; reason = '生意社抓取失败：' + $_.Exception.Message } }
+
+# 6) 手工补数：tools\manual_quotes.csv（seriesId,date,value），用于数据源更新滞后时补当日价
+$ManualP = Join-Path $PSScriptRoot 'manual_quotes.csv'
+if (Test-Path $ManualP) {
+  $manual = @{}
+  foreach ($ln in [System.IO.File]::ReadAllLines($ManualP, [System.Text.Encoding]::UTF8)) {
+    $t = $ln.Trim()
+    if (-not $t -or $t.StartsWith('#')) { continue }
+    $p = @($t -split ',')
+    if ($p.Count -lt 3) { continue }
+    $sid = $p[0].Trim(); $dd = $p[1].Trim(); $vv = 0.0
+    if ($dd -notmatch '^\d{4}-\d{2}-\d{2}$') { continue }
+    if (-not [double]::TryParse($p[2].Trim(), [ref]$vv)) { continue }
+    if (-not $manual.ContainsKey($sid)) { $manual[$sid] = @{} }
+    $manual[$sid][$dd] = $vv
+  }
+  foreach ($s in $seriesNew) {
+    if (-not $manual.ContainsKey($s.id)) { continue }
+    $dict = @{}
+    foreach ($pt in @($s.points)) { $dict[[string]$pt[0]] = [double]$pt[1] }
+    foreach ($k in @($manual[$s.id].Keys)) { $dict[$k] = $manual[$s.id][$k] }
+    $pl = @()
+    foreach ($k in ($dict.Keys | Sort-Object)) { $pl += , @($k, [double]$dict[$k]) }
+    $s.points = $pl
+    $s.updatedAt = $pl[$pl.Count - 1][0]
+    Log ("  [manual] " + $s.id + " 合并 " + $manual[$s.id].Count + " 点，最新 " + $s.updatedAt)
   }
 }
 

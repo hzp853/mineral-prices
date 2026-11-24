@@ -1,56 +1,65 @@
 [
-  {
-    "name": "上海期货交易所",
-    "type": "exchange",
-    "id": "shfe",
-    "note": "交易所官方日行情，收盘价/结算价，主力合约按持仓量滚动选取。",
-    "trust": "A",
-    "freq": "daily",
-    "url": "https://www.shfe.com.cn/"
-  },
-  {
-    "name": "上海黄金交易所",
-    "type": "exchange",
-    "id": "sge",
-    "note": "交易所官方每日行情。",
-    "trust": "A",
-    "freq": "daily",
-    "url": "https://www.sge.com.cn/"
-  },
-  {
-    "name": "新浪财经",
-    "type": "media",
-    "id": "sina",
-    "note": "国内期货主力连续日线，转载自交易所行情，用于无官方接口的品种。",
-    "trust": "B",
-    "freq": "daily",
-    "url": "https://finance.sina.com.cn/futures/"
-  },
-  {
-    "name": "中国有色网",
-    "type": "media",
-    "id": "cnmn",
-    "note": "上海金属现货报价（小金属），每日 10:00/11:30 更新，取区间中间值。",
-    "trust": "B",
-    "freq": "daily",
-    "url": "https://www.cnmn.com.cn/"
-  },
-  {
-    "name": "科矿网",
-    "type": "media",
-    "id": "kekuang",
-    "note": "稀土与非金属矿报价，不定期更新（偏周更）。",
-    "trust": "B",
-    "freq": "irregular",
-    "url": "http://www.kekuang.cn/"
-  },
-  {
-    "name": "Westmetall（LME 镜像）",
-    "type": "media",
-    "id": "westmetall",
-    "note": "LME 官方现货结算价与库存的免费镜像，美元/吨，含约一年历史。",
-    "trust": "B",
-    "freq": "daily",
-    "url": "https://www.westmetall.com/en/markdaten.php"
-  }
+    {
+        "id":  "shfe",
+        "name":  "上海期货交易所",
+        "freq":  "daily",
+        "note":  "交易所官方日行情，收盘价/结算价，主力合约按持仓量滚动选取。",
+        "type":  "exchange",
+        "trust":  "A",
+        "url":  "https://www.shfe.com.cn/"
+    },
+    {
+        "id":  "sge",
+        "name":  "上海黄金交易所",
+        "freq":  "daily",
+        "note":  "交易所官方每日行情。",
+        "type":  "exchange",
+        "trust":  "A",
+        "url":  "https://www.sge.com.cn/"
+    },
+    {
+        "id":  "sina",
+        "name":  "新浪财经",
+        "freq":  "daily",
+        "note":  "国内期货主力连续日线，转载自交易所行情，用于无官方接口的品种。",
+        "type":  "media",
+        "trust":  "B",
+        "url":  "https://finance.sina.com.cn/futures/"
+    },
+    {
+        "id":  "cnmn",
+        "name":  "中国有色网",
+        "freq":  "daily",
+        "note":  "上海金属现货报价（小金属），每日 10:00/11:30 更新，取区间中间值。",
+        "type":  "media",
+        "trust":  "B",
+        "url":  "https://www.cnmn.com.cn/"
+    },
+    {
+        "id":  "kekuang",
+        "name":  "科矿网",
+        "freq":  "irregular",
+        "note":  "稀土与非金属矿报价，不定期更新（偏周更）。",
+        "type":  "media",
+        "trust":  "B",
+        "url":  "http://www.kekuang.cn/"
+    },
+    {
+        "id":  "westmetall",
+        "name":  "Westmetall（LME 镜像）",
+        "freq":  "daily",
+        "note":  "LME 官方现货结算价与库存的免费镜像，美元/吨，含约一年历史。",
+        "type":  "media",
+        "trust":  "B",
+        "url":  "https://www.westmetall.com/en/markdaten.php"
+    },
+    {
+        "id":  "100ppi",
+        "name":  "生意社（100ppi）",
+        "freq":  "daily",
+        "note":  "生意社基准价：基于撮合报价与价格模型生成的交易指导价，非交易所结算价，历史约半年。",
+        "type":  "media",
+        "trust":  "B",
+        "url":  "https://www.100ppi.com/"
+    }
 ]
