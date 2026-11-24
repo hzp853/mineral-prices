@@ -1,6 +1,6 @@
 [
   {
-    "ranAt": "2026-11-24T08:55:42+00:00",
+    "ranAt": "2026-11-24T20:38:10+00:00",
     "dataAsOf": "2026-11-24",
     "demoSeries": [],
     "realSeries": [
@@ -47,50 +47,50 @@
     "steps": [
       {
         "seriesId": "cu-shfe-cathode",
-        "added": 1,
-        "status": "ok"
+        "added": 0,
+        "status": "noop"
       },
       {
         "seriesId": "al-shfe-a00",
-        "added": 1,
-        "status": "ok"
+        "added": 0,
+        "status": "noop"
       },
       {
         "seriesId": "pb-shfe-1",
-        "added": 1,
-        "status": "ok"
+        "added": 0,
+        "status": "noop"
       },
       {
         "seriesId": "zn-shfe-0",
-        "added": 1,
-        "status": "ok"
+        "added": 0,
+        "status": "noop"
       },
       {
         "seriesId": "ni-shfe-1",
-        "added": 1,
-        "status": "ok"
+        "added": 0,
+        "status": "noop"
       },
       {
         "seriesId": "sn-shfe-1",
-        "added": 1,
-        "status": "ok"
+        "added": 0,
+        "status": "noop"
       },
       {
         "seriesId": "au-sge-9999",
-        "added": 1,
-        "status": "ok"
+        "added": 0,
+        "status": "noop"
       },
       {
         "seriesId": "ag-sge-td",
-        "added": 1,
-        "status": "ok"
+        "added": 0,
+        "status": "noop"
       }
     ]
   },
   {
-    "at": "2026-11-24T08:58:09",
-    "series": 39,
     "varieties": 39,
+    "at": "2026-11-24T20:40:02",
+    "series": 39,
     "missing": [
       {
         "variety": "石墨",

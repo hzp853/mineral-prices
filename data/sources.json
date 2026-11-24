@@ -1,65 +1,65 @@
 [
   {
-    "trust": "A",
+    "id": "shfe",
     "url": "https://www.shfe.com.cn/",
     "note": "交易所官方日行情，收盘价/结算价，主力合约按持仓量滚动选取。",
-    "freq": "daily",
+    "trust": "A",
     "name": "上海期货交易所",
-    "id": "shfe",
-    "type": "exchange"
+    "type": "exchange",
+    "freq": "daily"
   },
   {
-    "trust": "A",
+    "id": "sge",
     "url": "https://www.sge.com.cn/",
     "note": "交易所官方每日行情。",
-    "freq": "daily",
+    "trust": "A",
     "name": "上海黄金交易所",
-    "id": "sge",
-    "type": "exchange"
+    "type": "exchange",
+    "freq": "daily"
   },
   {
-    "trust": "B",
+    "id": "sina",
     "url": "https://finance.sina.com.cn/futures/",
     "note": "国内期货主力连续日线，转载自交易所行情，用于无官方接口的品种。",
-    "freq": "daily",
+    "trust": "B",
     "name": "新浪财经",
-    "id": "sina",
-    "type": "media"
+    "type": "media",
+    "freq": "daily"
   },
   {
-    "trust": "B",
+    "id": "cnmn",
     "url": "https://www.cnmn.com.cn/",
     "note": "上海金属现货报价（小金属），每日 10:00/11:30 更新，取区间中间值。",
-    "freq": "daily",
+    "trust": "B",
     "name": "中国有色网",
-    "id": "cnmn",
-    "type": "media"
+    "type": "media",
+    "freq": "daily"
   },
   {
-    "trust": "B",
+    "id": "kekuang",
     "url": "http://www.kekuang.cn/",
     "note": "稀土与非金属矿报价，不定期更新（偏周更）。",
-    "freq": "irregular",
+    "trust": "B",
     "name": "科矿网",
-    "id": "kekuang",
-    "type": "media"
+    "type": "media",
+    "freq": "irregular"
   },
   {
-    "trust": "B",
+    "id": "westmetall",
     "url": "https://www.westmetall.com/en/markdaten.php",
     "note": "LME 官方现货结算价与库存的免费镜像，美元/吨，含约一年历史。",
-    "freq": "daily",
+    "trust": "B",
     "name": "Westmetall（LME 镜像）",
-    "id": "westmetall",
-    "type": "media"
+    "type": "media",
+    "freq": "daily"
   },
   {
-    "trust": "B",
+    "id": "100ppi",
     "url": "https://www.100ppi.com/",
     "note": "生意社基准价：基于撮合报价与价格模型生成的交易指导价，非交易所结算价，历史约半年。",
-    "freq": "daily",
+    "trust": "B",
     "name": "生意社（100ppi）",
-    "id": "100ppi",
-    "type": "media"
+    "type": "media",
+    "freq": "daily"
   }
 ]
