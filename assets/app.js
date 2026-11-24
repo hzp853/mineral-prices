@@ -17,7 +17,8 @@
     homeSort: 'chg-desc',
     rankTab: 'up',
     cmpIds: ['cu', 'al', 'iron-ore'],
-    cmpRange: '365'
+    cmpRange: '365',
+    intraday: null
   };
 
   var chartObj = null;
@@ -175,6 +176,34 @@
       s.onload = use;
       s.onerror = function () { reject(new Error('无法加载 data/bundle.js')); };
       document.head.appendChild(s);
+    });
+  }
+
+  /* 日内分时索引（可选；取不到就当作没有分时功能，不影响主流程） */
+  var intradayIndex = null;
+  var intradayCache = {};
+
+  function loadIntradayIndex() {
+    return fetch('data/intraday/index.json', { cache: 'no-store' }).then(function (r) {
+      if (!r.ok) throw new Error('no intraday index');
+      return r.json();
+    }).then(function (j) {
+      intradayIndex = j;
+    }).catch(function () {
+      intradayIndex = null;   // file:// 或未生成时静默降级
+    });
+  }
+
+  function loadIntradayFile(sid) {
+    if (intradayCache[sid]) return Promise.resolve(intradayCache[sid]);
+    var meta = intradayIndex && intradayIndex.series && intradayIndex.series[sid];
+    if (!meta) return Promise.reject(new Error('该序列没有分时数据'));
+    return fetch('data/intraday/' + meta.file, { cache: 'no-store' }).then(function (r) {
+      if (!r.ok) throw new Error('分时文件 ' + r.status);
+      return r.json();
+    }).then(function (j) {
+      intradayCache[sid] = j;
+      return j;
     });
   }
 
@@ -474,7 +503,7 @@
     h += '</tbody></table></div></div>';
 
     var sorted = D.catalog.filter(function (e) {
-      return isFinite(e.changePct) && e.freshness !== 'stopped';
+      return e.changePct != null && isFinite(e.changePct) && e.freshness !== 'stopped';
     });
     var top = sorted.slice().sort(function (a, b) { return b.changePct - a.changePct; }).slice(0, 5);
     var bot = sorted.slice().sort(function (a, b) { return a.changePct - b.changePct; }).slice(0, 5);
@@ -656,6 +685,38 @@
         '</div>';
     } else {
       h += '<div class="card"><div class="empty">所选区间内数据点不足，无法统计</div></div>';
+    }
+
+    /* --- 日内分时（仅当该序列有分钟数据时出现） --- */
+    var ivMeta = intradayIndex && intradayIndex.series && intradayIndex.series[sid];
+    if (ivMeta && query && query.iv && state.intraday !== sid) {
+      /* 支持 #/variety/au?iv=1 直接展开当日分时（也方便分享链接） */
+      loadIntradayFile(sid).then(function () {
+        state.intraday = sid;
+        routeKeep();
+      }).catch(function () { /* 忽略 */ });
+    }
+    if (ivMeta) {
+      var iv = intradayCache[sid];
+      var ivOn = !!(state.intraday && state.intraday === sid && iv);
+      h += '<div class="card chart-card" id="iv-card">' +
+        '<div class="chart-head">' +
+        '<span class="seg">' +
+        '<button data-act="intraday" data-id="' + esc(sid) + '"' + (ivOn ? ' class="active"' : '') + '>日内分时</button>' +
+        '</span>' +
+        '<span class="gap-note" style="margin-left:12px">' +
+        esc(ivMeta.date) + ' · ' + esc(ivMeta.name) + ' ' + esc(ivMeta.symbol) +
+        ' · ' + esc(ivMeta.unit) + ' · ' + (ivMeta.count || 0) + ' 个分钟点' +
+        (ivMeta.prevClose ? ' · 昨结 ' + fmtNum(ivMeta.prevClose, ivMeta.unit) : '') +
+        '</span>' +
+        '<span class="gap-note" style="margin-left:auto">数据源：新浪财经（期货主力连续，与上方现货口径不同）</span>' +
+        '</div>' +
+        '<div class="chart-host" id="chart-iv">' +
+        (ivOn ? '' : '<div class="empty" style="padding:36px 0">' +
+          '<button class="btn" data-act="intraday" data-id="' + esc(sid) + '">加载今日分时（' + (ivMeta.count || 0) + ' 点）</button>' +
+          '</div>') +
+        '</div>' +
+        '</div>';
     }
 
     /* 数据表 */
@@ -853,7 +914,7 @@
   function pageRanking() {
     var tab = state.rankTab;
     var list = D.catalog.slice().filter(function (e) {
-      return isFinite(e.changePct) && e.freshness !== 'stopped';
+      return e.changePct != null && isFinite(e.changePct) && e.freshness !== 'stopped';
     });
     list.sort(function (a, b) {
       return tab === 'down' ? a.changePct - b.changePct : b.changePct - a.changePct;
@@ -1008,6 +1069,8 @@
       MineChart.spark(host, e.spark, color);
     });
 
+    drawIntraday();
+
     if (!pendingChart) return;
     var host = document.getElementById('chart');
     if (!host) { pendingChart = null; return; }
@@ -1042,6 +1105,28 @@
     pendingChart = null;
   }
 
+  function drawIntraday() {
+    var host = document.getElementById('chart-iv');
+    if (!host || !state.intraday) return;
+    var iv = intradayCache[state.intraday];
+    if (!iv || !iv.points || !iv.points.length) return;
+    var up = iv.prevClose ? iv.points[iv.points.length - 1][1] >= iv.prevClose : true;
+    MineChart.line(host, {
+      series: [{
+        points: iv.points,
+        label: iv.name,
+        color: trendColor(up ? 1 : -1),
+        demo: false
+      }],
+      freq: 'intraday',
+      unit: iv.unit,
+      height: 320,
+      area: true,
+      minDecimals: decFor(iv.points[0][1], iv.unit),
+      refLine: iv.prevClose ? { value: iv.prevClose, label: '昨结' } : null
+    });
+  }
+
   /* -------------------------------------------------------------- 事件 */
 
   function onClick(ev) {
@@ -1069,6 +1154,25 @@
     if (act === 'range') {
       state.range = btn.getAttribute('data-v');
       routeKeep();
+      return;
+    }
+
+    if (act === 'intraday') {
+      var ivId = btn.getAttribute('data-id');
+      if (!ivId) return;
+      if (state.intraday === ivId && intradayCache[ivId]) {
+        state.intraday = null;      // 再点一次收起
+        routeKeep();
+        return;
+      }
+      btn.disabled = true;
+      loadIntradayFile(ivId).then(function () {
+        state.intraday = ivId;
+        routeKeep();
+      }).catch(function (err) {
+        btn.disabled = false;
+        alert('日内数据加载失败：' + (err && err.message ? err.message : err));
+      });
       return;
     }
 
@@ -1238,6 +1342,8 @@
     loadData().then(function () {
       buildMaps();
       updateChrome();
+      return loadIntradayIndex();
+    }).then(function () {
       route();
     }).catch(function (err) {
       document.getElementById('view').innerHTML =

@@ -6,7 +6,8 @@ name: 更新行情并发布
 
 on:
   schedule:
-    - cron: '10 10 * * 1-5'
+    - cron: '10 10 * * 1-5'      # 18:10 北京：收盘日线
+    - cron: '20 7 * * 1-5'       # 15:20 北京：当日分时（15:00 收盘后）
   workflow_dispatch:        # 也可以在 Actions 页面手动点一下立即跑
   push:                     # 页面/样式/脚本/数据有改动时也跑一次，方便验证链路
     branches: [ main ]
@@ -44,6 +45,15 @@ jobs:
             ./tools/ingest.ps1
           } else {
             Write-Host "没有 ingest.ps1，跳过"
+          }
+
+      - name: 抓取当日分时（金银铜铝等 16 条，供「日内」图）
+        shell: pwsh
+        run: |
+          if (Test-Path ./tools/fetch_intraday.ps1) {
+            ./tools/fetch_intraday.ps1 -Quiet
+          } else {
+            Write-Host "没有 fetch_intraday.ps1，跳过"
           }
 
       - name: 提交数据变更

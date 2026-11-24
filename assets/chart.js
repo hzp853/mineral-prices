@@ -28,17 +28,26 @@
   }
 
   function toTime(s) {
-    var p = String(s).split('-');
-    return Date.UTC(parseInt(p[0], 10), parseInt(p[1], 10) - 1, parseInt(p[2], 10));
+    var str = String(s);
+    var head = str.slice(0, 10).split('-');
+    var t = Date.UTC(parseInt(head[0], 10), parseInt(head[1], 10) - 1, parseInt(head[2], 10));
+    /* 支持 "YYYY-MM-DD HH:MM"（日内分时） */
+    var m = str.match(/[ T](\d{1,2}):(\d{2})/);
+    if (m) t += parseInt(m[1], 10) * 3600000 + parseInt(m[2], 10) * 60000;
+    return t;
   }
+
+  function isIntradayKey(s) { return /[ T]\d{1,2}:\d{2}/.test(String(s)); }
 
   function pad2(n) { return n < 10 ? '0' + n : String(n); }
 
   function fmtDate(t, mode) {
     var d = new Date(t);
     var y = d.getUTCFullYear(), m = d.getUTCMonth() + 1, dy = d.getUTCDate();
+    var hh = d.getUTCHours(), mi = d.getUTCMinutes();
     if (mode === 'ym') return String(y).slice(2) + '-' + pad2(m);
     if (mode === 'full') return y + '-' + pad2(m) + '-' + pad2(dy);
+    if (mode === 'hm') return pad2(hh) + ':' + pad2(mi);
     return pad2(m) + '-' + pad2(dy);
   }
 
@@ -89,21 +98,38 @@
     return (neg ? '-' : '') + p.join('.');
   }
 
-  /* 数据缺口：按频率给出"正常间隔"与"异常阈值"（天） */
+  /* 数据缺口：按频率给出"正常间隔"与"异常阈值"（天；日内序列按分钟折算） */
   function gapThreshold(freq) {
+    if (freq === 'intraday') return 5 / 1440;
     return freq === 'weekly' ? 10 : freq === 'monthly' ? 45 : 4;
   }
   function typicalGap(freq) {
+    if (freq === 'intraday') return 1 / 1440;
     return freq === 'weekly' ? 7 : freq === 'monthly' ? 30 : 3;
   }
 
   function findGaps(points, freq) {
     var th = gapThreshold(freq);
     var typ = typicalGap(freq);
+    var intraday = freq === 'intraday' ||
+      (points.length > 1 && /[ T]\d{1,2}:\d{2}/.test(String(points[0][0])));
     var out = [];
     for (var i = 1; i < points.length; i++) {
       var a = toTime(points[i - 1][0]);
       var b = toTime(points[i][0]);
+      if (intraday) {
+        var mins = (b - a) / 60000;
+        if (mins > 5) {
+          out.push({
+            from: points[i - 1][0],
+            to: points[i][0],
+            minutes: Math.round(mins),
+            missing: Math.round(mins),
+            index: i
+          });
+        }
+        continue;
+      }
       var d = Math.round((b - a) / DAY);
       if (d > th) {
         out.push({
@@ -228,6 +254,20 @@
     var yLo = vMin - spanV * 0.10;
     var yHi = vMax + spanV * 0.10;
 
+    /* 先定 Y 轴刻度，再按刻度文字宽度反推左侧留白，避免与竖排单位挤在一起 */
+    var yt0 = yTicks(yLo, yHi, 5);
+    var yDec0 = Math.max(decForStep(yt0.step), cfg.minDecimals || 0);
+    if (cfg.maxDecimals != null) yDec0 = Math.min(yDec0, cfg.maxDecimals);
+    var maxChars = 0;
+    yt0.values.forEach(function (v) {
+      var len = group(v, yDec0).length;
+      if (len > maxChars) maxChars = len;
+    });
+    var needL = Math.round(maxChars * 6.6) + (cfg.unit ? 30 : 18);
+    if (W < 460) needL = Math.min(needL, 52);
+    pad.l = Math.max(W < 460 ? 50 : 64, Math.min(needL, W < 460 ? 52 : 128));
+    plotW = Math.max(20, W - pad.l - pad.r);
+
     var x = function (t) { return pad.l + ((t - tMin) / (tMax - tMin)) * plotW; };
     var y = function (v) { return pad.t + (1 - (v - yLo) / (yHi - yLo)) * plotH; };
 
@@ -237,9 +277,8 @@
     });
 
     /* --- 网格与 Y 轴 --- */
-    var yt = yTicks(yLo, yHi, 5);
-    var yDec = Math.max(decForStep(yt.step), cfg.minDecimals || 0);
-    if (cfg.maxDecimals != null) yDec = Math.min(yDec, cfg.maxDecimals);
+    var yt = yt0;
+    var yDec = yDec0;
     yt.values.forEach(function (v) {
       var yy = y(v);
       svg.appendChild(el('line', {
@@ -268,17 +307,51 @@
 
     /* --- X 轴 --- */
     var spanDays = (tMax - tMin) / DAY;
-    var xCount = W < 460 ? 3 : (spanDays > 120 ? 6 : 4);
-    var xMode = spanDays > 320 ? 'ym' : 'md';
-    for (var i = 0; i <= xCount; i++) {
-      var tt = tMin + ((tMax - tMin) * i) / xCount;
-      var xx = x(tt);
-      var xt = el('text', {
-        x: xx, y: H - 10, 'text-anchor': 'middle',
-        'font-size': 11, fill: colors.text3, 'font-family': 'inherit'
+    var intraday = spanDays < 2;
+    var xCount = intraday ? (W < 460 ? 3 : 6) : (W < 460 ? 3 : (spanDays > 120 ? 6 : 4));
+    var xMode = intraday ? 'hm' : (spanDays > 320 ? 'ym' : 'md');
+
+    if (intraday) {
+      /* 日内：按真实数据点取刻度，标签用 HH:MM，避免出现「21:37」这类非整点 */
+      var basePts = series[0].pts;
+      var nmax = basePts.length - 1;
+      for (var k = 0; k <= xCount; k++) {
+        var idx = Math.round((nmax * k) / xCount);
+        var p = basePts[idx];
+        var xx0 = x(p.t);
+        var xt0 = el('text', {
+          x: xx0, y: H - 10, 'text-anchor': k === 0 ? 'start' : (k === xCount ? 'end' : 'middle'),
+          'font-size': 11, fill: colors.text3, 'font-family': 'inherit'
+        });
+        xt0.textContent = fmtDate(p.t, 'hm');
+        svg.appendChild(xt0);
+      }
+    } else {
+      for (var i = 0; i <= xCount; i++) {
+        var tt = tMin + ((tMax - tMin) * i) / xCount;
+        var xx = x(tt);
+        var xt = el('text', {
+          x: xx, y: H - 10, 'text-anchor': 'middle',
+          'font-size': 11, fill: colors.text3, 'font-family': 'inherit'
+        });
+        xt.textContent = fmtDate(tt, xMode);
+        svg.appendChild(xt);
+      }
+    }
+
+    /* --- 昨结参考线（日内图用） --- */
+    if (cfg.refLine && isFinite(cfg.refLine.value) && cfg.refLine.value >= yLo && cfg.refLine.value <= yHi) {
+      var ry = y(cfg.refLine.value);
+      svg.appendChild(el('line', {
+        x1: pad.l, x2: pad.l + plotW, y1: ry, y2: ry,
+        stroke: colors.text3, 'stroke-width': 1, 'stroke-dasharray': '5 4', opacity: 0.9
+      }));
+      var rl = el('text', {
+        x: pad.l + plotW - 2, y: ry - 5, 'text-anchor': 'end',
+        'font-size': 10, fill: colors.text3, 'font-family': 'inherit'
       });
-      xt.textContent = fmtDate(tt, xMode);
-      svg.appendChild(xt);
+      rl.textContent = (cfg.refLine.label || '昨结') + ' ' + group(cfg.refLine.value, decForStep(yt.step));
+      svg.appendChild(rl);
     }
 
     /* --- 绘图区边框（底边） --- */
@@ -306,12 +379,18 @@
     var gapCount = 0;
 
     series.forEach(function (s, si) {
-      var th = s.noGap ? Infinity : gapThreshold(s.freq);
+      var intraday = /[ T]\d{1,2}:\d{2}/.test(String(s.pts[0].d || ''));
+      var th = s.noGap && !intraday ? Infinity : gapThreshold(s.freq);
       var segs = [];
       var cur = [s.pts[0]];
       for (var k = 1; k < s.pts.length; k++) {
-        var dDays = Math.round((s.pts[k].t - s.pts[k - 1].t) / DAY);
-        if (dDays > th) { segs.push(cur); cur = []; }
+        var delta = (s.pts[k].t - s.pts[k - 1].t) / DAY;
+        if (intraday) {
+          /* 日内：超过 5 分钟即视为断点（隔夜/午休不画连续线） */
+          if (delta * 1440 > 5) { segs.push(cur); cur = []; }
+        } else if (Math.round(delta) > th) {
+          segs.push(cur); cur = [];
+        }
         cur.push(s.pts[k]);
       }
       segs.push(cur);
@@ -445,7 +524,8 @@
         html = cfg.tipRender(t0, rows);
       } else {
         var dec = yDec;
-        html = '<div class="tt-date">' + fmtDate(t0, 'full') + '</div>';
+        html = '<div class="tt-date">' + fmtDate(t0, 'full') +
+          (intraday ? ' ' + fmtDate(t0, 'hm') : '') + '</div>';
         rows.forEach(function (row) {
           html += '<div class="tt-row">' +
             '<span class="tt-dot" style="background:' + row.color + '"></span>' +

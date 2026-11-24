@@ -627,9 +627,10 @@ foreach ($s in $seriesNew) {
   $last = $pts[$pts.Count - 1]
   $prev = if ($pts.Count -ge 2) { $pts[$pts.Count - 2] } else { $null }
   $latest = [double]$last[1]
-  $prevV = if ($prev) { [double]$prev[1] } else { $latest }
-  $chg = $latest - $prevV
-  $pct = if ($prevV -ne 0) { $chg / $prevV * 100 } else { 0 }
+  $prevV = if ($prev) { [double]$prev[1] } else { $null }
+  # 只有一个点时无法算涨跌：留空（前端显示"—"），不要写 0.00% 假装持平
+  $chg = if ($null -ne $prevV) { $latest - $prevV } else { $null }
+  $pct = if ($null -ne $prevV -and $prevV -ne 0) { $chg / $prevV * 100 } else { $null }
   $spark = @()
   $step = [Math]::Max(1, [Math]::Floor($pts.Count / 12))
   for ($i = $pts.Count - 1; $i -ge 0 -and $spark.Count -lt 12; $i -= $step) { $spark += [double]$pts[$i][1] }
@@ -639,8 +640,10 @@ foreach ($s in $seriesNew) {
     seriesId = $s.id; varietyId = $s.varietyId
     varietyName = if ($v) { $v.name } else { $s.varietyId }
     category = if ($v) { $v.cat } else { 'other' }
-    unit = $s.unit; latest = [math]::Round($latest, 4); prev = [math]::Round($prevV, 4)
-    change = [math]::Round($chg, 4); changePct = [math]::Round($pct, 4)
+    unit = $s.unit; latest = [math]::Round($latest, 4)
+    prev = if ($null -ne $prevV) { [math]::Round($prevV, 4) } else { $null }
+    change = if ($null -ne $chg) { [math]::Round($chg, 4) } else { $null }
+    changePct = if ($null -ne $pct) { [math]::Round($pct, 4) } else { $null }
     asOf = [string]$last[0]; sourceId = $s.sourceId
     trust = (($Sources | Where-Object { $_.id -eq $s.sourceId } | Select-Object -First 1).trust)
     freshness = Get-Freshness $s.freq ([string]$last[0])
