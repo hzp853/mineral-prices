@@ -23,6 +23,9 @@ param(
   [switch]$Force
 )
 
+# 在 Linux / .NET Core 上启用 GBK 等代码页（GitHub Actions 的 ubuntu 环境需要）
+try { [System.Text.Encoding]::RegisterProvider([System.Text.CodePagesEncodingProvider]::Instance) } catch { }
+
 $ErrorActionPreference = 'Stop'
 try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 } catch {}
 $ProgressPreference = 'SilentlyContinue'
@@ -176,7 +179,10 @@ function Get-SgeSeries($instid) {
 # ---------------------------------------------------------------- 新鲜度
 function Get-Freshness($freq, $asOf) {
   if (-not $asOf) { return 'stopped' }
-  $d = [datetime]::ParseExact($asOf, 'yyyy-MM-dd', $null)
+  $d = [datetime]::MinValue
+  if (-not [datetime]::TryParseExact([string]$asOf, 'yyyy-MM-dd', $null, [System.Globalization.DateTimeStyles]::None, [ref]$d)) {
+    return 'unknown'
+  }
   $ref = (Get-Date).Date
   if ($ref.DayOfWeek -eq 'Saturday') { $ref = $ref.AddDays(-1) }
   if ($ref.DayOfWeek -eq 'Sunday') { $ref = $ref.AddDays(-2) }
@@ -221,7 +227,7 @@ $seriesByI = @{}
 $varietyByI = @{}
 foreach ($s in $series) {
   if (-not ($s.PSObject.Properties.Name -contains 'demo')) {
-    $s | Add-Member -NotePropertyName demo -NotePropertyValue $true -Force
+    $s | Add-Member -NotePropertyName demo -NotePropertyValue $false -Force
   }
   $seriesByI[$s.id] = $s
 }

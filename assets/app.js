@@ -913,7 +913,7 @@
         '<td data-label="数据点">' + s.points.length + '</td>' +
         '<td data-label="最新">' + esc(s.updatedAt) + '</td>' +
         '<td data-label="数据性质" style="text-align:left">' +
-          (e && e.demo === true ? demoTag(e) : '<span class="muted">交易所行情</span>') + '</td>' +
+          (e && e.demo === true ? demoTag(e) : '<span class="muted">' + ((MAP.source[e.sourceId]||{}).type === 'exchange' ? '交易所行情' : '机构报价') + '</span>') + '</td>' +
         '</tr>';
     });
     h += '</tbody></table></div>';

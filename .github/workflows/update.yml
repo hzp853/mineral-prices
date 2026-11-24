@@ -31,9 +31,18 @@ jobs:
       - name: 检出仓库
         uses: actions/checkout@v4
 
-      - name: 抓取行情（上期所 6 个品种 + 上金所 2 个品种）
+      - name: 抓取交易所行情（上期所 6 + 上金所 2）
         shell: pwsh
         run: ./tools/update_data.ps1 -Days 3
+
+      - name: 抓取多源行情（新浪 8 + 中国有色网 12 + 科矿网 3 + LME 6）
+        shell: pwsh
+        run: |
+          if (Test-Path ./tools/ingest.ps1) {
+            ./tools/ingest.ps1
+          } else {
+            Write-Host "没有 ingest.ps1，跳过"
+          }
 
       - name: 提交数据变更
         run: |
