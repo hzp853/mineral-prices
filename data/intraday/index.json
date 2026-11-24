@@ -1,168 +1,168 @@
 {
-    "generatedAt":  "2026-11-24T16:51:26",
-    "tradeDate":  "2026-11-24",
-    "count":  16,
-    "note":  "分时数据为新浪期货「主力合约连续」，与站内现货/交易所日线口径不同，仅用于日内走势参考。",
-    "series":  {
-                   "au-sge-9999":  {
-                                       "file":  "au-sge-9999.json",
-                                       "symbol":  "AU0",
-                                       "name":  "沪金主力连续",
-                                       "unit":  "元/克",
-                                       "date":  "2026-11-24",
-                                       "prevClose":  780.8,
-                                       "count":  558,
-                                       "kb":  65.5
-                                   },
-                   "ag-sge-td":  {
-                                     "file":  "ag-sge-td.json",
-                                     "symbol":  "AG0",
-                                     "name":  "沪银主力连续",
-                                     "unit":  "元/千克",
-                                     "date":  "2026-11-24",
-                                     "prevClose":  10165,
-                                     "count":  559,
-                                     "kb":  65.2
-                                 },
-                   "cu-shfe-cathode":  {
-                                           "file":  "cu-shfe-cathode.json",
-                                           "symbol":  "CU0",
-                                           "name":  "沪铜主力连续",
-                                           "unit":  "元/吨",
-                                           "date":  "2026-11-24",
-                                           "prevClose":  92350,
-                                           "count":  469,
-                                           "kb":  54.7
-                                       },
-                   "al-shfe-a00":  {
-                                       "file":  "al-shfe-a00.json",
-                                       "symbol":  "AL0",
-                                       "name":  "沪铝主力连续",
-                                       "unit":  "元/吨",
-                                       "date":  "2026-11-24",
-                                       "prevClose":  21600,
-                                       "count":  469,
-                                       "kb":  54.7
-                                   },
-                   "pb-shfe-1":  {
-                                     "file":  "pb-shfe-1.json",
-                                     "symbol":  "PB0",
-                                     "name":  "沪铅主力连续",
-                                     "unit":  "元/吨",
-                                     "date":  "2026-11-24",
-                                     "prevClose":  15415,
-                                     "count":  464,
-                                     "kb":  54.1
-                                 },
-                   "zn-shfe-0":  {
-                                     "file":  "zn-shfe-0.json",
-                                     "symbol":  "ZN0",
-                                     "name":  "沪锌主力连续",
-                                     "unit":  "元/吨",
-                                     "date":  "2026-11-24",
-                                     "prevClose":  23755,
-                                     "count":  467,
-                                     "kb":  54.5
-                                 },
-                   "ni-shfe-1":  {
-                                     "file":  "ni-shfe-1.json",
-                                     "symbol":  "NI0",
-                                     "name":  "沪镍主力连续",
-                                     "unit":  "元/吨",
-                                     "date":  "2026-11-24",
-                                     "prevClose":  117510,
-                                     "count":  468,
-                                     "kb":  55.1
-                                 },
-                   "sn-shfe-1":  {
-                                     "file":  "sn-shfe-1.json",
-                                     "symbol":  "SN0",
-                                     "name":  "沪锡主力连续",
-                                     "unit":  "元/吨",
-                                     "date":  "2026-11-24",
-                                     "prevClose":  313540,
-                                     "count":  468,
-                                     "kb":  55.1
-                                 },
-                   "intl-copper-sina-main":  {
-                                                 "file":  "intl-copper-sina-main.json",
-                                                 "symbol":  "BC0",
-                                                 "name":  "国际铜主力连续",
-                                                 "unit":  "元/吨",
-                                                 "date":  "2026-11-24",
-                                                 "prevClose":  86800,
-                                                 "count":  459,
-                                                 "kb":  53.6
-                                             },
-                   "iron-ore-sina-main":  {
-                                              "file":  "iron-ore-sina-main.json",
-                                              "symbol":  "I0",
-                                              "name":  "铁矿石主力连续",
-                                              "unit":  "元/吨",
-                                              "date":  "2026-11-24",
-                                              "prevClose":  654,
-                                              "count":  345,
-                                              "kb":  40
-                                          },
-                   "lithium-carbonate-sina-main":  {
-                                                       "file":  "lithium-carbonate-sina-main.json",
-                                                       "symbol":  "LC0",
-                                                       "name":  "碳酸锂主力连续",
-                                                       "unit":  "元/吨",
-                                                       "date":  "2026-11-24",
-                                                       "prevClose":  90500,
-                                                       "count":  228,
-                                                       "kb":  26.7
-                                                   },
-                   "industrial-silicon-sina-main":  {
-                                                        "file":  "industrial-silicon-sina-main.json",
-                                                        "symbol":  "SI0",
-                                                        "name":  "工业硅主力连续",
-                                                        "unit":  "元/吨",
-                                                        "date":  "2026-11-24",
-                                                        "prevClose":  8235,
-                                                        "count":  226,
-                                                        "kb":  26.3
-                                                    },
-                   "polysilicon-sina-main":  {
-                                                 "file":  "polysilicon-sina-main.json",
-                                                 "symbol":  "PS0",
-                                                 "name":  "多晶硅主力连续",
-                                                 "unit":  "元/吨",
-                                                 "date":  "2026-11-24",
-                                                 "prevClose":  32395,
-                                                 "count":  226,
-                                                 "kb":  26.5
-                                             },
-                   "alumina-sina-main":  {
-                                             "file":  "alumina-sina-main.json",
-                                             "symbol":  "AO0",
-                                             "name":  "氧化铝主力连续",
-                                             "unit":  "元/吨",
-                                             "date":  "2026-11-24",
-                                             "prevClose":  2553,
-                                             "count":  467,
-                                             "kb":  54
-                                         },
-                   "ferrosilicon-sina-main":  {
-                                                  "file":  "ferrosilicon-sina-main.json",
-                                                  "symbol":  "SF0",
-                                                  "name":  "硅铁主力连续",
-                                                  "unit":  "元/吨",
-                                                  "date":  "2026-11-24",
-                                                  "prevClose":  5816,
-                                                  "count":  225,
-                                                  "kb":  26.2
-                                              },
-                   "mn-si-sina-main":  {
-                                           "file":  "mn-si-sina-main.json",
-                                           "symbol":  "SM0",
-                                           "name":  "锰硅主力连续",
-                                           "unit":  "元/吨",
-                                           "date":  "2026-11-24",
-                                           "prevClose":  5770,
-                                           "count":  226,
-                                           "kb":  26.3
-                                       }
-               }
+  "generatedAt": "2026-11-24T08:58:27",
+  "tradeDate": "2026-11-24",
+  "count": 16,
+  "note": "分时数据为新浪期货「主力合约连续」，与站内现货/交易所日线口径不同，仅用于日内走势参考。",
+  "series": {
+    "au-sge-9999": {
+      "file": "au-sge-9999.json",
+      "symbol": "AU0",
+      "name": "沪金主力连续",
+      "unit": "元/克",
+      "date": "2026-11-24",
+      "prevClose": 780.8,
+      "count": 558,
+      "kb": 28.4
+    },
+    "ag-sge-td": {
+      "file": "ag-sge-td.json",
+      "symbol": "AG0",
+      "name": "沪银主力连续",
+      "unit": "元/千克",
+      "date": "2026-11-24",
+      "prevClose": 10165.0,
+      "count": 559,
+      "kb": 29.1
+    },
+    "cu-shfe-cathode": {
+      "file": "cu-shfe-cathode.json",
+      "symbol": "CU0",
+      "name": "沪铜主力连续",
+      "unit": "元/吨",
+      "date": "2026-11-24",
+      "prevClose": 92350.0,
+      "count": 469,
+      "kb": 24.5
+    },
+    "al-shfe-a00": {
+      "file": "al-shfe-a00.json",
+      "symbol": "AL0",
+      "name": "沪铝主力连续",
+      "unit": "元/吨",
+      "date": "2026-11-24",
+      "prevClose": 21600.0,
+      "count": 469,
+      "kb": 24.5
+    },
+    "pb-shfe-1": {
+      "file": "pb-shfe-1.json",
+      "symbol": "PB0",
+      "name": "沪铅主力连续",
+      "unit": "元/吨",
+      "date": "2026-11-24",
+      "prevClose": 15415.0,
+      "count": 464,
+      "kb": 24.2
+    },
+    "zn-shfe-0": {
+      "file": "zn-shfe-0.json",
+      "symbol": "ZN0",
+      "name": "沪锌主力连续",
+      "unit": "元/吨",
+      "date": "2026-11-24",
+      "prevClose": 23755.0,
+      "count": 467,
+      "kb": 24.4
+    },
+    "ni-shfe-1": {
+      "file": "ni-shfe-1.json",
+      "symbol": "NI0",
+      "name": "沪镍主力连续",
+      "unit": "元/吨",
+      "date": "2026-11-24",
+      "prevClose": 117510.0,
+      "count": 468,
+      "kb": 24.9
+    },
+    "sn-shfe-1": {
+      "file": "sn-shfe-1.json",
+      "symbol": "SN0",
+      "name": "沪锡主力连续",
+      "unit": "元/吨",
+      "date": "2026-11-24",
+      "prevClose": 313540.0,
+      "count": 468,
+      "kb": 24.9
+    },
+    "intl-copper-sina-main": {
+      "file": "intl-copper-sina-main.json",
+      "symbol": "BC0",
+      "name": "国际铜主力连续",
+      "unit": "元/吨",
+      "date": "2026-11-24",
+      "prevClose": 86800.0,
+      "count": 459,
+      "kb": 24.0
+    },
+    "iron-ore-sina-main": {
+      "file": "iron-ore-sina-main.json",
+      "symbol": "I0",
+      "name": "铁矿石主力连续",
+      "unit": "元/吨",
+      "date": "2026-11-24",
+      "prevClose": 654.0,
+      "count": 345,
+      "kb": 17.4
+    },
+    "lithium-carbonate-sina-main": {
+      "file": "lithium-carbonate-sina-main.json",
+      "symbol": "LC0",
+      "name": "碳酸锂主力连续",
+      "unit": "元/吨",
+      "date": "2026-11-24",
+      "prevClose": 90500.0,
+      "count": 228,
+      "kb": 12.0
+    },
+    "industrial-silicon-sina-main": {
+      "file": "industrial-silicon-sina-main.json",
+      "symbol": "SI0",
+      "name": "工业硅主力连续",
+      "unit": "元/吨",
+      "date": "2026-11-24",
+      "prevClose": 8235.0,
+      "count": 226,
+      "kb": 11.7
+    },
+    "polysilicon-sina-main": {
+      "file": "polysilicon-sina-main.json",
+      "symbol": "PS0",
+      "name": "多晶硅主力连续",
+      "unit": "元/吨",
+      "date": "2026-11-24",
+      "prevClose": 32395.0,
+      "count": 226,
+      "kb": 11.9
+    },
+    "alumina-sina-main": {
+      "file": "alumina-sina-main.json",
+      "symbol": "AO0",
+      "name": "氧化铝主力连续",
+      "unit": "元/吨",
+      "date": "2026-11-24",
+      "prevClose": 2553.0,
+      "count": 467,
+      "kb": 23.9
+    },
+    "ferrosilicon-sina-main": {
+      "file": "ferrosilicon-sina-main.json",
+      "symbol": "SF0",
+      "name": "硅铁主力连续",
+      "unit": "元/吨",
+      "date": "2026-11-24",
+      "prevClose": 5816.0,
+      "count": 225,
+      "kb": 11.6
+    },
+    "mn-si-sina-main": {
+      "file": "mn-si-sina-main.json",
+      "symbol": "SM0",
+      "name": "锰硅主力连续",
+      "unit": "元/吨",
+      "date": "2026-11-24",
+      "prevClose": 5770.0,
+      "count": 226,
+      "kb": 11.7
+    }
+  }
 }
