@@ -1,10 +1,10 @@
 {
-    "version":  "2.0.0",
-    "disclaimer":  "价格口径以各来源为准，本站仅做汇总展示，不构成任何交易或投资建议。",
-    "countVariety":  38,
-    "dataAsOf":  "2026-11-23",
-    "countSeries":  38,
-    "demoData":  false,
-    "siteName":  "矿产品价格中枢",
-    "generatedAt":  "2026-11-24T15:24:58"
+  "disclaimer": "价格口径以各来源为准，本站仅做汇总展示，不构成任何交易或投资建议。",
+  "version": "2.0.0",
+  "generatedAt": "2026-11-24T07:33:58",
+  "siteName": "矿产品价格中枢",
+  "demoData": false,
+  "countSeries": 38,
+  "countVariety": 38,
+  "dataAsOf": "2026-11-24"
 }
