@@ -8,11 +8,13 @@ on:
   schedule:
     - cron: '10 10 * * 1-5'
   workflow_dispatch:        # 也可以在 Actions 页面手动点一下立即跑
-  push:                     # 页面/样式/本文件有改动时也跑一次，方便第一次验证链路
+  push:                     # 页面/样式/脚本/数据有改动时也跑一次，方便验证链路
     branches: [ main ]
     paths:
       - 'assets/**'
       - 'index.html'
+      - 'tools/**'
+      - 'data/**'
       - '.github/workflows/update.yml'
 
 permissions:
