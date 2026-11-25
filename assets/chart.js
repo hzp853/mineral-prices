@@ -350,7 +350,7 @@
         x: pad.l + plotW - 2, y: ry - 5, 'text-anchor': 'end',
         'font-size': 10, fill: colors.text3, 'font-family': 'inherit'
       });
-      rl.textContent = (cfg.refLine.label || '昨结') + ' ' + group(cfg.refLine.value, decForStep(yt.step));
+      rl.textContent = (cfg.refLine.label || '昨结') + ' ' + group(cfg.refLine.value, cfg.refLine.decimals != null ? cfg.refLine.decimals : decForStep(yt.step));
       svg.appendChild(rl);
     }
 

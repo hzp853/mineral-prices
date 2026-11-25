@@ -182,6 +182,65 @@
   /* 日内分时索引（可选；取不到就当作没有分时功能，不影响主流程） */
   var intradayIndex = null;
   var intradayCache = {};
+  var intradayLive = {};      // sid -> { points, prevClose, tradeDate, at }
+  var intradayTimer = null;
+
+  /* 新浪 jsonp：var <回调名>=([[时间,价格,...],...]) —— 用 <script> 绕开 CORS，浏览器端可直连最新分时 */
+  function parseSinaMinute(rows) {
+    var arr = [];
+    var tradeDate = null, prevClose = null;
+    for (var i = 0; i < rows.length; i++) {
+      var c = rows[i];
+      if (!c || c.length < 2) continue;
+      var hm = String(c[0]);
+      if (!/^\d{1,2}:\d{2}$/.test(hm)) continue;
+      var v = parseFloat(c[1]);
+      if (!isFinite(v) || v <= 0) continue;
+      if (c.length >= 7 && !tradeDate) {
+        if (/^\d{4}-\d{2}-\d{2}$/.test(String(c[6]))) tradeDate = String(c[6]);
+        var pc = parseFloat(c[5]);
+        if (isFinite(pc) && pc > 0) prevClose = pc;
+      }
+      arr.push([hm, v]);
+    }
+    if (!tradeDate || !arr.length) return null;
+    var base = new Date(tradeDate + 'T00:00:00Z').getTime();
+    var pts = arr.map(function (p) {
+      var t = p[0] >= '20:00' ? base - 86400000 : base;
+      return [fmtDateFull(t) + ' ' + p[0], p[1]];
+    });
+    return { points: pts, prevClose: prevClose, tradeDate: tradeDate };
+  }
+
+  function fetchLiveMinute(sid, cb) {
+    var meta = intradayIndex && intradayIndex.series && intradayIndex.series[sid];
+    if (!meta || !meta.symbol) { cb(new Error('没有该品种的分时映射')); return; }
+    var name = '__mine_mp_' + Math.floor(Math.random() * 1e9);
+    var script = document.createElement('script');
+    var done = false;
+    function cleanup() {
+      try { delete window[name]; } catch (e) { window[name] = undefined; }
+      if (script.parentNode) script.parentNode.removeChild(script);
+    }
+    window[name] = null;
+    // 新浪返回的是 `var <name>=([...])` —— 赋值而非回调，必须 onload 后再读变量
+    script.onload = function () {
+      if (done) return;
+      done = true;
+      var rows = window[name];
+      var parsed = null;
+      try { parsed = (rows && rows.length) ? parseSinaMinute(rows) : null; } catch (e) { parsed = null; }
+      cleanup();
+      if (!parsed) cb(new Error('返回数据为空'));
+      else cb(null, parsed);
+    };
+    script.onerror = function () { if (!done) { done = true; cleanup(); cb(new Error('网络错误')); } };
+    script.referrerPolicy = 'no-referrer';   // 不带 Referer，否则新浪会挂起不返回
+    script.src = 'https://stock2.finance.sina.com.cn/futures/api/jsonp.php/var%20' + name +
+      '=/InnerFuturesNewService.getMinLine?symbol=' + encodeURIComponent(meta.symbol) + '&_=' + Date.now();
+    document.head.appendChild(script);
+    setTimeout(function () { if (!done) { cleanup(); cb(new Error('超时')); } }, 12000);
+  }
 
   function loadIntradayIndex() {
     return fetch('data/intraday/index.json', { cache: 'no-store' }).then(function (r) {
@@ -705,10 +764,11 @@
         '<button data-act="intraday" data-id="' + esc(sid) + '"' + (ivOn ? ' class="active"' : '') + '>日内分时</button>' +
         '</span>' +
         '<span class="gap-note" style="margin-left:12px">' +
-        esc(ivMeta.date) + ' · ' + esc(ivMeta.name) + ' ' + esc(ivMeta.symbol) +
-        ' · ' + esc(ivMeta.unit) + ' · ' + (ivMeta.count || 0) + ' 个分钟点' +
+        '<span id="iv-date">' + esc(ivMeta.date) + '</span>' + ' · ' + esc(ivMeta.name) + ' ' + esc(ivMeta.symbol) +
+        ' · ' + esc(ivMeta.unit) +
         (ivMeta.prevClose ? ' · 昨结 ' + fmtNum(ivMeta.prevClose, ivMeta.unit) : '') +
         '</span>' +
+        '<span class="gap-note live" id="iv-live">连接实时…</span>' +
         '<span class="gap-note" style="margin-left:auto">数据源：新浪财经（期货主力连续，与上方现货口径不同）</span>' +
         '</div>' +
         '<div class="chart-host" id="chart-iv">' +
@@ -1105,26 +1165,83 @@
     pendingChart = null;
   }
 
-  function drawIntraday() {
+  var ivChart = null;
+
+  function pad2n(n) { return n < 10 ? '0' + n : String(n); }
+  function fmtHM(d) { return pad2n(d.getHours()) + ':' + pad2n(d.getMinutes()) + ':' + pad2n(d.getSeconds()); }
+
+  function redrawIntraday() {
     var host = document.getElementById('chart-iv');
     if (!host || !state.intraday) return;
-    var iv = intradayCache[state.intraday];
+    var sid = state.intraday;
+    var iv = intradayLive[sid] || intradayCache[sid];
     if (!iv || !iv.points || !iv.points.length) return;
     var up = iv.prevClose ? iv.points[iv.points.length - 1][1] >= iv.prevClose : true;
-    MineChart.line(host, {
+    if (iv.tradeDate) {
+      var dt = document.getElementById('iv-date');
+      if (dt) dt.textContent = iv.tradeDate;
+    }
+    if (ivChart) { ivChart.destroy(); ivChart = null; }
+    ivChart = MineChart.line(host, {
       series: [{
         points: iv.points,
-        label: iv.name,
+        label: iv.name || '',
         color: trendColor(up ? 1 : -1),
         demo: false
       }],
       freq: 'intraday',
       unit: iv.unit,
       height: 320,
-      area: true,
+      area: false,
       minDecimals: decFor(iv.points[0][1], iv.unit),
-      refLine: iv.prevClose ? { value: iv.prevClose, label: '昨结' } : null
+      refLine: iv.prevClose ? { value: iv.prevClose, label: '昨结', decimals: decFor(iv.prevClose, iv.unit) } : null
     });
+  }
+
+  function setIvLiveTag(text, isLive) {
+    var tag = document.getElementById('iv-live');
+    if (!tag) return;
+    tag.textContent = text;
+    tag.className = 'gap-note' + (isLive ? ' live' : '');
+  }
+
+  function drawIntraday() {
+    if (intradayTimer) { clearInterval(intradayTimer); intradayTimer = null; }
+    if (!state.intraday) return;
+    var sid = state.intraday;
+    var meta = intradayIndex && intradayIndex.series && intradayIndex.series[sid];
+
+    redrawIntraday();
+
+    var apply = function (err, data) {
+      if (state.intraday !== sid) return;
+      if (!err && data) {
+        data.at = new Date();
+        data.unit = (meta && meta.unit) || (intradayCache[sid] && intradayCache[sid].unit) || '';
+        data.name = (meta && meta.name) || '';
+        intradayLive[sid] = data;
+        redrawIntraday();
+        setIvLiveTag('实时 · ' + fmtHM(new Date()) + ' 更新', true);
+      } else {
+        setIvLiveTag('实时接口不可用，显示每日快照' + (meta && meta.date ? '（' + meta.date + '）' : ''), false);
+      }
+    };
+
+    fetchLiveMinute(sid, apply);
+
+    intradayTimer = setInterval(function () {
+      if (!state.intraday || document.visibilityState === 'hidden') return;
+      var cur = state.intraday;
+      fetchLiveMinute(cur, function (err, data) {
+        if (err || !data || state.intraday !== cur) return;
+        data.at = new Date();
+        data.unit = (meta && meta.unit) || (intradayCache[cur] && intradayCache[cur].unit) || '';
+        data.name = (meta && meta.name) || '';
+        intradayLive[cur] = data;
+        redrawIntraday();
+        setIvLiveTag('实时 · ' + fmtHM(new Date()) + ' 更新', true);
+      });
+    }, 60000);
   }
 
   /* -------------------------------------------------------------- 事件 */
@@ -1160,7 +1277,7 @@
     if (act === 'intraday') {
       var ivId = btn.getAttribute('data-id');
       if (!ivId) return;
-      if (state.intraday === ivId && intradayCache[ivId]) {
+      if (state.intraday === ivId) {
         state.intraday = null;      // 再点一次收起
         routeKeep();
         return;
