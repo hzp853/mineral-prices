@@ -1,7 +1,7 @@
 [
   {
-    "ranAt": "2026-11-25T00:23:06+00:00",
-    "dataAsOf": "2026-11-24",
+    "ranAt": "2026-11-25T18:00:41+00:00",
+    "dataAsOf": "2026-11-25",
     "demoSeries": [],
     "realSeries": [
       "iron-ore-sina-main",
@@ -88,6 +88,7 @@
     ]
   },
   {
+    "varieties": 39,
     "missing": [
       {
         "variety": "石墨",
@@ -98,9 +99,8 @@
         "reason": "科矿网未找到 硫磺"
       }
     ],
-    "varieties": 39,
-    "series": 39,
-    "at": "2026-11-25T00:24:41",
-    "dataAsOf": "2026-11-24"
+    "dataAsOf": "2026-11-25",
+    "at": "2026-11-25T18:02:37",
+    "series": 39
   }
 ]

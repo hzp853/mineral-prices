@@ -1,526 +1,525 @@
 /* 自动生成：file:// 打开时的后备数据源。请勿手工编辑。 */
 window.__MINE_BUNDLE__ = {
   meta: {
-  "siteName": "矿产品价格中枢",
   "demoData": false,
   "countSeries": 39,
-  "disclaimer": "价格口径以各来源为准，本站仅做汇总展示，不构成任何交易或投资建议。",
+  "countVariety": 39,
   "version": "2.0.0",
-  "dataAsOf": "2026-11-24",
-  "generatedAt": "2026-11-25T00:24:41",
-  "countVariety": 39
+  "disclaimer": "价格口径以各来源为准，本站仅做汇总展示，不构成任何交易或投资建议。",
+  "siteName": "矿产品价格中枢",
+  "generatedAt": "2026-11-25T18:02:37",
+  "dataAsOf": "2026-11-25"
 },
   categories: [
   {
+    "desc": "铁矿石、硅铁、锰硅",
+    "order": 1,
     "name": "黑色金属",
     "id": "ferrous",
-    "icon": "▲",
-    "desc": "铁矿石、硅铁、锰硅",
-    "order": 1
+    "icon": "▲"
   },
   {
+    "desc": "铜、铝、铅、锌、镍、锡、氧化铝、钴、锑、镁、铋、铟、镓、镉、碲、海绵钛、电解锰、金属硅、LME 六种基本金属",
+    "order": 2,
     "name": "有色金属",
     "id": "nonferrous",
-    "icon": "■",
-    "desc": "铜、铝、铅、锌、镍、锡、氧化铝、钴、锑、镁、铋、铟、镓、镉、碲、海绵钛、电解锰、金属硅、LME 六种基本金属",
-    "order": 2
+    "icon": "■"
   },
   {
+    "desc": "黄金、白银",
+    "order": 3,
     "name": "贵金属",
     "id": "precious",
-    "icon": "◆",
-    "desc": "黄金、白银",
-    "order": 3
+    "icon": "◆"
   },
   {
+    "desc": "碳酸锂、氢氧化锂、工业硅、多晶硅、钨精矿、仲钨酸铵、钼精矿",
+    "order": 4,
     "name": "稀有与新能源",
     "id": "rare",
-    "icon": "●",
-    "desc": "碳酸锂、氢氧化锂、工业硅、多晶硅、钨精矿、仲钨酸铵、钼精矿",
-    "order": 4
+    "icon": "●"
   },
   {
+    "desc": "萤石（磷矿石、石墨数据源待接入）",
+    "order": 5,
     "name": "非金属矿",
     "id": "nonmetal",
-    "icon": "○",
-    "desc": "萤石（磷矿石、石墨数据源待接入）",
-    "order": 5
+    "icon": "○"
   }
 ],
   varieties: [
   {
+    "description": "硅铁期货主力连续收盘价。",
+    "aliases": [],
     "category": "ferrous",
     "defaultSeriesId": "ferrosilicon-sina-main",
-    "description": "硅铁期货主力连续收盘价。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "ferrosilicon",
     "name": "硅铁",
+    "id": "ferrosilicon",
+    "hasFutures": true,
     "unit": "元/吨"
   },
   {
+    "description": "进口铁矿石主力合约折算价，元/吨。",
+    "aliases": [],
     "category": "ferrous",
     "defaultSeriesId": "iron-ore-sina-main",
-    "description": "进口铁矿石主力合约折算价，元/吨。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "iron-ore",
     "name": "铁矿石",
+    "id": "iron-ore",
+    "hasFutures": true,
     "unit": "元/吨"
   },
   {
+    "description": "锰硅合金期货主力连续收盘价。",
+    "aliases": [],
     "category": "ferrous",
     "defaultSeriesId": "mn-si-sina-main",
-    "description": "锰硅合金期货主力连续收盘价。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "mn-si",
     "name": "锰硅",
+    "id": "mn-si",
+    "hasFutures": true,
     "unit": "元/吨"
   },
   {
+    "description": "上海期货交易所铝主力合约收盘价。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "al-shfe-a00",
-    "description": "上海期货交易所铝主力合约收盘价。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "al",
     "name": "铝",
+    "id": "al",
+    "hasFutures": true,
     "unit": "元/吨"
   },
   {
+    "description": "氧化铝期货主力连续收盘价。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "alumina-sina-main",
-    "description": "氧化铝期货主力连续收盘价。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "alumina",
     "name": "氧化铝",
+    "id": "alumina",
+    "hasFutures": true,
     "unit": "元/吨"
   },
   {
+    "description": "上海金属现货报价（小金属），锑 0# 中间值。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "antimony-cnmn",
-    "description": "上海金属现货报价（小金属），锑 0# 中间值。",
-    "hasFutures": false,
-    "aliases": [],
-    "id": "antimony",
     "name": "锑",
+    "id": "antimony",
+    "hasFutures": false,
     "unit": "元/吨"
   },
   {
+    "description": "上海金属现货报价（小金属），铋 99.99% 中间值。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "bismuth-cnmn",
-    "description": "上海金属现货报价（小金属），铋 99.99% 中间值。",
-    "hasFutures": false,
-    "aliases": [],
-    "id": "bismuth",
     "name": "铋",
+    "id": "bismuth",
+    "hasFutures": false,
     "unit": "元/吨"
   },
   {
+    "description": "上海金属现货报价（小金属），镉 99.99% 中间值。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "cadmium-cnmn",
-    "description": "上海金属现货报价（小金属），镉 99.99% 中间值。",
-    "hasFutures": false,
-    "aliases": [],
-    "id": "cadmium",
     "name": "镉",
+    "id": "cadmium",
+    "hasFutures": false,
     "unit": "元/吨"
   },
   {
+    "description": "上海金属现货报价（小金属），钴 99.8% 中间值。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "cobalt-cnmn",
-    "description": "上海金属现货报价（小金属），钴 99.8% 中间值。",
-    "hasFutures": false,
-    "aliases": [],
-    "id": "cobalt",
     "name": "钴",
+    "id": "cobalt",
+    "hasFutures": false,
     "unit": "元/吨"
   },
   {
+    "description": "上海期货交易所阴极铜主力合约收盘价。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "cu-shfe-cathode",
-    "description": "上海期货交易所阴极铜主力合约收盘价。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "cu",
     "name": "铜",
+    "id": "cu",
+    "hasFutures": true,
     "unit": "元/吨"
   },
   {
+    "description": "上海金属现货报价（小金属），电解锰 1# 中间值。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "electrolytic-mn-cnmn",
-    "description": "上海金属现货报价（小金属），电解锰 1# 中间值。",
-    "hasFutures": false,
-    "aliases": [],
-    "id": "electrolytic-mn",
     "name": "电解锰",
+    "id": "electrolytic-mn",
+    "hasFutures": false,
     "unit": "元/吨"
   },
   {
+    "description": "上海金属现货报价（小金属），镓 99.99% 中间值。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "gallium-cnmn",
-    "description": "上海金属现货报价（小金属），镓 99.99% 中间值。",
-    "hasFutures": false,
-    "aliases": [],
-    "id": "gallium",
     "name": "镓",
+    "id": "gallium",
+    "hasFutures": false,
     "unit": "元/千克"
   },
   {
+    "description": "上海金属现货报价（小金属），铟 99.99% 中间值。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "indium-cnmn",
-    "description": "上海金属现货报价（小金属），铟 99.99% 中间值。",
-    "hasFutures": false,
-    "aliases": [],
-    "id": "indium",
     "name": "铟",
+    "id": "indium",
+    "hasFutures": false,
     "unit": "元/千克"
   },
   {
+    "description": "国际铜期货主力连续收盘价（不含税）。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "intl-copper-sina-main",
-    "description": "国际铜期货主力连续收盘价（不含税）。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "intl-copper",
     "name": "国际铜",
+    "id": "intl-copper",
+    "hasFutures": true,
     "unit": "元/吨"
   },
   {
+    "description": "LME 铝现货结算价（美元/吨）。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "lme-al-westmetall",
-    "description": "LME 铝现货结算价（美元/吨）。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "lme-al",
     "name": "LME铝",
+    "id": "lme-al",
+    "hasFutures": true,
     "unit": "美元/吨"
   },
   {
+    "description": "LME 铜现货结算价（美元/吨）。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "lme-cu-westmetall",
-    "description": "LME 铜现货结算价（美元/吨）。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "lme-cu",
     "name": "LME铜",
+    "id": "lme-cu",
+    "hasFutures": true,
     "unit": "美元/吨"
   },
   {
+    "description": "LME 镍现货结算价（美元/吨）。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "lme-ni-westmetall",
-    "description": "LME 镍现货结算价（美元/吨）。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "lme-ni",
     "name": "LME镍",
+    "id": "lme-ni",
+    "hasFutures": true,
     "unit": "美元/吨"
   },
   {
+    "description": "LME 铅现货结算价（美元/吨）。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "lme-pb-westmetall",
-    "description": "LME 铅现货结算价（美元/吨）。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "lme-pb",
     "name": "LME铅",
+    "id": "lme-pb",
+    "hasFutures": true,
     "unit": "美元/吨"
   },
   {
+    "description": "LME 锡现货结算价（美元/吨）。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "lme-sn-westmetall",
-    "description": "LME 锡现货结算价（美元/吨）。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "lme-sn",
     "name": "LME锡",
+    "id": "lme-sn",
+    "hasFutures": true,
     "unit": "美元/吨"
   },
   {
+    "description": "LME 锌现货结算价（美元/吨）。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "lme-zn-westmetall",
-    "description": "LME 锌现货结算价（美元/吨）。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "lme-zn",
     "name": "LME锌",
+    "id": "lme-zn",
+    "hasFutures": true,
     "unit": "美元/吨"
   },
   {
+    "description": "上海金属现货报价（小金属），镁 1# 中间值。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "magnesium-cnmn",
-    "description": "上海金属现货报价（小金属），镁 1# 中间值。",
-    "hasFutures": false,
-    "aliases": [],
-    "id": "magnesium",
     "name": "镁",
+    "id": "magnesium",
+    "hasFutures": false,
     "unit": "元/吨"
   },
   {
+    "description": "上海期货交易所镍主力合约收盘价。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "ni-shfe-1",
-    "description": "上海期货交易所镍主力合约收盘价。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "ni",
     "name": "镍",
+    "id": "ni",
+    "hasFutures": true,
     "unit": "元/吨"
   },
   {
+    "description": "上海期货交易所铅主力合约收盘价。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "pb-shfe-1",
-    "description": "上海期货交易所铅主力合约收盘价。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "pb",
     "name": "铅",
+    "id": "pb",
+    "hasFutures": true,
     "unit": "元/吨"
   },
   {
+    "description": "上海金属现货报价（小金属），金属硅 553# 中间值。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "silicon-metal-cnmn",
-    "description": "上海金属现货报价（小金属），金属硅 553# 中间值。",
-    "hasFutures": false,
-    "aliases": [],
-    "id": "silicon-metal",
     "name": "金属硅",
+    "id": "silicon-metal",
+    "hasFutures": false,
     "unit": "元/吨"
   },
   {
+    "description": "上海期货交易所锡主力合约收盘价。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "sn-shfe-1",
-    "description": "上海期货交易所锡主力合约收盘价。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "sn",
     "name": "锡",
+    "id": "sn",
+    "hasFutures": true,
     "unit": "元/吨"
   },
   {
+    "description": "上海金属现货报价（小金属），碲中间值。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "tellurium-cnmn",
-    "description": "上海金属现货报价（小金属），碲中间值。",
-    "hasFutures": false,
-    "aliases": [],
-    "id": "tellurium",
     "name": "碲",
+    "id": "tellurium",
+    "hasFutures": false,
     "unit": "元/千克"
   },
   {
+    "description": "上海金属现货报价（小金属），海绵钛中间值。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "titanium-sponge-cnmn",
-    "description": "上海金属现货报价（小金属），海绵钛中间值。",
-    "hasFutures": false,
-    "aliases": [],
-    "id": "titanium-sponge",
     "name": "海绵钛",
+    "id": "titanium-sponge",
+    "hasFutures": false,
     "unit": "元/吨"
   },
   {
+    "description": "上海期货交易所锌主力合约收盘价。",
+    "aliases": [],
     "category": "nonferrous",
     "defaultSeriesId": "zn-shfe-0",
-    "description": "上海期货交易所锌主力合约收盘价。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "zn",
     "name": "锌",
+    "id": "zn",
+    "hasFutures": true,
     "unit": "元/吨"
   },
   {
+    "description": "上海黄金交易所 Ag(T+D) 收盘价。",
+    "aliases": [],
     "category": "precious",
     "defaultSeriesId": "ag-sge-td",
-    "description": "上海黄金交易所 Ag(T+D) 收盘价。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "ag",
     "name": "白银",
+    "id": "ag",
+    "hasFutures": true,
     "unit": "元/千克"
   },
   {
+    "description": "上海黄金交易所 Au99.99 收盘价。",
+    "aliases": [],
     "category": "precious",
     "defaultSeriesId": "au-sge-9999",
-    "description": "上海黄金交易所 Au99.99 收盘价。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "au",
     "name": "黄金",
+    "id": "au",
+    "hasFutures": true,
     "unit": "元/克"
   },
   {
+    "description": "仲钨酸铵 APT 报价。",
+    "aliases": [],
     "category": "rare",
     "defaultSeriesId": "apt-kekuang",
-    "description": "仲钨酸铵 APT 报价。",
-    "hasFutures": false,
-    "aliases": [],
-    "id": "apt",
     "name": "仲钨酸铵",
+    "id": "apt",
+    "hasFutures": false,
     "unit": "元/吨"
   },
   {
+    "description": "工业硅期货主力连续收盘价。",
+    "aliases": [],
     "category": "rare",
     "defaultSeriesId": "industrial-silicon-sina-main",
-    "description": "工业硅期货主力连续收盘价。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "industrial-silicon",
     "name": "工业硅",
+    "id": "industrial-silicon",
+    "hasFutures": true,
     "unit": "元/吨"
   },
   {
+    "description": "碳酸锂期货主力连续收盘价。",
+    "aliases": [],
     "category": "rare",
     "defaultSeriesId": "lithium-carbonate-sina-main",
-    "description": "碳酸锂期货主力连续收盘价。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "lithium-carbonate",
     "name": "碳酸锂",
+    "id": "lithium-carbonate",
+    "hasFutures": true,
     "unit": "元/吨"
   },
   {
+    "description": "上海金属现货报价（小金属），电池级氢氧化锂中间值。",
+    "aliases": [],
     "category": "rare",
     "defaultSeriesId": "lithium-hydroxide-cnmn",
-    "description": "上海金属现货报价（小金属），电池级氢氧化锂中间值。",
-    "hasFutures": false,
-    "aliases": [],
-    "id": "lithium-hydroxide",
     "name": "氢氧化锂",
+    "id": "lithium-hydroxide",
+    "hasFutures": false,
     "unit": "元/吨"
   },
   {
+    "description": "钼精矿报价，元/吨度。",
+    "aliases": [],
     "category": "rare",
     "defaultSeriesId": "moly-conc-kekuang",
-    "description": "钼精矿报价，元/吨度。",
-    "hasFutures": false,
-    "aliases": [],
-    "id": "moly-conc",
     "name": "钼精矿",
+    "id": "moly-conc",
+    "hasFutures": false,
     "unit": "元/吨度"
   },
   {
+    "description": "多晶硅期货主力连续收盘价。",
+    "aliases": [],
     "category": "rare",
     "defaultSeriesId": "polysilicon-sina-main",
-    "description": "多晶硅期货主力连续收盘价。",
-    "hasFutures": true,
-    "aliases": [],
-    "id": "polysilicon",
     "name": "多晶硅",
+    "id": "polysilicon",
+    "hasFutures": true,
     "unit": "元/吨"
   },
   {
+    "description": "黑钨精矿 65% 报价。",
+    "aliases": [],
     "category": "rare",
     "defaultSeriesId": "tungsten-conc-kekuang",
-    "description": "黑钨精矿 65% 报价。",
-    "hasFutures": false,
-    "aliases": [],
-    "id": "tungsten-conc",
     "name": "钨精矿",
+    "id": "tungsten-conc",
+    "hasFutures": false,
     "unit": "元/吨"
   },
   {
+    "description": "萤石 97% 湿粉，生意社基准价（全国主流，出厂参考）。生意社公开数据列表缺 2026 年 6–7 月，该段不补点、图上断开。",
+    "aliases": [],
     "category": "nonmetal",
     "defaultSeriesId": "fluorite-100ppi",
-    "description": "萤石 97% 湿粉，生意社基准价（全国主流，出厂参考）。生意社公开数据列表缺 2026 年 6–7 月，该段不补点、图上断开。",
-    "hasFutures": false,
-    "aliases": [],
-    "id": "fluorite",
     "name": "萤石",
+    "id": "fluorite",
+    "hasFutures": false,
     "unit": "元/吨"
   },
   {
+    "description": "磷矿石，生意社基准价（全国主流，出厂参考），日频。",
+    "aliases": [],
     "category": "nonmetal",
     "defaultSeriesId": "phosphate-rock-100ppi",
-    "description": "磷矿石，生意社基准价（全国主流，出厂参考），日频。",
-    "hasFutures": false,
-    "aliases": [],
-    "id": "phosphate-rock",
     "name": "磷矿石",
+    "id": "phosphate-rock",
+    "hasFutures": false,
     "unit": "元/吨"
   }
 ],
   sources: [
   {
-    "id": "shfe",
-    "name": "上海期货交易所",
-    "type": "exchange",
-    "freq": "daily",
+    "url": "https://www.shfe.com.cn/",
     "note": "交易所官方日行情，收盘价/结算价，主力合约按持仓量滚动选取。",
     "trust": "A",
-    "url": "https://www.shfe.com.cn/"
+    "name": "上海期货交易所",
+    "id": "shfe",
+    "freq": "daily",
+    "type": "exchange"
   },
   {
-    "id": "sge",
-    "name": "上海黄金交易所",
-    "type": "exchange",
-    "freq": "daily",
+    "url": "https://www.sge.com.cn/",
     "note": "交易所官方每日行情。",
     "trust": "A",
-    "url": "https://www.sge.com.cn/"
+    "name": "上海黄金交易所",
+    "id": "sge",
+    "freq": "daily",
+    "type": "exchange"
   },
   {
-    "id": "sina",
-    "name": "新浪财经",
-    "type": "media",
-    "freq": "daily",
+    "url": "https://finance.sina.com.cn/futures/",
     "note": "国内期货主力连续日线，转载自交易所行情，用于无官方接口的品种。",
     "trust": "B",
-    "url": "https://finance.sina.com.cn/futures/"
+    "name": "新浪财经",
+    "id": "sina",
+    "freq": "daily",
+    "type": "media"
   },
   {
-    "id": "cnmn",
-    "name": "中国有色网",
-    "type": "media",
-    "freq": "daily",
+    "url": "https://www.cnmn.com.cn/",
     "note": "上海金属现货报价（小金属），每日 10:00/11:30 更新，取区间中间值。",
     "trust": "B",
-    "url": "https://www.cnmn.com.cn/"
+    "name": "中国有色网",
+    "id": "cnmn",
+    "freq": "daily",
+    "type": "media"
   },
   {
-    "id": "kekuang",
-    "name": "科矿网",
-    "type": "media",
-    "freq": "irregular",
+    "url": "http://www.kekuang.cn/",
     "note": "稀土与非金属矿报价，不定期更新（偏周更）。",
     "trust": "B",
-    "url": "http://www.kekuang.cn/"
+    "name": "科矿网",
+    "id": "kekuang",
+    "freq": "irregular",
+    "type": "media"
   },
   {
-    "id": "westmetall",
-    "name": "Westmetall（LME 镜像）",
-    "type": "media",
-    "freq": "daily",
+    "url": "https://www.westmetall.com/en/markdaten.php",
     "note": "LME 官方现货结算价与库存的免费镜像，美元/吨，含约一年历史。",
     "trust": "B",
-    "url": "https://www.westmetall.com/en/markdaten.php"
+    "name": "Westmetall（LME 镜像）",
+    "id": "westmetall",
+    "freq": "daily",
+    "type": "media"
   },
   {
-    "id": "100ppi",
-    "name": "生意社（100ppi）",
-    "type": "media",
-    "freq": "daily",
+    "url": "https://www.100ppi.com/",
     "note": "生意社基准价：基于撮合报价与价格模型生成的交易指导价，非交易所结算价，历史约半年。",
     "trust": "B",
-    "url": "https://www.100ppi.com/"
+    "name": "生意社（100ppi）",
+    "id": "100ppi",
+    "freq": "daily",
+    "type": "media"
   }
 ],
   series: [
   {
-    "historyStart": "2025-11-10",
-    "label": "铁矿石 主力连续",
-    "unit": "元/吨",
-    "varietyId": "iron-ore",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "tax": "含税",
-      "region": "日照港",
-      "delivery": "交易所交割",
-      "currency": "CNY",
-      "grade": "62% 干基"
-    },
+    "updatedAt": "2026-11-25",
     "id": "iron-ore-sina-main",
-    "freq": "daily",
+    "label": "铁矿石 主力连续",
     "sourceId": "sina",
+    "historyStart": "2025-11-10",
+    "unit": "元/吨",
+    "spec": {
+      "grade": "62% 干基",
+      "currency": "CNY",
+      "delivery": "交易所交割",
+      "region": "日照港",
+      "tax": "含税"
+    },
+    "varietyId": "iron-ore",
     "points": [
       [
         "2025-11-10",
@@ -1533,25 +1532,29 @@ window.__MINE_BUNDLE__ = {
       [
         "2026-11-24",
         658.5
+      ],
+      [
+        "2026-11-25",
+        657.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2025-11-10",
-    "label": "硅铁 主力连续",
-    "unit": "元/吨",
-    "varietyId": "ferrosilicon",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "tax": "含税",
-      "region": "宁夏",
-      "delivery": "交易所交割",
-      "currency": "CNY",
-      "grade": "72# 合格块"
-    },
+    "updatedAt": "2026-11-25",
     "id": "ferrosilicon-sina-main",
-    "freq": "daily",
+    "label": "硅铁 主力连续",
     "sourceId": "sina",
+    "historyStart": "2025-11-10",
+    "unit": "元/吨",
+    "spec": {
+      "grade": "72# 合格块",
+      "currency": "CNY",
+      "delivery": "交易所交割",
+      "region": "宁夏",
+      "tax": "含税"
+    },
+    "varietyId": "ferrosilicon",
     "points": [
       [
         "2025-11-10",
@@ -2564,25 +2567,29 @@ window.__MINE_BUNDLE__ = {
       [
         "2026-11-24",
         5854.0
+      ],
+      [
+        "2026-11-25",
+        5838.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2025-11-10",
-    "label": "锰硅 主力连续",
-    "unit": "元/吨",
-    "varietyId": "mn-si",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "tax": "含税",
-      "region": "宁夏",
-      "delivery": "交易所交割",
-      "currency": "CNY",
-      "grade": "FeMn68Si18"
-    },
+    "updatedAt": "2026-11-25",
     "id": "mn-si-sina-main",
-    "freq": "daily",
+    "label": "锰硅 主力连续",
     "sourceId": "sina",
+    "historyStart": "2025-11-10",
+    "unit": "元/吨",
+    "spec": {
+      "grade": "FeMn68Si18",
+      "currency": "CNY",
+      "delivery": "交易所交割",
+      "region": "宁夏",
+      "tax": "含税"
+    },
+    "varietyId": "mn-si",
     "points": [
       [
         "2025-11-10",
@@ -3595,25 +3602,29 @@ window.__MINE_BUNDLE__ = {
       [
         "2026-11-24",
         5786.0
+      ],
+      [
+        "2026-11-25",
+        5802.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2025-11-10",
-    "label": "氧化铝 主力连续",
-    "unit": "元/吨",
-    "varietyId": "alumina",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "tax": "含税",
-      "region": "全国",
-      "delivery": "交易所交割",
-      "currency": "CNY",
-      "grade": "AO-1"
-    },
+    "updatedAt": "2026-11-25",
     "id": "alumina-sina-main",
-    "freq": "daily",
+    "label": "氧化铝 主力连续",
     "sourceId": "sina",
+    "historyStart": "2025-11-10",
+    "unit": "元/吨",
+    "spec": {
+      "grade": "AO-1",
+      "currency": "CNY",
+      "delivery": "交易所交割",
+      "region": "全国",
+      "tax": "含税"
+    },
+    "varietyId": "alumina",
     "points": [
       [
         "2025-11-10",
@@ -4626,25 +4637,29 @@ window.__MINE_BUNDLE__ = {
       [
         "2026-11-24",
         2553.0
+      ],
+      [
+        "2026-11-25",
+        2555.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2025-11-10",
-    "label": "国际铜 主力连续",
-    "unit": "元/吨",
-    "varietyId": "intl-copper",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "tax": "含税",
-      "region": "保税区",
-      "delivery": "交易所交割",
-      "currency": "CNY",
-      "grade": "BC-1"
-    },
+    "updatedAt": "2026-11-25",
     "id": "intl-copper-sina-main",
-    "freq": "daily",
+    "label": "国际铜 主力连续",
     "sourceId": "sina",
+    "historyStart": "2025-11-10",
+    "unit": "元/吨",
+    "spec": {
+      "grade": "BC-1",
+      "currency": "CNY",
+      "delivery": "交易所交割",
+      "region": "保税区",
+      "tax": "含税"
+    },
+    "varietyId": "intl-copper",
     "points": [
       [
         "2025-11-10",
@@ -5657,25 +5672,29 @@ window.__MINE_BUNDLE__ = {
       [
         "2026-11-24",
         84330.0
+      ],
+      [
+        "2026-11-25",
+        80560.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2025-11-10",
-    "label": "碳酸锂 主力连续",
-    "unit": "元/吨",
-    "varietyId": "lithium-carbonate",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "tax": "含税",
-      "region": "全国",
-      "delivery": "交易所交割",
-      "currency": "CNY",
-      "grade": "电池级"
-    },
+    "updatedAt": "2026-11-25",
     "id": "lithium-carbonate-sina-main",
-    "freq": "daily",
+    "label": "碳酸锂 主力连续",
     "sourceId": "sina",
+    "historyStart": "2025-11-10",
+    "unit": "元/吨",
+    "spec": {
+      "grade": "电池级",
+      "currency": "CNY",
+      "delivery": "交易所交割",
+      "region": "全国",
+      "tax": "含税"
+    },
+    "varietyId": "lithium-carbonate",
     "points": [
       [
         "2025-11-10",
@@ -6688,25 +6707,29 @@ window.__MINE_BUNDLE__ = {
       [
         "2026-11-24",
         88940.0
+      ],
+      [
+        "2026-11-25",
+        82620.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2025-11-10",
-    "label": "工业硅 主力连续",
-    "unit": "元/吨",
-    "varietyId": "industrial-silicon",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "tax": "含税",
-      "region": "新疆",
-      "delivery": "交易所交割",
-      "currency": "CNY",
-      "grade": "553# 通氧"
-    },
+    "updatedAt": "2026-11-25",
     "id": "industrial-silicon-sina-main",
-    "freq": "daily",
+    "label": "工业硅 主力连续",
     "sourceId": "sina",
+    "historyStart": "2025-11-10",
+    "unit": "元/吨",
+    "spec": {
+      "grade": "553# 通氧",
+      "currency": "CNY",
+      "delivery": "交易所交割",
+      "region": "新疆",
+      "tax": "含税"
+    },
+    "varietyId": "industrial-silicon",
     "points": [
       [
         "2025-11-10",
@@ -7719,25 +7742,29 @@ window.__MINE_BUNDLE__ = {
       [
         "2026-11-24",
         8270.0
+      ],
+      [
+        "2026-11-25",
+        8260.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2025-11-10",
-    "label": "多晶硅 主力连续",
-    "unit": "元/吨",
-    "varietyId": "polysilicon",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "tax": "含税",
-      "region": "全国",
-      "delivery": "交易所交割",
-      "currency": "CNY",
-      "grade": "N型复投料"
-    },
+    "updatedAt": "2026-11-25",
     "id": "polysilicon-sina-main",
-    "freq": "daily",
+    "label": "多晶硅 主力连续",
     "sourceId": "sina",
+    "historyStart": "2025-11-10",
+    "unit": "元/吨",
+    "spec": {
+      "grade": "N型复投料",
+      "currency": "CNY",
+      "delivery": "交易所交割",
+      "region": "全国",
+      "tax": "含税"
+    },
+    "varietyId": "polysilicon",
     "points": [
       [
         "2025-11-10",
@@ -8750,25 +8777,29 @@ window.__MINE_BUNDLE__ = {
       [
         "2026-11-24",
         31985.0
+      ],
+      [
+        "2026-11-25",
+        31385.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2026-01-02",
-    "label": "LME铜 现货结算",
-    "unit": "美元/吨",
-    "varietyId": "lme-cu",
     "updatedAt": "2026-11-24",
-    "spec": {
-      "tax": "不含税",
-      "region": "伦敦",
-      "delivery": "现货结算",
-      "currency": "USD",
-      "grade": "LME 标准"
-    },
     "id": "lme-cu-westmetall",
-    "freq": "daily",
+    "label": "LME铜 现货结算",
     "sourceId": "westmetall",
+    "historyStart": "2026-01-02",
+    "unit": "美元/吨",
+    "spec": {
+      "grade": "LME 标准",
+      "currency": "USD",
+      "delivery": "现货结算",
+      "region": "伦敦",
+      "tax": "不含税"
+    },
+    "varietyId": "lme-cu",
     "points": [
       [
         "2026-01-02",
@@ -9682,24 +9713,24 @@ window.__MINE_BUNDLE__ = {
         "2026-11-24",
         12035.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2026-01-02",
-    "label": "LME铝 现货结算",
-    "unit": "美元/吨",
-    "varietyId": "lme-al",
     "updatedAt": "2026-11-24",
-    "spec": {
-      "tax": "不含税",
-      "region": "伦敦",
-      "delivery": "现货结算",
-      "currency": "USD",
-      "grade": "LME 标准"
-    },
     "id": "lme-al-westmetall",
-    "freq": "daily",
+    "label": "LME铝 现货结算",
     "sourceId": "westmetall",
+    "historyStart": "2026-01-02",
+    "unit": "美元/吨",
+    "spec": {
+      "grade": "LME 标准",
+      "currency": "USD",
+      "delivery": "现货结算",
+      "region": "伦敦",
+      "tax": "不含税"
+    },
+    "varietyId": "lme-al",
     "points": [
       [
         "2026-01-02",
@@ -10613,24 +10644,24 @@ window.__MINE_BUNDLE__ = {
         "2026-11-24",
         3120.5
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2026-01-02",
-    "label": "LME锌 现货结算",
-    "unit": "美元/吨",
-    "varietyId": "lme-zn",
     "updatedAt": "2026-11-24",
-    "spec": {
-      "tax": "不含税",
-      "region": "伦敦",
-      "delivery": "现货结算",
-      "currency": "USD",
-      "grade": "LME 标准"
-    },
     "id": "lme-zn-westmetall",
-    "freq": "daily",
+    "label": "LME锌 现货结算",
     "sourceId": "westmetall",
+    "historyStart": "2026-01-02",
+    "unit": "美元/吨",
+    "spec": {
+      "grade": "LME 标准",
+      "currency": "USD",
+      "delivery": "现货结算",
+      "region": "伦敦",
+      "tax": "不含税"
+    },
+    "varietyId": "lme-zn",
     "points": [
       [
         "2026-01-02",
@@ -11544,24 +11575,24 @@ window.__MINE_BUNDLE__ = {
         "2026-11-24",
         3665.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2026-01-02",
-    "label": "LME铅 现货结算",
-    "unit": "美元/吨",
-    "varietyId": "lme-pb",
     "updatedAt": "2026-11-24",
-    "spec": {
-      "tax": "不含税",
-      "region": "伦敦",
-      "delivery": "现货结算",
-      "currency": "USD",
-      "grade": "LME 标准"
-    },
     "id": "lme-pb-westmetall",
-    "freq": "daily",
+    "label": "LME铅 现货结算",
     "sourceId": "westmetall",
+    "historyStart": "2026-01-02",
+    "unit": "美元/吨",
+    "spec": {
+      "grade": "LME 标准",
+      "currency": "USD",
+      "delivery": "现货结算",
+      "region": "伦敦",
+      "tax": "不含税"
+    },
+    "varietyId": "lme-pb",
     "points": [
       [
         "2026-01-02",
@@ -12475,24 +12506,24 @@ window.__MINE_BUNDLE__ = {
         "2026-11-24",
         1786.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2026-01-02",
-    "label": "LME镍 现货结算",
-    "unit": "美元/吨",
-    "varietyId": "lme-ni",
     "updatedAt": "2026-11-24",
-    "spec": {
-      "tax": "不含税",
-      "region": "伦敦",
-      "delivery": "现货结算",
-      "currency": "USD",
-      "grade": "LME 标准"
-    },
     "id": "lme-ni-westmetall",
-    "freq": "daily",
+    "label": "LME镍 现货结算",
     "sourceId": "westmetall",
+    "historyStart": "2026-01-02",
+    "unit": "美元/吨",
+    "spec": {
+      "grade": "LME 标准",
+      "currency": "USD",
+      "delivery": "现货结算",
+      "region": "伦敦",
+      "tax": "不含税"
+    },
+    "varietyId": "lme-ni",
     "points": [
       [
         "2026-01-02",
@@ -13406,24 +13437,24 @@ window.__MINE_BUNDLE__ = {
         "2026-11-24",
         15060.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2026-01-02",
-    "label": "LME锡 现货结算",
-    "unit": "美元/吨",
-    "varietyId": "lme-sn",
     "updatedAt": "2026-11-24",
-    "spec": {
-      "tax": "不含税",
-      "region": "伦敦",
-      "delivery": "现货结算",
-      "currency": "USD",
-      "grade": "LME 标准"
-    },
     "id": "lme-sn-westmetall",
-    "freq": "daily",
+    "label": "LME锡 现货结算",
     "sourceId": "westmetall",
+    "historyStart": "2026-01-02",
+    "unit": "美元/吨",
+    "spec": {
+      "grade": "LME 标准",
+      "currency": "USD",
+      "delivery": "现货结算",
+      "region": "伦敦",
+      "tax": "不含税"
+    },
+    "varietyId": "lme-sn",
     "points": [
       [
         "2026-01-02",
@@ -14337,7 +14368,8 @@ window.__MINE_BUNDLE__ = {
         "2026-11-24",
         40825.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
     "id": "cu-shfe-cathode",
@@ -14353,7 +14385,7 @@ window.__MINE_BUNDLE__ = {
     },
     "unit": "元/吨",
     "freq": "daily",
-    "updatedAt": "2026-11-24",
+    "updatedAt": "2026-11-25",
     "points": [
       [
         "2025-11-12",
@@ -15358,6 +15390,10 @@ window.__MINE_BUNDLE__ = {
       [
         "2026-11-24",
         92410.0
+      ],
+      [
+        "2026-11-25",
+        87950.0
       ]
     ],
     "demo": false
@@ -15376,7 +15412,7 @@ window.__MINE_BUNDLE__ = {
     },
     "unit": "元/吨",
     "freq": "daily",
-    "updatedAt": "2026-11-24",
+    "updatedAt": "2026-11-25",
     "points": [
       [
         "2025-11-12",
@@ -16381,6 +16417,10 @@ window.__MINE_BUNDLE__ = {
       [
         "2026-11-24",
         21390.0
+      ],
+      [
+        "2026-11-25",
+        20600.0
       ]
     ],
     "demo": false
@@ -16399,7 +16439,7 @@ window.__MINE_BUNDLE__ = {
     },
     "unit": "元/吨",
     "freq": "daily",
-    "updatedAt": "2026-11-24",
+    "updatedAt": "2026-11-25",
     "points": [
       [
         "2025-11-12",
@@ -17404,6 +17444,10 @@ window.__MINE_BUNDLE__ = {
       [
         "2026-11-24",
         15355.0
+      ],
+      [
+        "2026-11-25",
+        15105.0
       ]
     ],
     "demo": false
@@ -17422,7 +17466,7 @@ window.__MINE_BUNDLE__ = {
     },
     "unit": "元/吨",
     "freq": "daily",
-    "updatedAt": "2026-11-24",
+    "updatedAt": "2026-11-25",
     "points": [
       [
         "2025-11-12",
@@ -18427,6 +18471,10 @@ window.__MINE_BUNDLE__ = {
       [
         "2026-11-24",
         23895.0
+      ],
+      [
+        "2026-11-25",
+        23195.0
       ]
     ],
     "demo": false
@@ -18445,7 +18493,7 @@ window.__MINE_BUNDLE__ = {
     },
     "unit": "元/吨",
     "freq": "daily",
-    "updatedAt": "2026-11-24",
+    "updatedAt": "2026-11-25",
     "points": [
       [
         "2025-11-12",
@@ -19450,6 +19498,10 @@ window.__MINE_BUNDLE__ = {
       [
         "2026-11-24",
         116830.0
+      ],
+      [
+        "2026-11-25",
+        114350.0
       ]
     ],
     "demo": false
@@ -19468,7 +19520,7 @@ window.__MINE_BUNDLE__ = {
     },
     "unit": "元/吨",
     "freq": "daily",
-    "updatedAt": "2026-11-24",
+    "updatedAt": "2026-11-25",
     "points": [
       [
         "2025-11-12",
@@ -20473,6 +20525,10 @@ window.__MINE_BUNDLE__ = {
       [
         "2026-11-24",
         313720.0
+      ],
+      [
+        "2026-11-25",
+        288990.0
       ]
     ],
     "demo": false
@@ -20491,7 +20547,7 @@ window.__MINE_BUNDLE__ = {
     },
     "unit": "元/克",
     "freq": "daily",
-    "updatedAt": "2026-11-24",
+    "updatedAt": "2026-11-25",
     "points": [
       [
         "2016-12-19",
@@ -30128,6 +30184,10 @@ window.__MINE_BUNDLE__ = {
       [
         "2026-11-24",
         777.72
+      ],
+      [
+        "2026-11-25",
+        757.35
       ]
     ],
     "demo": false
@@ -30146,7 +30206,7 @@ window.__MINE_BUNDLE__ = {
     },
     "unit": "元/千克",
     "freq": "daily",
-    "updatedAt": "2026-11-24",
+    "updatedAt": "2026-11-25",
     "points": [
       [
         "2016-12-16",
@@ -39783,319 +39843,318 @@ window.__MINE_BUNDLE__ = {
       [
         "2026-11-24",
         10035.0
+      ],
+      [
+        "2026-11-25",
+        9381.0
       ]
     ],
     "demo": false
   },
   {
-    "historyStart": "2026-11-24",
-    "label": "钴 钴(99.8%)",
-    "unit": "元/吨",
-    "varietyId": "cobalt",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "currency": "CNY",
-      "delivery": "现货",
-      "region": "上海",
-      "tax": "含税",
-      "grade": "钴(99.8%)",
-      "quote": "307000-320000"
-    },
+    "updatedAt": "2026-11-25",
     "id": "cobalt-cnmn",
-    "freq": "daily",
+    "label": "钴 钴(99.8%)",
     "sourceId": "cnmn",
+    "historyStart": "2026-11-25",
+    "unit": "元/吨",
+    "spec": {
+      "quote": "339000-350000",
+      "delivery": "现货",
+      "tax": "含税",
+      "currency": "CNY",
+      "region": "上海",
+      "grade": "钴(99.8%)"
+    },
+    "varietyId": "cobalt",
     "points": [
       [
-        "2026-11-24",
-        313500.0
+        "2026-11-25",
+        344500.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2026-11-24",
-    "label": "锑 锑(0#,99.91%)",
-    "unit": "元/吨",
-    "varietyId": "antimony",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "currency": "CNY",
-      "delivery": "现货",
-      "region": "上海",
-      "tax": "含税",
-      "grade": "锑(0#,99.91%)",
-      "quote": "87000-90000"
-    },
+    "updatedAt": "2026-11-25",
     "id": "antimony-cnmn",
-    "freq": "daily",
+    "label": "锑 锑(0#,99.91%)",
     "sourceId": "cnmn",
+    "historyStart": "2026-11-25",
+    "unit": "元/吨",
+    "spec": {
+      "quote": "87000-90000",
+      "delivery": "现货",
+      "tax": "含税",
+      "currency": "CNY",
+      "region": "上海",
+      "grade": "锑(0#,99.91%)"
+    },
+    "varietyId": "antimony",
     "points": [
       [
-        "2026-11-24",
+        "2026-11-25",
         88500.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2026-11-24",
-    "label": "镁 镁(1#，99.95%)",
-    "unit": "元/吨",
-    "varietyId": "magnesium",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "currency": "CNY",
-      "delivery": "现货",
-      "region": "上海",
-      "tax": "含税",
-      "grade": "镁(1#，99.95%)",
-      "quote": "16200-16300"
-    },
+    "updatedAt": "2026-11-25",
     "id": "magnesium-cnmn",
-    "freq": "daily",
+    "label": "镁 镁(1#，99.95%)",
     "sourceId": "cnmn",
+    "historyStart": "2026-11-25",
+    "unit": "元/吨",
+    "spec": {
+      "quote": "16200-16300",
+      "delivery": "现货",
+      "tax": "含税",
+      "currency": "CNY",
+      "region": "上海",
+      "grade": "镁(1#，99.95%)"
+    },
+    "varietyId": "magnesium",
     "points": [
       [
-        "2026-11-24",
+        "2026-11-25",
         16250.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2026-11-24",
-    "label": "铋 铋(99.99%)",
-    "unit": "元/吨",
-    "varietyId": "bismuth",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "currency": "CNY",
-      "delivery": "现货",
-      "region": "上海",
-      "tax": "含税",
-      "grade": "铋(99.99%)",
-      "quote": "126000-128000"
-    },
+    "updatedAt": "2026-11-25",
     "id": "bismuth-cnmn",
-    "freq": "daily",
+    "label": "铋 铋(99.99%)",
     "sourceId": "cnmn",
+    "historyStart": "2026-11-25",
+    "unit": "元/吨",
+    "spec": {
+      "quote": "127000-129000",
+      "delivery": "现货",
+      "tax": "含税",
+      "currency": "CNY",
+      "region": "上海",
+      "grade": "铋(99.99%)"
+    },
+    "varietyId": "bismuth",
     "points": [
       [
-        "2026-11-24",
-        127000.0
+        "2026-11-25",
+        128000.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2026-11-24",
-    "label": "铟 铟(99.99%)",
-    "unit": "元/千克",
-    "varietyId": "indium",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "currency": "CNY",
-      "delivery": "现货",
-      "region": "上海",
-      "tax": "含税",
-      "grade": "铟(99.99%)",
-      "quote": "4400-4500"
-    },
+    "updatedAt": "2026-11-25",
     "id": "indium-cnmn",
-    "freq": "daily",
+    "label": "铟 铟(99.99%)",
     "sourceId": "cnmn",
+    "historyStart": "2026-11-25",
+    "unit": "元/千克",
+    "spec": {
+      "quote": "4400-4500",
+      "delivery": "现货",
+      "tax": "含税",
+      "currency": "CNY",
+      "region": "上海",
+      "grade": "铟(99.99%)"
+    },
+    "varietyId": "indium",
     "points": [
       [
-        "2026-11-24",
+        "2026-11-25",
         4450.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2026-11-24",
-    "label": "镓 镓(99.99%)",
-    "unit": "元/千克",
-    "varietyId": "gallium",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "currency": "CNY",
-      "delivery": "现货",
-      "region": "上海",
-      "tax": "含税",
-      "grade": "镓(99.99%)",
-      "quote": "1710-1750"
-    },
+    "updatedAt": "2026-11-25",
     "id": "gallium-cnmn",
-    "freq": "daily",
+    "label": "镓 镓(99.99%)",
     "sourceId": "cnmn",
+    "historyStart": "2026-11-25",
+    "unit": "元/千克",
+    "spec": {
+      "quote": "1710-1750",
+      "delivery": "现货",
+      "tax": "含税",
+      "currency": "CNY",
+      "region": "上海",
+      "grade": "镓(99.99%)"
+    },
+    "varietyId": "gallium",
     "points": [
       [
-        "2026-11-24",
+        "2026-11-25",
         1730.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2026-11-24",
-    "label": "镉 镉(1#，99.99%)",
-    "unit": "元/吨",
-    "varietyId": "cadmium",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "currency": "CNY",
-      "delivery": "现货",
-      "region": "上海",
-      "tax": "含税",
-      "grade": "镉(1#，99.99%)",
-      "quote": "28500-29000"
-    },
+    "updatedAt": "2026-11-25",
     "id": "cadmium-cnmn",
-    "freq": "daily",
+    "label": "镉 镉(1#，99.99%)",
     "sourceId": "cnmn",
+    "historyStart": "2026-11-25",
+    "unit": "元/吨",
+    "spec": {
+      "quote": "28500-29000",
+      "delivery": "现货",
+      "tax": "含税",
+      "currency": "CNY",
+      "region": "上海",
+      "grade": "镉(1#，99.99%)"
+    },
+    "varietyId": "cadmium",
     "points": [
       [
-        "2026-11-24",
+        "2026-11-25",
         28750.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2026-11-24",
-    "label": "碲 碲(99.99%)",
-    "unit": "元/千克",
-    "varietyId": "tellurium",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "currency": "CNY",
-      "delivery": "现货",
-      "region": "上海",
-      "tax": "含税",
-      "grade": "碲(99.99%)",
-      "quote": "810-820"
-    },
+    "updatedAt": "2026-11-25",
     "id": "tellurium-cnmn",
-    "freq": "daily",
+    "label": "碲 碲(99.99%)",
     "sourceId": "cnmn",
+    "historyStart": "2026-11-25",
+    "unit": "元/千克",
+    "spec": {
+      "quote": "810-820",
+      "delivery": "现货",
+      "tax": "含税",
+      "currency": "CNY",
+      "region": "上海",
+      "grade": "碲(99.99%)"
+    },
+    "varietyId": "tellurium",
     "points": [
       [
-        "2026-11-24",
+        "2026-11-25",
         815.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2026-11-24",
-    "label": "海绵钛 海绵钛(&ge;97-98%)",
-    "unit": "元/吨",
-    "varietyId": "titanium-sponge",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "currency": "CNY",
-      "delivery": "现货",
-      "region": "上海",
-      "tax": "含税",
-      "grade": "海绵钛(&ge;97-98%)",
-      "quote": "41000-42000"
-    },
+    "updatedAt": "2026-11-25",
     "id": "titanium-sponge-cnmn",
-    "freq": "daily",
+    "label": "海绵钛 海绵钛(&ge;97-98%)",
     "sourceId": "cnmn",
+    "historyStart": "2026-11-25",
+    "unit": "元/吨",
+    "spec": {
+      "quote": "41000-42000",
+      "delivery": "现货",
+      "tax": "含税",
+      "currency": "CNY",
+      "region": "上海",
+      "grade": "海绵钛(&ge;97-98%)"
+    },
+    "varietyId": "titanium-sponge",
     "points": [
       [
-        "2026-11-24",
+        "2026-11-25",
         41500.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2026-11-24",
-    "label": "电解锰 电解锰(1#，袋装，99.7%)",
-    "unit": "元/吨",
-    "varietyId": "electrolytic-mn",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "currency": "CNY",
-      "delivery": "现货",
-      "region": "上海",
-      "tax": "含税",
-      "grade": "电解锰(1#，袋装，99.7%)",
-      "quote": "18300-18500"
-    },
+    "updatedAt": "2026-11-25",
     "id": "electrolytic-mn-cnmn",
-    "freq": "daily",
+    "label": "电解锰 电解锰(1#，桶装，99.7%)",
     "sourceId": "cnmn",
+    "historyStart": "2026-11-25",
+    "unit": "元/吨",
+    "spec": {
+      "quote": "19300-19500",
+      "delivery": "现货",
+      "tax": "含税",
+      "currency": "CNY",
+      "region": "上海",
+      "grade": "电解锰(1#，桶装，99.7%)"
+    },
+    "varietyId": "electrolytic-mn",
     "points": [
       [
-        "2026-11-24",
-        18400.0
+        "2026-11-25",
+        19400.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2026-11-24",
-    "label": "金属硅 金属硅(553#)",
-    "unit": "元/吨",
-    "varietyId": "silicon-metal",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "currency": "CNY",
-      "delivery": "现货",
-      "region": "上海",
-      "tax": "含税",
-      "grade": "金属硅(553#)",
-      "quote": "9400-9600"
-    },
+    "updatedAt": "2026-11-25",
     "id": "silicon-metal-cnmn",
-    "freq": "daily",
+    "label": "金属硅 金属硅(553#)",
     "sourceId": "cnmn",
+    "historyStart": "2026-11-25",
+    "unit": "元/吨",
+    "spec": {
+      "quote": "9400-9600",
+      "delivery": "现货",
+      "tax": "含税",
+      "currency": "CNY",
+      "region": "上海",
+      "grade": "金属硅(553#)"
+    },
+    "varietyId": "silicon-metal",
     "points": [
       [
-        "2026-11-24",
+        "2026-11-25",
         9500.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2026-11-24",
-    "label": "氢氧化锂 电池级氢氧化锂",
-    "unit": "元/吨",
-    "varietyId": "lithium-hydroxide",
-    "updatedAt": "2026-11-24",
-    "spec": {
-      "currency": "CNY",
-      "delivery": "现货",
-      "region": "上海",
-      "tax": "含税",
-      "grade": "电池级氢氧化锂",
-      "quote": "79100-82600"
-    },
+    "updatedAt": "2026-11-25",
     "id": "lithium-hydroxide-cnmn",
-    "freq": "daily",
+    "label": "氢氧化锂 电池级氢氧化锂",
     "sourceId": "cnmn",
+    "historyStart": "2026-11-25",
+    "unit": "元/吨",
+    "spec": {
+      "quote": "75600-78100",
+      "delivery": "现货",
+      "tax": "含税",
+      "currency": "CNY",
+      "region": "上海",
+      "grade": "电池级氢氧化锂"
+    },
+    "varietyId": "lithium-hydroxide",
     "points": [
       [
-        "2026-11-24",
-        80850.0
+        "2026-11-25",
+        76850.0
       ]
-    ]
+    ],
+    "freq": "daily"
   },
   {
-    "historyStart": "2026-11-04",
-    "label": "钨精矿 349333 元/吨",
-    "unit": "元/吨",
-    "varietyId": "tungsten-conc",
     "updatedAt": "2026-11-18",
-    "spec": {
-      "tax": "未知",
-      "region": "全国",
-      "delivery": "现货",
-      "currency": "CNY",
-      "grade": "349333 元/吨"
-    },
     "id": "tungsten-conc-kekuang",
-    "freq": "irregular",
+    "label": "钨精矿 379000 元/吨",
     "sourceId": "kekuang",
+    "historyStart": "2026-11-10",
+    "unit": "元/吨",
+    "spec": {
+      "grade": "379000 元/吨",
+      "currency": "CNY",
+      "delivery": "现货",
+      "region": "全国",
+      "tax": "未知"
+    },
+    "varietyId": "tungsten-conc",
     "points": [
-      [
-        "2026-11-04",
-        349333.0
-      ],
       [
         "2026-11-10",
         379000.0
@@ -40108,29 +40167,25 @@ window.__MINE_BUNDLE__ = {
         "2026-11-18",
         379000.0
       ]
-    ]
+    ],
+    "freq": "irregular"
   },
   {
-    "historyStart": "2026-11-04",
-    "label": "仲钨酸铵 520000 元/吨",
-    "unit": "元/吨",
-    "varietyId": "apt",
     "updatedAt": "2026-11-18",
-    "spec": {
-      "tax": "未知",
-      "region": "全国",
-      "delivery": "现货",
-      "currency": "CNY",
-      "grade": "520000 元/吨"
-    },
     "id": "apt-kekuang",
-    "freq": "irregular",
+    "label": "仲钨酸铵 556667 元/吨",
     "sourceId": "kekuang",
+    "historyStart": "2026-11-17",
+    "unit": "元/吨",
+    "spec": {
+      "grade": "556667 元/吨",
+      "currency": "CNY",
+      "delivery": "现货",
+      "region": "全国",
+      "tax": "未知"
+    },
+    "varietyId": "apt",
     "points": [
-      [
-        "2026-11-04",
-        520000.0
-      ],
       [
         "2026-11-17",
         556667.0
@@ -40139,29 +40194,25 @@ window.__MINE_BUNDLE__ = {
         "2026-11-18",
         556667.0
       ]
-    ]
+    ],
+    "freq": "irregular"
   },
   {
-    "historyStart": "2026-11-04",
-    "label": "钼精矿 5165 元/吨度",
-    "unit": "元/吨度",
-    "varietyId": "moly-conc",
     "updatedAt": "2026-11-18",
-    "spec": {
-      "tax": "未知",
-      "region": "全国",
-      "delivery": "现货",
-      "currency": "CNY",
-      "grade": "5165 元/吨度"
-    },
     "id": "moly-conc-kekuang",
-    "freq": "irregular",
+    "label": "钼精矿 5900 元/吨度",
     "sourceId": "kekuang",
+    "historyStart": "2026-11-16",
+    "unit": "元/吨度",
+    "spec": {
+      "grade": "5900 元/吨度",
+      "currency": "CNY",
+      "delivery": "现货",
+      "region": "全国",
+      "tax": "未知"
+    },
+    "varietyId": "moly-conc",
     "points": [
-      [
-        "2026-11-04",
-        5165.0
-      ],
       [
         "2026-11-16",
         5900.0
@@ -40174,24 +40225,24 @@ window.__MINE_BUNDLE__ = {
         "2026-11-18",
         5385.0
       ]
-    ]
+    ],
+    "freq": "irregular"
   },
   {
-    "historyStart": "2026-03-18",
-    "label": "萤石 生意社基准价",
-    "unit": "元/吨",
-    "varietyId": "fluorite",
     "updatedAt": "2026-11-23",
-    "spec": {
-      "tax": "含税",
-      "region": "全国",
-      "delivery": "出厂",
-      "currency": "CNY",
-      "grade": "CaF₂ 97% 湿粉"
-    },
     "id": "fluorite-100ppi",
-    "freq": "weekly",
+    "label": "萤石 生意社基准价",
     "sourceId": "100ppi",
+    "historyStart": "2026-03-18",
+    "unit": "元/吨",
+    "spec": {
+      "grade": "CaF₂ 97% 湿粉",
+      "currency": "CNY",
+      "delivery": "出厂",
+      "region": "全国",
+      "tax": "含税"
+    },
+    "varietyId": "fluorite",
     "points": [
       [
         "2026-03-18",
@@ -40609,24 +40660,24 @@ window.__MINE_BUNDLE__ = {
         "2026-11-23",
         3650.0
       ]
-    ]
+    ],
+    "freq": "weekly"
   },
   {
-    "historyStart": "2026-03-01",
-    "label": "磷矿石 生意社基准价",
-    "unit": "元/吨",
-    "varietyId": "phosphate-rock",
     "updatedAt": "2026-11-01",
-    "spec": {
-      "tax": "含税",
-      "region": "全国",
-      "delivery": "出厂",
-      "currency": "CNY",
-      "grade": "综合基准价（品位未细分）"
-    },
     "id": "phosphate-rock-100ppi",
-    "freq": "daily",
+    "label": "磷矿石 生意社基准价",
     "sourceId": "100ppi",
+    "historyStart": "2026-03-01",
+    "unit": "元/吨",
+    "spec": {
+      "grade": "综合基准价（品位未细分）",
+      "currency": "CNY",
+      "delivery": "出厂",
+      "region": "全国",
+      "tax": "含税"
+    },
+    "varietyId": "phosphate-rock",
     "points": [
       [
         "2026-03-01",
@@ -40904,262 +40955,264 @@ window.__MINE_BUNDLE__ = {
         "2026-11-01",
         663.33
       ]
-    ]
+    ],
+    "freq": "daily"
   }
 ],
   catalog: [
   {
-    "change": 4.5,
-    "category": "ferrous",
-    "prev": 654.0,
-    "spark": [
-      757.5,
-      814.5,
-      761.5,
-      811.0,
-      778.5,
-      789.5,
-      739.5,
-      749.0,
-      712.0,
-      710.5,
-      671.5,
-      658.5
-    ],
     "trust": "B",
-    "freshness": "normal",
-    "points": 253,
+    "prev": 658.5,
     "historyStart": "2025-11-10",
-    "varietyId": "iron-ore",
-    "latest": 658.5,
-    "varietyName": "铁矿石",
-    "changePct": 0.6881,
     "seriesId": "iron-ore-sina-main",
-    "sourceId": "sina",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
-  },
-  {
-    "change": 38.0,
-    "category": "ferrous",
-    "prev": 5816.0,
     "spark": [
-      5462.0,
-      5632.0,
-      5594.0,
-      5796.0,
-      5700.0,
-      5884.0,
-      5656.0,
-      5782.0,
-      5956.0,
-      6052.0,
-      5828.0,
-      5854.0
+      769.0,
+      822.5,
+      761.5,
+      807.5,
+      786.5,
+      792.0,
+      738.5,
+      739.5,
+      707.0,
+      715.5,
+      664.0,
+      657.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 253,
-    "historyStart": "2025-11-10",
-    "varietyId": "ferrosilicon",
-    "latest": 5854.0,
-    "varietyName": "硅铁",
-    "changePct": 0.6534,
-    "seriesId": "ferrosilicon-sina-main",
+    "change": -1.5,
+    "category": "ferrous",
+    "latest": 657.0,
+    "points": 254,
+    "changePct": -0.2278,
+    "varietyId": "iron-ore",
     "sourceId": "sina",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "铁矿石"
   },
   {
+    "trust": "B",
+    "prev": 5854.0,
+    "historyStart": "2025-11-10",
+    "seriesId": "ferrosilicon-sina-main",
+    "spark": [
+      5434.0,
+      5698.0,
+      5580.0,
+      5824.0,
+      5742.0,
+      5846.0,
+      5624.0,
+      5840.0,
+      5966.0,
+      6018.0,
+      5848.0,
+      5838.0
+    ],
+    "freshness": "normal",
+    "change": -16.0,
+    "category": "ferrous",
+    "latest": 5838.0,
+    "points": 254,
+    "changePct": -0.2733,
+    "varietyId": "ferrosilicon",
+    "sourceId": "sina",
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "硅铁"
+  },
+  {
+    "trust": "B",
+    "prev": 5786.0,
+    "historyStart": "2025-11-10",
+    "seriesId": "mn-si-sina-main",
+    "spark": [
+      5724.0,
+      5930.0,
+      5818.0,
+      6188.0,
+      6200.0,
+      5876.0,
+      5804.0,
+      5712.0,
+      5930.0,
+      5786.0,
+      5882.0,
+      5802.0
+    ],
+    "freshness": "normal",
     "change": 16.0,
     "category": "ferrous",
-    "prev": 5770.0,
-    "spark": [
-      5732.0,
-      5904.0,
-      5812.0,
-      6138.0,
-      6230.0,
-      5908.0,
-      5848.0,
-      5788.0,
-      5922.0,
-      5796.0,
-      5862.0,
-      5786.0
-    ],
-    "trust": "B",
-    "freshness": "normal",
-    "points": 253,
-    "historyStart": "2025-11-10",
+    "latest": 5802.0,
+    "points": 254,
+    "changePct": 0.2765,
     "varietyId": "mn-si",
-    "latest": 5786.0,
-    "varietyName": "锰硅",
-    "changePct": 0.2773,
-    "seriesId": "mn-si-sina-main",
     "sourceId": "sina",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "锰硅"
   },
   {
-    "change": 0.0,
-    "category": "nonferrous",
+    "trust": "B",
     "prev": 2553.0,
-    "spark": [
-      2546.0,
-      2843.0,
-      2868.0,
-      3048.0,
-      2772.0,
-      2709.0,
-      2917.0,
-      2727.0,
-      2668.0,
-      2682.0,
-      2565.0,
-      2553.0
-    ],
-    "trust": "B",
-    "freshness": "normal",
-    "points": 253,
     "historyStart": "2025-11-10",
-    "varietyId": "alumina",
-    "latest": 2553.0,
-    "varietyName": "氧化铝",
-    "changePct": 0.0,
     "seriesId": "alumina-sina-main",
+    "spark": [
+      2477.0,
+      2866.0,
+      2835.0,
+      3027.0,
+      2790.0,
+      2717.0,
+      2843.0,
+      2721.0,
+      2663.0,
+      2695.0,
+      2560.0,
+      2555.0
+    ],
+    "freshness": "normal",
+    "change": 2.0,
+    "category": "nonferrous",
+    "latest": 2555.0,
+    "points": 254,
+    "changePct": 0.0783,
+    "varietyId": "alumina",
     "sourceId": "sina",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "氧化铝"
   },
   {
-    "change": -2470.0,
-    "category": "nonferrous",
-    "prev": 86800.0,
-    "spark": [
-      81610.0,
-      90150.0,
-      90500.0,
-      87050.0,
-      91010.0,
-      92100.0,
-      92980.0,
-      94150.0,
-      94740.0,
-      96590.0,
-      97230.0,
-      84330.0
-    ],
     "trust": "B",
-    "freshness": "normal",
-    "points": 253,
+    "prev": 84330.0,
     "historyStart": "2025-11-10",
-    "varietyId": "intl-copper",
-    "latest": 84330.0,
-    "varietyName": "国际铜",
-    "changePct": -2.8456,
     "seriesId": "intl-copper-sina-main",
-    "sourceId": "sina",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
-  },
-  {
-    "change": -1560.0,
-    "category": "rare",
-    "prev": 90500.0,
     "spark": [
-      92800.0,
-      143420.0,
-      137000.0,
-      150120.0,
-      177560.0,
-      177600.0,
-      161740.0,
-      141620.0,
-      150660.0,
-      131180.0,
-      95280.0,
-      88940.0
+      82270.0,
+      92330.0,
+      90200.0,
+      83380.0,
+      91220.0,
+      93030.0,
+      91730.0,
+      94740.0,
+      95370.0,
+      97870.0,
+      97020.0,
+      80560.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 253,
-    "historyStart": "2025-11-10",
-    "varietyId": "lithium-carbonate",
-    "latest": 88940.0,
-    "varietyName": "碳酸锂",
-    "changePct": -1.7238,
-    "seriesId": "lithium-carbonate-sina-main",
-    "sourceId": "sina",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
-  },
-  {
-    "change": 35.0,
-    "category": "rare",
-    "prev": 8235.0,
-    "spark": [
-      8340.0,
-      8715.0,
-      8450.0,
-      8375.0,
-      8630.0,
-      8440.0,
-      8540.0,
-      8275.0,
-      8825.0,
-      8445.0,
-      8650.0,
-      8270.0
-    ],
-    "trust": "B",
-    "freshness": "normal",
-    "points": 253,
-    "historyStart": "2025-11-10",
-    "varietyId": "industrial-silicon",
-    "latest": 8270.0,
-    "varietyName": "工业硅",
-    "changePct": 0.425,
-    "seriesId": "industrial-silicon-sina-main",
-    "sourceId": "sina",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
-  },
-  {
-    "change": -410.0,
-    "category": "rare",
-    "prev": 32395.0,
-    "spark": [
-      54615.0,
-      51300.0,
-      49370.0,
-      40105.0,
-      39780.0,
-      37080.0,
-      36090.0,
-      33760.0,
-      37815.0,
-      36490.0,
-      35600.0,
-      31985.0
-    ],
-    "trust": "B",
-    "freshness": "normal",
-    "points": 253,
-    "historyStart": "2025-11-10",
-    "varietyId": "polysilicon",
-    "latest": 31985.0,
-    "varietyName": "多晶硅",
-    "changePct": -1.2656,
-    "seriesId": "polysilicon-sina-main",
-    "sourceId": "sina",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
-  },
-  {
-    "change": -130.0,
+    "change": -3770.0,
     "category": "nonferrous",
+    "latest": 80560.0,
+    "points": 254,
+    "changePct": -4.4705,
+    "varietyId": "intl-copper",
+    "sourceId": "sina",
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "国际铜"
+  },
+  {
+    "trust": "B",
+    "prev": 88940.0,
+    "historyStart": "2025-11-10",
+    "seriesId": "lithium-carbonate-sina-main",
+    "spark": [
+      95980.0,
+      156060.0,
+      137340.0,
+      142600.0,
+      180200.0,
+      184460.0,
+      157220.0,
+      143300.0,
+      152160.0,
+      127160.0,
+      98500.0,
+      82620.0
+    ],
+    "freshness": "normal",
+    "change": -6320.0,
+    "category": "rare",
+    "latest": 82620.0,
+    "points": 254,
+    "changePct": -7.1059,
+    "varietyId": "lithium-carbonate",
+    "sourceId": "sina",
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "碳酸锂"
+  },
+  {
+    "trust": "B",
+    "prev": 8270.0,
+    "historyStart": "2025-11-10",
+    "seriesId": "industrial-silicon-sina-main",
+    "spark": [
+      8250.0,
+      8755.0,
+      8375.0,
+      8285.0,
+      8690.0,
+      8440.0,
+      8505.0,
+      8250.0,
+      8755.0,
+      8410.0,
+      8640.0,
+      8260.0
+    ],
+    "freshness": "normal",
+    "change": -10.0,
+    "category": "rare",
+    "latest": 8260.0,
+    "points": 254,
+    "changePct": -0.1209,
+    "varietyId": "industrial-silicon",
+    "sourceId": "sina",
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "工业硅"
+  },
+  {
+    "trust": "B",
+    "prev": 31985.0,
+    "historyStart": "2025-11-10",
+    "seriesId": "polysilicon-sina-main",
+    "spark": [
+      54600.0,
+      49995.0,
+      48950.0,
+      38550.0,
+      42955.0,
+      37540.0,
+      35800.0,
+      34250.0,
+      38475.0,
+      36490.0,
+      36735.0,
+      31385.0
+    ],
+    "freshness": "normal",
+    "change": -600.0,
+    "category": "rare",
+    "latest": 31385.0,
+    "points": 254,
+    "changePct": -1.8759,
+    "varietyId": "polysilicon",
+    "sourceId": "sina",
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "多晶硅"
+  },
+  {
+    "trust": "B",
     "prev": 12165.0,
+    "historyStart": "2026-01-02",
+    "seriesId": "lme-cu-westmetall",
     "spark": [
       12994.0,
       13011.0,
@@ -41174,23 +41227,23 @@ window.__MINE_BUNDLE__ = {
       14675.5,
       12035.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 228,
-    "historyStart": "2026-01-02",
-    "varietyId": "lme-cu",
+    "change": -130.0,
+    "category": "nonferrous",
     "latest": 12035.0,
-    "varietyName": "LME铜",
+    "points": 228,
     "changePct": -1.0686,
-    "seriesId": "lme-cu-westmetall",
+    "varietyId": "lme-cu",
     "sourceId": "westmetall",
     "asOf": "2026-11-24",
-    "unit": "美元/吨"
+    "unit": "美元/吨",
+    "varietyName": "LME铜"
   },
   {
-    "change": -81.0,
-    "category": "nonferrous",
+    "trust": "B",
     "prev": 3201.5,
+    "historyStart": "2026-01-02",
+    "seriesId": "lme-al-westmetall",
     "spark": [
       3259.0,
       3077.0,
@@ -41205,23 +41258,23 @@ window.__MINE_BUNDLE__ = {
       3101.0,
       3120.5
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 228,
-    "historyStart": "2026-01-02",
-    "varietyId": "lme-al",
+    "change": -81.0,
+    "category": "nonferrous",
     "latest": 3120.5,
-    "varietyName": "LME铝",
+    "points": 228,
     "changePct": -2.5301,
-    "seriesId": "lme-al-westmetall",
+    "varietyId": "lme-al",
     "sourceId": "westmetall",
     "asOf": "2026-11-24",
-    "unit": "美元/吨"
+    "unit": "美元/吨",
+    "varietyName": "LME铝"
   },
   {
-    "change": 34.5,
-    "category": "nonferrous",
+    "trust": "B",
     "prev": 3630.5,
+    "historyStart": "2026-01-02",
+    "seriesId": "lme-zn-westmetall",
     "spark": [
       3359.0,
       3351.0,
@@ -41236,23 +41289,23 @@ window.__MINE_BUNDLE__ = {
       3960.0,
       3665.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 228,
-    "historyStart": "2026-01-02",
-    "varietyId": "lme-zn",
+    "change": 34.5,
+    "category": "nonferrous",
     "latest": 3665.0,
-    "varietyName": "LME锌",
+    "points": 228,
     "changePct": 0.9503,
-    "seriesId": "lme-zn-westmetall",
+    "varietyId": "lme-zn",
     "sourceId": "westmetall",
     "asOf": "2026-11-24",
-    "unit": "美元/吨"
+    "unit": "美元/吨",
+    "varietyName": "LME锌"
   },
   {
-    "change": -2.0,
-    "category": "nonferrous",
+    "trust": "B",
     "prev": 1788.0,
+    "historyStart": "2026-01-02",
+    "seriesId": "lme-pb-westmetall",
     "spark": [
       1972.5,
       1903.0,
@@ -41267,23 +41320,23 @@ window.__MINE_BUNDLE__ = {
       1910.0,
       1786.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 228,
-    "historyStart": "2026-01-02",
-    "varietyId": "lme-pb",
+    "change": -2.0,
+    "category": "nonferrous",
     "latest": 1786.0,
-    "varietyName": "LME铅",
+    "points": 228,
     "changePct": -0.1119,
-    "seriesId": "lme-pb-westmetall",
+    "varietyId": "lme-pb",
     "sourceId": "westmetall",
     "asOf": "2026-11-24",
-    "unit": "美元/吨"
+    "unit": "美元/吨",
+    "varietyName": "LME铅"
   },
   {
-    "change": -155.0,
-    "category": "nonferrous",
+    "trust": "B",
     "prev": 15215.0,
+    "historyStart": "2026-01-02",
+    "seriesId": "lme-ni-westmetall",
     "spark": [
       18200.0,
       17585.0,
@@ -41298,23 +41351,23 @@ window.__MINE_BUNDLE__ = {
       15580.0,
       15060.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 228,
-    "historyStart": "2026-01-02",
-    "varietyId": "lme-ni",
+    "change": -155.0,
+    "category": "nonferrous",
     "latest": 15060.0,
-    "varietyName": "LME镍",
+    "points": 228,
     "changePct": -1.0187,
-    "seriesId": "lme-ni-westmetall",
+    "varietyId": "lme-ni",
     "sourceId": "westmetall",
     "asOf": "2026-11-24",
-    "unit": "美元/吨"
+    "unit": "美元/吨",
+    "varietyName": "LME镍"
   },
   {
-    "change": -425.0,
-    "category": "nonferrous",
+    "trust": "B",
     "prev": 41250.0,
+    "historyStart": "2026-01-02",
+    "seriesId": "lme-sn-westmetall",
     "spark": [
       56400.0,
       48905.0,
@@ -41329,579 +41382,576 @@ window.__MINE_BUNDLE__ = {
       51700.0,
       40825.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 228,
-    "historyStart": "2026-01-02",
-    "varietyId": "lme-sn",
+    "change": -425.0,
+    "category": "nonferrous",
     "latest": 40825.0,
-    "varietyName": "LME锡",
+    "points": 228,
     "changePct": -1.0303,
-    "seriesId": "lme-sn-westmetall",
+    "varietyId": "lme-sn",
     "sourceId": "westmetall",
     "asOf": "2026-11-24",
-    "unit": "美元/吨"
+    "unit": "美元/吨",
+    "varietyName": "LME锡"
   },
   {
-    "change": -2660.0,
-    "category": "nonferrous",
-    "prev": 95070.0,
-    "spark": [
-      96100.0,
-      101340.0,
-      103850.0,
-      95760.0,
-      102260.0,
-      105000.0,
-      103160.0,
-      105050.0,
-      108110.0,
-      110180.0,
-      108390.0,
-      92410.0
-    ],
     "trust": "A",
-    "freshness": "normal",
-    "points": 251,
+    "prev": 92410.0,
     "historyStart": null,
-    "varietyId": "cu",
-    "latest": 92410.0,
-    "varietyName": "铜",
-    "changePct": -2.7979,
     "seriesId": "cu-shfe-cathode",
+    "spark": [
+      91850.0,
+      103800.0,
+      101560.0,
+      94430.0,
+      102460.0,
+      104770.0,
+      103580.0,
+      105820.0,
+      107200.0,
+      109620.0,
+      108390.0,
+      87950.0
+    ],
+    "freshness": "normal",
+    "change": -4460.0,
+    "category": "nonferrous",
+    "latest": 87950.0,
+    "points": 252,
+    "changePct": -4.8263,
+    "varietyId": "cu",
     "sourceId": "shfe",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "铜"
   },
   {
-    "change": -210.0,
-    "category": "nonferrous",
-    "prev": 21600.0,
-    "spark": [
-      22330.0,
-      24290.0,
-      24465.0,
-      24725.0,
-      24610.0,
-      24270.0,
-      23085.0,
-      23195.0,
-      23765.0,
-      24220.0,
-      23405.0,
-      21390.0
-    ],
     "trust": "A",
-    "freshness": "normal",
-    "points": 251,
+    "prev": 21390.0,
     "historyStart": null,
-    "varietyId": "al",
-    "latest": 21390.0,
-    "varietyName": "铝",
-    "changePct": -0.9722,
     "seriesId": "al-shfe-a00",
+    "spark": [
+      21935.0,
+      24650.0,
+      23515.0,
+      24180.0,
+      25125.0,
+      24440.0,
+      23485.0,
+      23190.0,
+      23595.0,
+      24400.0,
+      23405.0,
+      20600.0
+    ],
+    "freshness": "normal",
+    "change": -790.0,
+    "category": "nonferrous",
+    "latest": 20600.0,
+    "points": 252,
+    "changePct": -3.6933,
+    "varietyId": "al",
     "sourceId": "shfe",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "铝"
   },
   {
-    "change": -60.0,
-    "category": "nonferrous",
-    "prev": 15415.0,
-    "spark": [
-      17225.0,
-      17095.0,
-      16895.0,
-      16495.0,
-      16695.0,
-      16560.0,
-      16230.0,
-      15635.0,
-      16165.0,
-      16415.0,
-      16260.0,
-      15355.0
-    ],
     "trust": "A",
-    "freshness": "normal",
-    "points": 251,
+    "prev": 15355.0,
     "historyStart": null,
-    "varietyId": "pb",
-    "latest": 15355.0,
-    "varietyName": "铅",
-    "changePct": -0.3892,
     "seriesId": "pb-shfe-1",
+    "spark": [
+      17115.0,
+      17440.0,
+      16665.0,
+      16415.0,
+      16730.0,
+      16735.0,
+      16350.0,
+      15725.0,
+      15935.0,
+      16320.0,
+      16260.0,
+      15105.0
+    ],
+    "freshness": "normal",
+    "change": -250.0,
+    "category": "nonferrous",
+    "latest": 15105.0,
+    "points": 252,
+    "changePct": -1.6281,
+    "varietyId": "pb",
     "sourceId": "shfe",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "铅"
   },
   {
-    "change": 140.0,
-    "category": "nonferrous",
-    "prev": 23755.0,
-    "spark": [
-      23230.0,
-      24585.0,
-      24850.0,
-      23540.0,
-      23840.0,
-      24965.0,
-      24470.0,
-      24885.0,
-      25905.0,
-      26710.0,
-      25680.0,
-      23895.0
-    ],
     "trust": "A",
-    "freshness": "normal",
-    "points": 251,
+    "prev": 23895.0,
     "historyStart": null,
-    "varietyId": "zn",
-    "latest": 23895.0,
-    "varietyName": "锌",
-    "changePct": 0.5893,
     "seriesId": "zn-shfe-0",
+    "spark": [
+      23075.0,
+      24125.0,
+      24455.0,
+      22705.0,
+      24150.0,
+      24865.0,
+      24570.0,
+      24565.0,
+      25350.0,
+      26565.0,
+      25680.0,
+      23195.0
+    ],
+    "freshness": "normal",
+    "change": -700.0,
+    "category": "nonferrous",
+    "latest": 23195.0,
+    "points": 252,
+    "changePct": -2.9295,
+    "varietyId": "zn",
     "sourceId": "shfe",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "锌"
   },
   {
-    "change": -680.0,
-    "category": "nonferrous",
-    "prev": 117510.0,
-    "spark": [
-      128000.0,
-      148360.0,
-      140890.0,
-      137120.0,
-      149340.0,
-      143670.0,
-      129480.0,
-      132850.0,
-      129590.0,
-      123890.0,
-      117970.0,
-      116830.0
-    ],
     "trust": "A",
-    "freshness": "normal",
-    "points": 251,
+    "prev": 116830.0,
     "historyStart": null,
-    "varietyId": "ni",
-    "latest": 116830.0,
-    "varietyName": "镍",
-    "changePct": -0.5787,
     "seriesId": "ni-shfe-1",
+    "spark": [
+      117090.0,
+      144200.0,
+      133350.0,
+      131550.0,
+      141490.0,
+      143330.0,
+      132400.0,
+      131480.0,
+      129190.0,
+      124090.0,
+      117970.0,
+      114350.0
+    ],
+    "freshness": "normal",
+    "change": -2480.0,
+    "category": "nonferrous",
+    "latest": 114350.0,
+    "points": 252,
+    "changePct": -2.1227,
+    "varietyId": "ni",
     "sourceId": "shfe",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "镍"
   },
   {
-    "change": 180.0,
-    "category": "nonferrous",
-    "prev": 313540.0,
-    "spark": [
-      341800.0,
-      429570.0,
-      444010.0,
-      370720.0,
-      384600.0,
-      424650.0,
-      393060.0,
-      421350.0,
-      427110.0,
-      409000.0,
-      383200.0,
-      313720.0
-    ],
     "trust": "A",
-    "freshness": "normal",
-    "points": 251,
+    "prev": 313720.0,
     "historyStart": null,
-    "varietyId": "sn",
-    "latest": 313720.0,
-    "varietyName": "锡",
-    "changePct": 0.0574,
     "seriesId": "sn-shfe-1",
+    "spark": [
+      322630.0,
+      376920.0,
+      382000.0,
+      345730.0,
+      390880.0,
+      421320.0,
+      400070.0,
+      417190.0,
+      426250.0,
+      407490.0,
+      383200.0,
+      288990.0
+    ],
+    "freshness": "normal",
+    "change": -24730.0,
+    "category": "nonferrous",
+    "latest": 288990.0,
+    "points": 252,
+    "changePct": -7.8828,
+    "varietyId": "sn",
     "sourceId": "shfe",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "锡"
   },
   {
-    "change": -3.68,
-    "category": "precious",
-    "prev": 781.4,
-    "spark": [
-      272.93,
-      264.51,
-      311.0,
-      378.3,
-      382.74,
-      365.85,
-      392.57,
-      454.02,
-      553.49,
-      735.84,
-      1110.3,
-      777.72
-    ],
     "trust": "A",
-    "freshness": "normal",
-    "points": 2409,
+    "prev": 777.72,
     "historyStart": null,
-    "varietyId": "au",
-    "latest": 777.72,
-    "varietyName": "黄金",
-    "changePct": -0.4709,
     "seriesId": "au-sge-9999",
-    "sourceId": "sge",
-    "asOf": "2026-11-24",
-    "unit": "元/克"
-  },
-  {
-    "change": -114.0,
+    "spark": [
+      272.92,
+      264.1,
+      313.26,
+      369.92,
+      383.0,
+      367.52,
+      392.83,
+      454.89,
+      550.25,
+      732.5,
+      1144.45,
+      757.35
+    ],
+    "freshness": "normal",
+    "change": -20.37,
     "category": "precious",
-    "prev": 10149.0,
-    "spark": [
-      3844.0,
-      3480.0,
-      3590.0,
-      3728.0,
-      5499.0,
-      4612.0,
-      4479.0,
-      5610.0,
-      8045.0,
-      8414.0,
-      24988.0,
-      10035.0
-    ],
-    "trust": "A",
-    "freshness": "normal",
-    "points": 2409,
-    "historyStart": null,
-    "varietyId": "ag",
-    "latest": 10035.0,
-    "varietyName": "白银",
-    "changePct": -1.1233,
-    "seriesId": "ag-sge-td",
+    "latest": 757.35,
+    "points": 2410,
+    "changePct": -2.6192,
+    "varietyId": "au",
     "sourceId": "sge",
-    "asOf": "2026-11-24",
-    "unit": "元/千克"
+    "asOf": "2026-11-25",
+    "unit": "元/克",
+    "varietyName": "黄金"
   },
   {
-    "change": null,
-    "category": "nonferrous",
-    "prev": null,
+    "trust": "A",
+    "prev": 10035.0,
+    "historyStart": null,
+    "seriesId": "ag-sge-td",
     "spark": [
-      313500.0
+      3797.0,
+      3507.0,
+      3649.0,
+      3777.0,
+      5555.0,
+      4520.0,
+      4442.0,
+      5640.0,
+      7742.0,
+      8386.0,
+      27513.0,
+      9381.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 1,
-    "historyStart": "2026-11-24",
-    "varietyId": "cobalt",
-    "latest": 313500.0,
-    "varietyName": "钴",
-    "changePct": null,
-    "seriesId": "cobalt-cnmn",
-    "sourceId": "cnmn",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
+    "change": -654.0,
+    "category": "precious",
+    "latest": 9381.0,
+    "points": 2410,
+    "changePct": -6.5172,
+    "varietyId": "ag",
+    "sourceId": "sge",
+    "asOf": "2026-11-25",
+    "unit": "元/千克",
+    "varietyName": "白银"
   },
   {
+    "trust": "B",
+    "prev": null,
+    "historyStart": "2026-11-25",
+    "seriesId": "cobalt-cnmn",
+    "spark": [
+      344500.0
+    ],
+    "freshness": "normal",
     "change": null,
     "category": "nonferrous",
+    "latest": 344500.0,
+    "points": 1,
+    "changePct": null,
+    "varietyId": "cobalt",
+    "sourceId": "cnmn",
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "钴"
+  },
+  {
+    "trust": "B",
     "prev": null,
+    "historyStart": "2026-11-25",
+    "seriesId": "antimony-cnmn",
     "spark": [
       88500.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 1,
-    "historyStart": "2026-11-24",
-    "varietyId": "antimony",
-    "latest": 88500.0,
-    "varietyName": "锑",
-    "changePct": null,
-    "seriesId": "antimony-cnmn",
-    "sourceId": "cnmn",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
-  },
-  {
     "change": null,
     "category": "nonferrous",
+    "latest": 88500.0,
+    "points": 1,
+    "changePct": null,
+    "varietyId": "antimony",
+    "sourceId": "cnmn",
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "锑"
+  },
+  {
+    "trust": "B",
     "prev": null,
+    "historyStart": "2026-11-25",
+    "seriesId": "magnesium-cnmn",
     "spark": [
       16250.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 1,
-    "historyStart": "2026-11-24",
-    "varietyId": "magnesium",
+    "change": null,
+    "category": "nonferrous",
     "latest": 16250.0,
-    "varietyName": "镁",
-    "changePct": null,
-    "seriesId": "magnesium-cnmn",
-    "sourceId": "cnmn",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
-  },
-  {
-    "change": null,
-    "category": "nonferrous",
-    "prev": null,
-    "spark": [
-      127000.0
-    ],
-    "trust": "B",
-    "freshness": "normal",
     "points": 1,
-    "historyStart": "2026-11-24",
-    "varietyId": "bismuth",
-    "latest": 127000.0,
-    "varietyName": "铋",
     "changePct": null,
-    "seriesId": "bismuth-cnmn",
+    "varietyId": "magnesium",
     "sourceId": "cnmn",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "镁"
   },
   {
+    "trust": "B",
+    "prev": null,
+    "historyStart": "2026-11-25",
+    "seriesId": "bismuth-cnmn",
+    "spark": [
+      128000.0
+    ],
+    "freshness": "normal",
     "change": null,
     "category": "nonferrous",
+    "latest": 128000.0,
+    "points": 1,
+    "changePct": null,
+    "varietyId": "bismuth",
+    "sourceId": "cnmn",
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "铋"
+  },
+  {
+    "trust": "B",
     "prev": null,
+    "historyStart": "2026-11-25",
+    "seriesId": "indium-cnmn",
     "spark": [
       4450.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 1,
-    "historyStart": "2026-11-24",
-    "varietyId": "indium",
-    "latest": 4450.0,
-    "varietyName": "铟",
-    "changePct": null,
-    "seriesId": "indium-cnmn",
-    "sourceId": "cnmn",
-    "asOf": "2026-11-24",
-    "unit": "元/千克"
-  },
-  {
     "change": null,
     "category": "nonferrous",
+    "latest": 4450.0,
+    "points": 1,
+    "changePct": null,
+    "varietyId": "indium",
+    "sourceId": "cnmn",
+    "asOf": "2026-11-25",
+    "unit": "元/千克",
+    "varietyName": "铟"
+  },
+  {
+    "trust": "B",
     "prev": null,
+    "historyStart": "2026-11-25",
+    "seriesId": "gallium-cnmn",
     "spark": [
       1730.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 1,
-    "historyStart": "2026-11-24",
-    "varietyId": "gallium",
-    "latest": 1730.0,
-    "varietyName": "镓",
-    "changePct": null,
-    "seriesId": "gallium-cnmn",
-    "sourceId": "cnmn",
-    "asOf": "2026-11-24",
-    "unit": "元/千克"
-  },
-  {
     "change": null,
     "category": "nonferrous",
+    "latest": 1730.0,
+    "points": 1,
+    "changePct": null,
+    "varietyId": "gallium",
+    "sourceId": "cnmn",
+    "asOf": "2026-11-25",
+    "unit": "元/千克",
+    "varietyName": "镓"
+  },
+  {
+    "trust": "B",
     "prev": null,
+    "historyStart": "2026-11-25",
+    "seriesId": "cadmium-cnmn",
     "spark": [
       28750.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 1,
-    "historyStart": "2026-11-24",
-    "varietyId": "cadmium",
-    "latest": 28750.0,
-    "varietyName": "镉",
-    "changePct": null,
-    "seriesId": "cadmium-cnmn",
-    "sourceId": "cnmn",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
-  },
-  {
     "change": null,
     "category": "nonferrous",
+    "latest": 28750.0,
+    "points": 1,
+    "changePct": null,
+    "varietyId": "cadmium",
+    "sourceId": "cnmn",
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "镉"
+  },
+  {
+    "trust": "B",
     "prev": null,
+    "historyStart": "2026-11-25",
+    "seriesId": "tellurium-cnmn",
     "spark": [
       815.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 1,
-    "historyStart": "2026-11-24",
-    "varietyId": "tellurium",
-    "latest": 815.0,
-    "varietyName": "碲",
-    "changePct": null,
-    "seriesId": "tellurium-cnmn",
-    "sourceId": "cnmn",
-    "asOf": "2026-11-24",
-    "unit": "元/千克"
-  },
-  {
     "change": null,
     "category": "nonferrous",
+    "latest": 815.0,
+    "points": 1,
+    "changePct": null,
+    "varietyId": "tellurium",
+    "sourceId": "cnmn",
+    "asOf": "2026-11-25",
+    "unit": "元/千克",
+    "varietyName": "碲"
+  },
+  {
+    "trust": "B",
     "prev": null,
+    "historyStart": "2026-11-25",
+    "seriesId": "titanium-sponge-cnmn",
     "spark": [
       41500.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 1,
-    "historyStart": "2026-11-24",
-    "varietyId": "titanium-sponge",
+    "change": null,
+    "category": "nonferrous",
     "latest": 41500.0,
-    "varietyName": "海绵钛",
-    "changePct": null,
-    "seriesId": "titanium-sponge-cnmn",
-    "sourceId": "cnmn",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
-  },
-  {
-    "change": null,
-    "category": "nonferrous",
-    "prev": null,
-    "spark": [
-      18400.0
-    ],
-    "trust": "B",
-    "freshness": "normal",
     "points": 1,
-    "historyStart": "2026-11-24",
-    "varietyId": "electrolytic-mn",
-    "latest": 18400.0,
-    "varietyName": "电解锰",
     "changePct": null,
-    "seriesId": "electrolytic-mn-cnmn",
+    "varietyId": "titanium-sponge",
     "sourceId": "cnmn",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "海绵钛"
   },
   {
+    "trust": "B",
+    "prev": null,
+    "historyStart": "2026-11-25",
+    "seriesId": "electrolytic-mn-cnmn",
+    "spark": [
+      19400.0
+    ],
+    "freshness": "normal",
     "change": null,
     "category": "nonferrous",
+    "latest": 19400.0,
+    "points": 1,
+    "changePct": null,
+    "varietyId": "electrolytic-mn",
+    "sourceId": "cnmn",
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "电解锰"
+  },
+  {
+    "trust": "B",
     "prev": null,
+    "historyStart": "2026-11-25",
+    "seriesId": "silicon-metal-cnmn",
     "spark": [
       9500.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 1,
-    "historyStart": "2026-11-24",
-    "varietyId": "silicon-metal",
+    "change": null,
+    "category": "nonferrous",
     "latest": 9500.0,
-    "varietyName": "金属硅",
+    "points": 1,
     "changePct": null,
-    "seriesId": "silicon-metal-cnmn",
+    "varietyId": "silicon-metal",
     "sourceId": "cnmn",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "金属硅"
   },
   {
+    "trust": "B",
+    "prev": null,
+    "historyStart": "2026-11-25",
+    "seriesId": "lithium-hydroxide-cnmn",
+    "spark": [
+      76850.0
+    ],
+    "freshness": "normal",
     "change": null,
     "category": "rare",
-    "prev": null,
-    "spark": [
-      80850.0
-    ],
-    "trust": "B",
-    "freshness": "normal",
+    "latest": 76850.0,
     "points": 1,
-    "historyStart": "2026-11-24",
-    "varietyId": "lithium-hydroxide",
-    "latest": 80850.0,
-    "varietyName": "氢氧化锂",
     "changePct": null,
-    "seriesId": "lithium-hydroxide-cnmn",
+    "varietyId": "lithium-hydroxide",
     "sourceId": "cnmn",
-    "asOf": "2026-11-24",
-    "unit": "元/吨"
+    "asOf": "2026-11-25",
+    "unit": "元/吨",
+    "varietyName": "氢氧化锂"
   },
   {
-    "change": 0.0,
-    "category": "rare",
+    "trust": "B",
     "prev": 379000.0,
+    "historyStart": "2026-11-10",
+    "seriesId": "tungsten-conc-kekuang",
     "spark": [
-      349333.0,
       379000.0,
       379000.0,
       379000.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 4,
-    "historyStart": "2026-11-04",
-    "varietyId": "tungsten-conc",
-    "latest": 379000.0,
-    "varietyName": "钨精矿",
-    "changePct": 0.0,
-    "seriesId": "tungsten-conc-kekuang",
-    "sourceId": "kekuang",
-    "asOf": "2026-11-18",
-    "unit": "元/吨"
-  },
-  {
     "change": 0.0,
     "category": "rare",
+    "latest": 379000.0,
+    "points": 3,
+    "changePct": 0.0,
+    "varietyId": "tungsten-conc",
+    "sourceId": "kekuang",
+    "asOf": "2026-11-18",
+    "unit": "元/吨",
+    "varietyName": "钨精矿"
+  },
+  {
+    "trust": "B",
     "prev": 556667.0,
+    "historyStart": "2026-11-17",
+    "seriesId": "apt-kekuang",
     "spark": [
-      520000.0,
       556667.0,
       556667.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 3,
-    "historyStart": "2026-11-04",
-    "varietyId": "apt",
+    "change": 0.0,
+    "category": "rare",
     "latest": 556667.0,
-    "varietyName": "仲钨酸铵",
+    "points": 2,
     "changePct": 0.0,
-    "seriesId": "apt-kekuang",
+    "varietyId": "apt",
     "sourceId": "kekuang",
     "asOf": "2026-11-18",
-    "unit": "元/吨"
+    "unit": "元/吨",
+    "varietyName": "仲钨酸铵"
   },
   {
-    "change": 65.0,
-    "category": "rare",
+    "trust": "B",
     "prev": 5320.0,
+    "historyStart": "2026-11-16",
+    "seriesId": "moly-conc-kekuang",
     "spark": [
-      5165.0,
       5900.0,
       5320.0,
       5385.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 4,
-    "historyStart": "2026-11-04",
-    "varietyId": "moly-conc",
+    "change": 65.0,
+    "category": "rare",
     "latest": 5385.0,
-    "varietyName": "钼精矿",
+    "points": 3,
     "changePct": 1.2218,
-    "seriesId": "moly-conc-kekuang",
+    "varietyId": "moly-conc",
     "sourceId": "kekuang",
     "asOf": "2026-11-18",
-    "unit": "元/吨度"
+    "unit": "元/吨度",
+    "varietyName": "钼精矿"
   },
   {
-    "change": -43.75,
-    "category": "nonmetal",
+    "trust": "B",
     "prev": 3693.75,
+    "historyStart": "2026-03-18",
+    "seriesId": "fluorite-100ppi",
     "spark": [
       3575.0,
       3537.5,
@@ -41916,23 +41966,23 @@ window.__MINE_BUNDLE__ = {
       3687.5,
       3650.0
     ],
-    "trust": "B",
     "freshness": "normal",
-    "points": 104,
-    "historyStart": "2026-03-18",
-    "varietyId": "fluorite",
+    "change": -43.75,
+    "category": "nonmetal",
     "latest": 3650.0,
-    "varietyName": "萤石",
+    "points": 104,
     "changePct": -1.1844,
-    "seriesId": "fluorite-100ppi",
+    "varietyId": "fluorite",
     "sourceId": "100ppi",
     "asOf": "2026-11-23",
-    "unit": "元/吨"
+    "unit": "元/吨",
+    "varietyName": "萤石"
   },
   {
-    "change": 0.0,
-    "category": "nonmetal",
+    "trust": "B",
     "prev": 663.33,
+    "historyStart": "2026-03-01",
+    "seriesId": "phosphate-rock-100ppi",
     "spark": [
       800.0,
       530.0,
@@ -41947,18 +41997,17 @@ window.__MINE_BUNDLE__ = {
       643.33,
       663.33
     ],
-    "trust": "B",
     "freshness": "stopped",
-    "points": 69,
-    "historyStart": "2026-03-01",
-    "varietyId": "phosphate-rock",
+    "change": 0.0,
+    "category": "nonmetal",
     "latest": 663.33,
-    "varietyName": "磷矿石",
+    "points": 69,
     "changePct": 0.0,
-    "seriesId": "phosphate-rock-100ppi",
+    "varietyId": "phosphate-rock",
     "sourceId": "100ppi",
     "asOf": "2026-11-01",
-    "unit": "元/吨"
+    "unit": "元/吨",
+    "varietyName": "磷矿石"
   }
 ]
 };
