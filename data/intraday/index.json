@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T18:02:53",
+  "generatedAt": "2026-11-25T19:55:45",
   "tradeDate": "2026-11-26",
   "count": 16,
   "note": "分时数据为新浪期货「主力合约连续」，与站内现货/交易所日线口径不同，仅用于日内走势参考。",
@@ -11,8 +11,8 @@
       "unit": "元/克",
       "date": "2026-11-26",
       "prevClose": 757.4,
-      "count": 302,
-      "kb": 15.4
+      "count": 331,
+      "kb": 16.9
     },
     "ag-sge-td": {
       "file": "ag-sge-td.json",
@@ -21,8 +21,8 @@
       "unit": "元/千克",
       "date": "2026-11-26",
       "prevClose": 9438.0,
-      "count": 302,
-      "kb": 15.5
+      "count": 331,
+      "kb": 17.0
     },
     "cu-shfe-cathode": {
       "file": "cu-shfe-cathode.json",

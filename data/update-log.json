@@ -1,6 +1,6 @@
 [
   {
-    "ranAt": "2026-11-25T18:00:41+00:00",
+    "ranAt": "2026-11-25T19:53:40+00:00",
     "dataAsOf": "2026-11-25",
     "demoSeries": [],
     "realSeries": [
@@ -47,60 +47,60 @@
     "steps": [
       {
         "seriesId": "cu-shfe-cathode",
-        "added": 1,
-        "status": "ok"
+        "added": 0,
+        "status": "noop"
       },
       {
         "seriesId": "al-shfe-a00",
-        "added": 1,
-        "status": "ok"
+        "added": 0,
+        "status": "noop"
       },
       {
         "seriesId": "pb-shfe-1",
-        "added": 1,
-        "status": "ok"
+        "added": 0,
+        "status": "noop"
       },
       {
         "seriesId": "zn-shfe-0",
-        "added": 1,
-        "status": "ok"
+        "added": 0,
+        "status": "noop"
       },
       {
         "seriesId": "ni-shfe-1",
-        "added": 1,
-        "status": "ok"
+        "added": 0,
+        "status": "noop"
       },
       {
         "seriesId": "sn-shfe-1",
-        "added": 1,
-        "status": "ok"
+        "added": 0,
+        "status": "noop"
       },
       {
         "seriesId": "au-sge-9999",
-        "added": 1,
-        "status": "ok"
+        "added": 0,
+        "status": "noop"
       },
       {
         "seriesId": "ag-sge-td",
-        "added": 1,
-        "status": "ok"
+        "added": 0,
+        "status": "noop"
       }
     ]
   },
   {
+    "at": "2026-11-25T19:55:25",
     "varieties": 39,
     "missing": [
       {
-        "variety": "石墨",
-        "reason": "科矿网未找到 鳞片石墨"
+        "reason": "科矿网未找到 鳞片石墨",
+        "variety": "石墨"
       },
       {
-        "variety": "硫磺",
-        "reason": "科矿网未找到 硫磺"
+        "reason": "科矿网未找到 硫磺",
+        "variety": "硫磺"
       }
     ],
-    "dataAsOf": "2026-11-25",
-    "at": "2026-11-25T18:02:37",
-    "series": 39
+    "series": 39,
+    "dataAsOf": "2026-11-25"
   }
 ]

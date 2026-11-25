@@ -1,37 +1,37 @@
 [
   {
+    "icon": "▲",
     "desc": "铁矿石、硅铁、锰硅",
     "order": 1,
-    "name": "黑色金属",
     "id": "ferrous",
-    "icon": "▲"
+    "name": "黑色金属"
   },
   {
+    "icon": "■",
     "desc": "铜、铝、铅、锌、镍、锡、氧化铝、钴、锑、镁、铋、铟、镓、镉、碲、海绵钛、电解锰、金属硅、LME 六种基本金属",
     "order": 2,
-    "name": "有色金属",
     "id": "nonferrous",
-    "icon": "■"
+    "name": "有色金属"
   },
   {
+    "icon": "◆",
     "desc": "黄金、白银",
     "order": 3,
-    "name": "贵金属",
     "id": "precious",
-    "icon": "◆"
+    "name": "贵金属"
   },
   {
+    "icon": "●",
     "desc": "碳酸锂、氢氧化锂、工业硅、多晶硅、钨精矿、仲钨酸铵、钼精矿",
     "order": 4,
-    "name": "稀有与新能源",
     "id": "rare",
-    "icon": "●"
+    "name": "稀有与新能源"
   },
   {
+    "icon": "○",
     "desc": "萤石（磷矿石、石墨数据源待接入）",
     "order": 5,
-    "name": "非金属矿",
     "id": "nonmetal",
-    "icon": "○"
+    "name": "非金属矿"
   }
 ]

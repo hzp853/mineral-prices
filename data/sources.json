@@ -1,65 +1,65 @@
 [
   {
-    "url": "https://www.shfe.com.cn/",
+    "type": "exchange",
     "note": "交易所官方日行情，收盘价/结算价，主力合约按持仓量滚动选取。",
-    "trust": "A",
-    "name": "上海期货交易所",
     "id": "shfe",
+    "name": "上海期货交易所",
+    "url": "https://www.shfe.com.cn/",
     "freq": "daily",
-    "type": "exchange"
+    "trust": "A"
   },
   {
-    "url": "https://www.sge.com.cn/",
+    "type": "exchange",
     "note": "交易所官方每日行情。",
-    "trust": "A",
-    "name": "上海黄金交易所",
     "id": "sge",
+    "name": "上海黄金交易所",
+    "url": "https://www.sge.com.cn/",
     "freq": "daily",
-    "type": "exchange"
+    "trust": "A"
   },
   {
-    "url": "https://finance.sina.com.cn/futures/",
+    "type": "media",
     "note": "国内期货主力连续日线，转载自交易所行情，用于无官方接口的品种。",
-    "trust": "B",
-    "name": "新浪财经",
     "id": "sina",
+    "name": "新浪财经",
+    "url": "https://finance.sina.com.cn/futures/",
     "freq": "daily",
-    "type": "media"
+    "trust": "B"
   },
   {
-    "url": "https://www.cnmn.com.cn/",
+    "type": "media",
     "note": "上海金属现货报价（小金属），每日 10:00/11:30 更新，取区间中间值。",
-    "trust": "B",
-    "name": "中国有色网",
     "id": "cnmn",
+    "name": "中国有色网",
+    "url": "https://www.cnmn.com.cn/",
     "freq": "daily",
-    "type": "media"
+    "trust": "B"
   },
   {
-    "url": "http://www.kekuang.cn/",
+    "type": "media",
     "note": "稀土与非金属矿报价，不定期更新（偏周更）。",
-    "trust": "B",
-    "name": "科矿网",
     "id": "kekuang",
+    "name": "科矿网",
+    "url": "http://www.kekuang.cn/",
     "freq": "irregular",
-    "type": "media"
+    "trust": "B"
   },
   {
-    "url": "https://www.westmetall.com/en/markdaten.php",
+    "type": "media",
     "note": "LME 官方现货结算价与库存的免费镜像，美元/吨，含约一年历史。",
-    "trust": "B",
-    "name": "Westmetall（LME 镜像）",
     "id": "westmetall",
+    "name": "Westmetall（LME 镜像）",
+    "url": "https://www.westmetall.com/en/markdaten.php",
     "freq": "daily",
-    "type": "media"
+    "trust": "B"
   },
   {
-    "url": "https://www.100ppi.com/",
+    "type": "media",
     "note": "生意社基准价：基于撮合报价与价格模型生成的交易指导价，非交易所结算价，历史约半年。",
-    "trust": "B",
-    "name": "生意社（100ppi）",
     "id": "100ppi",
+    "name": "生意社（100ppi）",
+    "url": "https://www.100ppi.com/",
     "freq": "daily",
-    "type": "media"
+    "trust": "B"
   }
 ]
