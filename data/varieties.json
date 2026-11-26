@@ -1,392 +1,392 @@
 [
   {
     "id": "ferrosilicon",
-    "category": "ferrous",
-    "name": "硅铁",
-    "defaultSeriesId": "ferrosilicon-sina-main",
     "unit": "元/吨",
-    "hasFutures": true,
+    "category": "ferrous",
     "aliases": [],
-    "description": "硅铁期货主力连续收盘价。"
+    "hasFutures": true,
+    "defaultSeriesId": "ferrosilicon-sina-main",
+    "description": "硅铁期货主力连续收盘价。",
+    "name": "硅铁"
   },
   {
     "id": "iron-ore",
-    "category": "ferrous",
-    "name": "铁矿石",
-    "defaultSeriesId": "iron-ore-sina-main",
     "unit": "元/吨",
-    "hasFutures": true,
+    "category": "ferrous",
     "aliases": [],
-    "description": "进口铁矿石主力合约折算价，元/吨。"
+    "hasFutures": true,
+    "defaultSeriesId": "iron-ore-sina-main",
+    "description": "进口铁矿石主力合约折算价，元/吨。",
+    "name": "铁矿石"
   },
   {
     "id": "mn-si",
-    "category": "ferrous",
-    "name": "锰硅",
-    "defaultSeriesId": "mn-si-sina-main",
     "unit": "元/吨",
-    "hasFutures": true,
+    "category": "ferrous",
     "aliases": [],
-    "description": "锰硅合金期货主力连续收盘价。"
+    "hasFutures": true,
+    "defaultSeriesId": "mn-si-sina-main",
+    "description": "锰硅合金期货主力连续收盘价。",
+    "name": "锰硅"
   },
   {
     "id": "al",
-    "category": "nonferrous",
-    "name": "铝",
-    "defaultSeriesId": "al-shfe-a00",
     "unit": "元/吨",
-    "hasFutures": true,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "上海期货交易所铝主力合约收盘价。"
+    "hasFutures": true,
+    "defaultSeriesId": "al-shfe-a00",
+    "description": "上海期货交易所铝主力合约收盘价。",
+    "name": "铝"
   },
   {
     "id": "alumina",
-    "category": "nonferrous",
-    "name": "氧化铝",
-    "defaultSeriesId": "alumina-sina-main",
     "unit": "元/吨",
-    "hasFutures": true,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "氧化铝期货主力连续收盘价。"
+    "hasFutures": true,
+    "defaultSeriesId": "alumina-sina-main",
+    "description": "氧化铝期货主力连续收盘价。",
+    "name": "氧化铝"
   },
   {
     "id": "antimony",
-    "category": "nonferrous",
-    "name": "锑",
-    "defaultSeriesId": "antimony-cnmn",
     "unit": "元/吨",
-    "hasFutures": false,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "上海金属现货报价（小金属），锑 0# 中间值。"
+    "hasFutures": false,
+    "defaultSeriesId": "antimony-cnmn",
+    "description": "上海金属现货报价（小金属），锑 0# 中间值。",
+    "name": "锑"
   },
   {
     "id": "bismuth",
-    "category": "nonferrous",
-    "name": "铋",
-    "defaultSeriesId": "bismuth-cnmn",
     "unit": "元/吨",
-    "hasFutures": false,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "上海金属现货报价（小金属），铋 99.99% 中间值。"
+    "hasFutures": false,
+    "defaultSeriesId": "bismuth-cnmn",
+    "description": "上海金属现货报价（小金属），铋 99.99% 中间值。",
+    "name": "铋"
   },
   {
     "id": "cadmium",
-    "category": "nonferrous",
-    "name": "镉",
-    "defaultSeriesId": "cadmium-cnmn",
     "unit": "元/吨",
-    "hasFutures": false,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "上海金属现货报价（小金属），镉 99.99% 中间值。"
+    "hasFutures": false,
+    "defaultSeriesId": "cadmium-cnmn",
+    "description": "上海金属现货报价（小金属），镉 99.99% 中间值。",
+    "name": "镉"
   },
   {
     "id": "cobalt",
-    "category": "nonferrous",
-    "name": "钴",
-    "defaultSeriesId": "cobalt-cnmn",
     "unit": "元/吨",
-    "hasFutures": false,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "上海金属现货报价（小金属），钴 99.8% 中间值。"
+    "hasFutures": false,
+    "defaultSeriesId": "cobalt-cnmn",
+    "description": "上海金属现货报价（小金属），钴 99.8% 中间值。",
+    "name": "钴"
   },
   {
     "id": "cu",
-    "category": "nonferrous",
-    "name": "铜",
-    "defaultSeriesId": "cu-shfe-cathode",
     "unit": "元/吨",
-    "hasFutures": true,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "上海期货交易所阴极铜主力合约收盘价。"
+    "hasFutures": true,
+    "defaultSeriesId": "cu-shfe-cathode",
+    "description": "上海期货交易所阴极铜主力合约收盘价。",
+    "name": "铜"
   },
   {
     "id": "electrolytic-mn",
-    "category": "nonferrous",
-    "name": "电解锰",
-    "defaultSeriesId": "electrolytic-mn-cnmn",
     "unit": "元/吨",
-    "hasFutures": false,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "上海金属现货报价（小金属），电解锰 1# 中间值。"
+    "hasFutures": false,
+    "defaultSeriesId": "electrolytic-mn-cnmn",
+    "description": "上海金属现货报价（小金属），电解锰 1# 中间值。",
+    "name": "电解锰"
   },
   {
     "id": "gallium",
-    "category": "nonferrous",
-    "name": "镓",
-    "defaultSeriesId": "gallium-cnmn",
     "unit": "元/千克",
-    "hasFutures": false,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "上海金属现货报价（小金属），镓 99.99% 中间值。"
+    "hasFutures": false,
+    "defaultSeriesId": "gallium-cnmn",
+    "description": "上海金属现货报价（小金属），镓 99.99% 中间值。",
+    "name": "镓"
   },
   {
     "id": "indium",
-    "category": "nonferrous",
-    "name": "铟",
-    "defaultSeriesId": "indium-cnmn",
     "unit": "元/千克",
-    "hasFutures": false,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "上海金属现货报价（小金属），铟 99.99% 中间值。"
+    "hasFutures": false,
+    "defaultSeriesId": "indium-cnmn",
+    "description": "上海金属现货报价（小金属），铟 99.99% 中间值。",
+    "name": "铟"
   },
   {
     "id": "intl-copper",
-    "category": "nonferrous",
-    "name": "国际铜",
-    "defaultSeriesId": "intl-copper-sina-main",
     "unit": "元/吨",
-    "hasFutures": true,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "国际铜期货主力连续收盘价（不含税）。"
+    "hasFutures": true,
+    "defaultSeriesId": "intl-copper-sina-main",
+    "description": "国际铜期货主力连续收盘价（不含税）。",
+    "name": "国际铜"
   },
   {
     "id": "lme-al",
-    "category": "nonferrous",
-    "name": "LME铝",
-    "defaultSeriesId": "lme-al-westmetall",
     "unit": "美元/吨",
-    "hasFutures": true,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "LME 铝现货结算价（美元/吨）。"
+    "hasFutures": true,
+    "defaultSeriesId": "lme-al-westmetall",
+    "description": "LME 铝现货结算价（美元/吨）。",
+    "name": "LME铝"
   },
   {
     "id": "lme-cu",
-    "category": "nonferrous",
-    "name": "LME铜",
-    "defaultSeriesId": "lme-cu-westmetall",
     "unit": "美元/吨",
-    "hasFutures": true,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "LME 铜现货结算价（美元/吨）。"
+    "hasFutures": true,
+    "defaultSeriesId": "lme-cu-westmetall",
+    "description": "LME 铜现货结算价（美元/吨）。",
+    "name": "LME铜"
   },
   {
     "id": "lme-ni",
-    "category": "nonferrous",
-    "name": "LME镍",
-    "defaultSeriesId": "lme-ni-westmetall",
     "unit": "美元/吨",
-    "hasFutures": true,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "LME 镍现货结算价（美元/吨）。"
+    "hasFutures": true,
+    "defaultSeriesId": "lme-ni-westmetall",
+    "description": "LME 镍现货结算价（美元/吨）。",
+    "name": "LME镍"
   },
   {
     "id": "lme-pb",
-    "category": "nonferrous",
-    "name": "LME铅",
-    "defaultSeriesId": "lme-pb-westmetall",
     "unit": "美元/吨",
-    "hasFutures": true,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "LME 铅现货结算价（美元/吨）。"
+    "hasFutures": true,
+    "defaultSeriesId": "lme-pb-westmetall",
+    "description": "LME 铅现货结算价（美元/吨）。",
+    "name": "LME铅"
   },
   {
     "id": "lme-sn",
-    "category": "nonferrous",
-    "name": "LME锡",
-    "defaultSeriesId": "lme-sn-westmetall",
     "unit": "美元/吨",
-    "hasFutures": true,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "LME 锡现货结算价（美元/吨）。"
+    "hasFutures": true,
+    "defaultSeriesId": "lme-sn-westmetall",
+    "description": "LME 锡现货结算价（美元/吨）。",
+    "name": "LME锡"
   },
   {
     "id": "lme-zn",
-    "category": "nonferrous",
-    "name": "LME锌",
-    "defaultSeriesId": "lme-zn-westmetall",
     "unit": "美元/吨",
-    "hasFutures": true,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "LME 锌现货结算价（美元/吨）。"
+    "hasFutures": true,
+    "defaultSeriesId": "lme-zn-westmetall",
+    "description": "LME 锌现货结算价（美元/吨）。",
+    "name": "LME锌"
   },
   {
     "id": "magnesium",
-    "category": "nonferrous",
-    "name": "镁",
-    "defaultSeriesId": "magnesium-cnmn",
     "unit": "元/吨",
-    "hasFutures": false,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "上海金属现货报价（小金属），镁 1# 中间值。"
+    "hasFutures": false,
+    "defaultSeriesId": "magnesium-cnmn",
+    "description": "上海金属现货报价（小金属），镁 1# 中间值。",
+    "name": "镁"
   },
   {
     "id": "ni",
-    "category": "nonferrous",
-    "name": "镍",
-    "defaultSeriesId": "ni-shfe-1",
     "unit": "元/吨",
-    "hasFutures": true,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "上海期货交易所镍主力合约收盘价。"
+    "hasFutures": true,
+    "defaultSeriesId": "ni-shfe-1",
+    "description": "上海期货交易所镍主力合约收盘价。",
+    "name": "镍"
   },
   {
     "id": "pb",
-    "category": "nonferrous",
-    "name": "铅",
-    "defaultSeriesId": "pb-shfe-1",
     "unit": "元/吨",
-    "hasFutures": true,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "上海期货交易所铅主力合约收盘价。"
+    "hasFutures": true,
+    "defaultSeriesId": "pb-shfe-1",
+    "description": "上海期货交易所铅主力合约收盘价。",
+    "name": "铅"
   },
   {
     "id": "silicon-metal",
-    "category": "nonferrous",
-    "name": "金属硅",
-    "defaultSeriesId": "silicon-metal-cnmn",
     "unit": "元/吨",
-    "hasFutures": false,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "上海金属现货报价（小金属），金属硅 553# 中间值。"
+    "hasFutures": false,
+    "defaultSeriesId": "silicon-metal-cnmn",
+    "description": "上海金属现货报价（小金属），金属硅 553# 中间值。",
+    "name": "金属硅"
   },
   {
     "id": "sn",
-    "category": "nonferrous",
-    "name": "锡",
-    "defaultSeriesId": "sn-shfe-1",
     "unit": "元/吨",
-    "hasFutures": true,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "上海期货交易所锡主力合约收盘价。"
+    "hasFutures": true,
+    "defaultSeriesId": "sn-shfe-1",
+    "description": "上海期货交易所锡主力合约收盘价。",
+    "name": "锡"
   },
   {
     "id": "tellurium",
-    "category": "nonferrous",
-    "name": "碲",
-    "defaultSeriesId": "tellurium-cnmn",
     "unit": "元/千克",
-    "hasFutures": false,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "上海金属现货报价（小金属），碲中间值。"
+    "hasFutures": false,
+    "defaultSeriesId": "tellurium-cnmn",
+    "description": "上海金属现货报价（小金属），碲中间值。",
+    "name": "碲"
   },
   {
     "id": "titanium-sponge",
-    "category": "nonferrous",
-    "name": "海绵钛",
-    "defaultSeriesId": "titanium-sponge-cnmn",
     "unit": "元/吨",
-    "hasFutures": false,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "上海金属现货报价（小金属），海绵钛中间值。"
+    "hasFutures": false,
+    "defaultSeriesId": "titanium-sponge-cnmn",
+    "description": "上海金属现货报价（小金属），海绵钛中间值。",
+    "name": "海绵钛"
   },
   {
     "id": "zn",
-    "category": "nonferrous",
-    "name": "锌",
-    "defaultSeriesId": "zn-shfe-0",
     "unit": "元/吨",
-    "hasFutures": true,
+    "category": "nonferrous",
     "aliases": [],
-    "description": "上海期货交易所锌主力合约收盘价。"
+    "hasFutures": true,
+    "defaultSeriesId": "zn-shfe-0",
+    "description": "上海期货交易所锌主力合约收盘价。",
+    "name": "锌"
   },
   {
     "id": "ag",
-    "category": "precious",
-    "name": "白银",
-    "defaultSeriesId": "ag-sge-td",
     "unit": "元/千克",
-    "hasFutures": true,
+    "category": "precious",
     "aliases": [],
-    "description": "上海黄金交易所 Ag(T+D) 收盘价。"
+    "hasFutures": true,
+    "defaultSeriesId": "ag-sge-td",
+    "description": "上海黄金交易所 Ag(T+D) 收盘价。",
+    "name": "白银"
   },
   {
     "id": "au",
-    "category": "precious",
-    "name": "黄金",
-    "defaultSeriesId": "au-sge-9999",
     "unit": "元/克",
-    "hasFutures": true,
+    "category": "precious",
     "aliases": [],
-    "description": "上海黄金交易所 Au99.99 收盘价。"
+    "hasFutures": true,
+    "defaultSeriesId": "au-sge-9999",
+    "description": "上海黄金交易所 Au99.99 收盘价。",
+    "name": "黄金"
   },
   {
     "id": "apt",
-    "category": "rare",
-    "name": "仲钨酸铵",
-    "defaultSeriesId": "apt-kekuang",
     "unit": "元/吨",
-    "hasFutures": false,
+    "category": "rare",
     "aliases": [],
-    "description": "仲钨酸铵 APT 报价。"
+    "hasFutures": false,
+    "defaultSeriesId": "apt-kekuang",
+    "description": "仲钨酸铵 APT 报价。",
+    "name": "仲钨酸铵"
   },
   {
     "id": "industrial-silicon",
-    "category": "rare",
-    "name": "工业硅",
-    "defaultSeriesId": "industrial-silicon-sina-main",
     "unit": "元/吨",
-    "hasFutures": true,
+    "category": "rare",
     "aliases": [],
-    "description": "工业硅期货主力连续收盘价。"
+    "hasFutures": true,
+    "defaultSeriesId": "industrial-silicon-sina-main",
+    "description": "工业硅期货主力连续收盘价。",
+    "name": "工业硅"
   },
   {
     "id": "lithium-carbonate",
-    "category": "rare",
-    "name": "碳酸锂",
-    "defaultSeriesId": "lithium-carbonate-sina-main",
     "unit": "元/吨",
-    "hasFutures": true,
+    "category": "rare",
     "aliases": [],
-    "description": "碳酸锂期货主力连续收盘价。"
+    "hasFutures": true,
+    "defaultSeriesId": "lithium-carbonate-sina-main",
+    "description": "碳酸锂期货主力连续收盘价。",
+    "name": "碳酸锂"
   },
   {
     "id": "lithium-hydroxide",
-    "category": "rare",
-    "name": "氢氧化锂",
-    "defaultSeriesId": "lithium-hydroxide-cnmn",
     "unit": "元/吨",
-    "hasFutures": false,
+    "category": "rare",
     "aliases": [],
-    "description": "上海金属现货报价（小金属），电池级氢氧化锂中间值。"
+    "hasFutures": false,
+    "defaultSeriesId": "lithium-hydroxide-cnmn",
+    "description": "上海金属现货报价（小金属），电池级氢氧化锂中间值。",
+    "name": "氢氧化锂"
   },
   {
     "id": "moly-conc",
-    "category": "rare",
-    "name": "钼精矿",
-    "defaultSeriesId": "moly-conc-kekuang",
     "unit": "元/吨度",
-    "hasFutures": false,
+    "category": "rare",
     "aliases": [],
-    "description": "钼精矿报价，元/吨度。"
+    "hasFutures": false,
+    "defaultSeriesId": "moly-conc-kekuang",
+    "description": "钼精矿报价，元/吨度。",
+    "name": "钼精矿"
   },
   {
     "id": "polysilicon",
-    "category": "rare",
-    "name": "多晶硅",
-    "defaultSeriesId": "polysilicon-sina-main",
     "unit": "元/吨",
-    "hasFutures": true,
+    "category": "rare",
     "aliases": [],
-    "description": "多晶硅期货主力连续收盘价。"
+    "hasFutures": true,
+    "defaultSeriesId": "polysilicon-sina-main",
+    "description": "多晶硅期货主力连续收盘价。",
+    "name": "多晶硅"
   },
   {
     "id": "tungsten-conc",
-    "category": "rare",
-    "name": "钨精矿",
-    "defaultSeriesId": "tungsten-conc-kekuang",
     "unit": "元/吨",
-    "hasFutures": false,
+    "category": "rare",
     "aliases": [],
-    "description": "黑钨精矿 65% 报价。"
+    "hasFutures": false,
+    "defaultSeriesId": "tungsten-conc-kekuang",
+    "description": "黑钨精矿 65% 报价。",
+    "name": "钨精矿"
   },
   {
     "id": "fluorite",
-    "category": "nonmetal",
-    "name": "萤石",
-    "defaultSeriesId": "fluorite-100ppi",
     "unit": "元/吨",
-    "hasFutures": false,
+    "category": "nonmetal",
     "aliases": [],
-    "description": "萤石 97% 湿粉，生意社基准价（全国主流，出厂参考）。生意社公开数据列表缺 2026 年 6–7 月，该段不补点、图上断开。"
+    "hasFutures": false,
+    "defaultSeriesId": "fluorite-100ppi",
+    "description": "萤石 97% 湿粉，生意社基准价（全国主流，出厂参考）。生意社公开数据列表缺 2026 年 6–7 月，该段不补点、图上断开。",
+    "name": "萤石"
   },
   {
     "id": "phosphate-rock",
-    "category": "nonmetal",
-    "name": "磷矿石",
-    "defaultSeriesId": "phosphate-rock-100ppi",
     "unit": "元/吨",
-    "hasFutures": false,
+    "category": "nonmetal",
     "aliases": [],
-    "description": "磷矿石，生意社基准价（全国主流，出厂参考），日频。"
+    "hasFutures": false,
+    "defaultSeriesId": "phosphate-rock-100ppi",
+    "description": "磷矿石，生意社基准价（全国主流，出厂参考），日频。",
+    "name": "磷矿石"
   }
 ]
