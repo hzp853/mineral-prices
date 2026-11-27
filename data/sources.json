@@ -1,65 +1,65 @@
 [
   {
+    "name": "上海期货交易所",
     "id": "shfe",
     "note": "交易所官方日行情，收盘价/结算价，主力合约按持仓量滚动选取。",
-    "freq": "daily",
     "trust": "A",
+    "freq": "daily",
     "type": "exchange",
-    "name": "上海期货交易所",
     "url": "https://www.shfe.com.cn/"
   },
   {
+    "name": "上海黄金交易所",
     "id": "sge",
     "note": "交易所官方每日行情。",
-    "freq": "daily",
     "trust": "A",
+    "freq": "daily",
     "type": "exchange",
-    "name": "上海黄金交易所",
     "url": "https://www.sge.com.cn/"
   },
   {
+    "name": "新浪财经",
     "id": "sina",
     "note": "国内期货主力连续日线，转载自交易所行情，用于无官方接口的品种。",
-    "freq": "daily",
     "trust": "B",
+    "freq": "daily",
     "type": "media",
-    "name": "新浪财经",
     "url": "https://finance.sina.com.cn/futures/"
   },
   {
+    "name": "中国有色网",
     "id": "cnmn",
     "note": "上海金属现货报价（小金属），每日 10:00/11:30 更新，取区间中间值。",
-    "freq": "daily",
     "trust": "B",
+    "freq": "daily",
     "type": "media",
-    "name": "中国有色网",
     "url": "https://www.cnmn.com.cn/"
   },
   {
+    "name": "科矿网",
     "id": "kekuang",
     "note": "稀土与非金属矿报价，不定期更新（偏周更）。",
-    "freq": "irregular",
     "trust": "B",
+    "freq": "irregular",
     "type": "media",
-    "name": "科矿网",
     "url": "http://www.kekuang.cn/"
   },
   {
+    "name": "Westmetall（LME 镜像）",
     "id": "westmetall",
     "note": "LME 官方现货结算价与库存的免费镜像，美元/吨，含约一年历史。",
-    "freq": "daily",
     "trust": "B",
+    "freq": "daily",
     "type": "media",
-    "name": "Westmetall（LME 镜像）",
     "url": "https://www.westmetall.com/en/markdaten.php"
   },
   {
+    "name": "生意社（100ppi）",
     "id": "100ppi",
     "note": "生意社基准价：基于撮合报价与价格模型生成的交易指导价，非交易所结算价，历史约半年。",
-    "freq": "daily",
     "trust": "B",
+    "freq": "daily",
     "type": "media",
-    "name": "生意社（100ppi）",
     "url": "https://www.100ppi.com/"
   }
 ]
